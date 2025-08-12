@@ -1,0 +1,319 @@
+/* Modal Backdrop */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Modal Container */
+.modal {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: trainer-info-modal-appear 0.3s ease-out;
+}
+
+@keyframes trainer-info-modal-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 0 24px;
+  border-bottom: 1px solid rgba(229, 231, 235, 1);
+  padding-bottom: 16px;
+}
+
+.modalTitle {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(43, 45, 66, 1);
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: rgba(115, 123, 125, 1);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  background-color: rgba(243, 244, 246, 1);
+  color: rgba(75, 85, 99, 1);
+}
+
+.closeButton:focus {
+  outline: none;
+  background-color: rgba(243, 244, 246, 1);
+}
+
+/* Modal Content */
+.modalContent {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Trainer Header */
+.trainerHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background-color: rgba(249, 248, 252, 1);
+  border-radius: 12px;
+  border: 1px solid rgba(229, 231, 235, 1);
+}
+
+.avatarContainer {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.levelBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  border-radius: 16px;
+  background-color: rgba(235, 249, 238, 1);
+  border: 1px solid rgba(45, 159, 70, 1);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(45, 159, 70, 1);
+  letter-spacing: -0.6px;
+}
+
+.levelIcon {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(45, 159, 70, 1);
+  border-radius: 50%;
+}
+
+.levelText {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.trainerBasicInfo {
+  flex: 1;
+}
+
+.trainerName {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(43, 45, 66, 1);
+  letter-spacing: -1px;
+  margin: 0 0 8px 0;
+}
+
+.assignmentInfo {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  color: rgba(118, 118, 118, 1);
+  letter-spacing: -0.56px;
+}
+
+.assignmentCount {
+  font-weight: 700;
+  color: rgba(118, 118, 118, 1);
+}
+
+/* Trainer Details */
+.trainerDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(243, 244, 246, 1);
+}
+
+.detailRow:last-child {
+  border-bottom: none;
+}
+
+.detailLabel {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(75, 85, 99, 1);
+  letter-spacing: -0.56px;
+  min-width: 120px;
+}
+
+.detailValue {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(43, 45, 66, 1);
+  letter-spacing: -0.56px;
+  text-align: right;
+  flex: 1;
+  margin-left: 16px;
+  word-break: break-word;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px 24px 24px;
+  border-top: 1px solid rgba(229, 231, 235, 1);
+}
+
+.cancelButton {
+  padding: 12px 20px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  background-color: white;
+  color: rgba(75, 85, 99, 1);
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.56px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background-color: rgba(249, 250, 251, 1);
+  border-color: rgba(156, 163, 175, 1);
+}
+
+.cancelButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(208, 213, 221, 0.3);
+}
+
+.assignButton {
+  padding: 12px 20px;
+  background-color: rgba(239, 35, 60, 1);
+  color: white;
+  border: none;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.assignButton:hover {
+  background-color: rgba(220, 30, 55, 1);
+  transform: translateY(-1px);
+}
+
+.assignButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.3);
+}
+
+.assignButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .modalBackdrop {
+    padding: 16px;
+  }
+  
+  .modal {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .modalHeader {
+    padding: 20px 20px 0 20px;
+  }
+  
+  .modalContent {
+    padding: 20px;
+  }
+  
+  .modalFooter {
+    padding: 16px 20px 20px 20px;
+    flex-direction: column;
+  }
+  
+  .cancelButton,
+  .assignButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .trainerHeader {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .detailRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  
+  .detailValue {
+    text-align: left;
+    margin-left: 0;
+  }
+}

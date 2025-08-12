@@ -1,0 +1,265 @@
+/* Modal Backdrop */
+.welcome-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 15px;
+  /* CHANGED: Added to prevent scrolling on backdrop */
+  overflow: hidden;
+}
+
+/* Modal Container */
+.welcome-modal-container {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  /* CHANGED: Reduced max-width from 615px to 400px */
+  max-width: 400px;
+  width: 100%;
+  /* CHANGED: Removed fixed height for flexible sizing */
+  max-height: 85vh;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: stretch;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* CHANGED: Added overflow-y for scrolling on small screens */
+  overflow-y: auto;
+}
+
+.welcome-modal-content {
+  /* CHANGED: Reduced padding from 24px to 20px */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Image Section */
+.welcome-modal-image-section {
+  border-radius: 12px;
+  background-color: rgba(240, 239, 247, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  /* CHANGED: Reduced padding from 60px 33px to 30px 20px */
+  padding: 30px 20px;
+}
+
+.welcome-modal-image {
+  aspect-ratio: 2.12;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  /* CHANGED: Added max-height to control image size */
+  max-height: 140px;
+}
+
+/* Text Section */
+.welcome-modal-text-section {
+  /* CHANGED: Reduced margin from 24px to 18px */
+  margin-top: 18px;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.welcome-modal-title {
+  color: rgba(43, 45, 66, 1);
+  /* CHANGED: Reduced font-size from 36px to 26px */
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1.56px;
+}
+
+.welcome-modal-title-highlight {
+  font-weight: 700;
+  color: rgba(239, 35, 60, 1);
+}
+
+.welcome-modal-description {
+  margin-top: 8px;
+  width: 100%;
+  /* CHANGED: Reduced font-size from 24px to 16px */
+  font-size: 16px;
+  color: rgba(115, 123, 125, 1);
+  font-weight: 400;
+  letter-spacing: -0.48px;
+  /* CHANGED: Reduced line-height from 31px to 24px */
+  line-height: 24px;
+}
+
+/* Divider */
+.welcome-modal-divider {
+  /* CHANGED: Reduced margin from 21px to 16px */
+  margin-top: 16px;
+  flex-shrink: 0;
+  /* CHANGED: Reduced height from 2px to 1px */
+  height: 1px;
+  border: 1px dashed rgba(221, 221, 225, 1);
+}
+
+/* Button Section */
+.welcome-modal-button-container {
+  display: flex;
+  justify-content: flex-end;
+  /* CHANGED: Reduced margin from 24px to 16px */
+  margin-top: 16px;
+}
+
+.welcome-modal-button {
+  border-radius: 8px;
+  display: flex;
+  /* CHANGED: Reduced min-height from 52px to 44px */
+  min-height: 44px;
+  align-items: stretch;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: -0.96px;
+  justify-content: center;
+  /* CHANGED: Reduced font-size from 18px to 16px */
+  font: 700 16px/1 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.welcome-modal-button-content {
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #EF233C;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #EF233C;
+  display: flex;
+  /* CHANGED: Reduced gap from 8px to 6px */
+  gap: 6px;
+  overflow: hidden;
+  height: 100%;
+  /* CHANGED: Reduced padding from 10px 24px to 8px 20px */
+  padding: 8px 20px;
+  transition: all 0.2s ease;
+}
+
+.welcome-modal-button:hover .welcome-modal-button-content {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.welcome-modal-button:active .welcome-modal-button-content {
+  transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .welcome-modal-backdrop {
+    padding: 12px;
+  }
+  
+  .welcome-modal-container {
+    /* CHANGED: Reduced max-width for tablets */
+    max-width: 340px;
+  }
+  
+  .welcome-modal-content {
+    /* CHANGED: Reduced padding */
+    padding: 16px;
+  }
+  
+  .welcome-modal-image-section {
+    /* CHANGED: Reduced padding */
+    padding: 25px 15px;
+  }
+  
+  .welcome-modal-image {
+    /* CHANGED: Reduced max-height */
+    max-height: 120px;
+  }
+  
+  .welcome-modal-title {
+    /* CHANGED: Reduced font-size from 28px to 22px */
+    font-size: 22px;
+    letter-spacing: -1.32px;
+  }
+  
+  .welcome-modal-description {
+    /* CHANGED: Reduced font-size from 20px to 15px */
+    font-size: 15px;
+    letter-spacing: -0.45px;
+    line-height: 22px;
+  }
+  
+  .welcome-modal-button {
+    /* CHANGED: Reduced min-height */
+    min-height: 40px;
+    font-size: 15px;
+  }
+  
+  .welcome-modal-button-content {
+    /* CHANGED: Reduced padding */
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .welcome-modal-container {
+    /* CHANGED: Further reduced max-width for mobile */
+    max-width: 300px;
+  }
+  
+  .welcome-modal-content {
+    /* CHANGED: Further reduced padding */
+    padding: 14px;
+  }
+  
+  .welcome-modal-title {
+    /* CHANGED: Reduced font-size from 24px to 20px */
+    font-size: 20px;
+    letter-spacing: -1.2px;
+  }
+  
+  .welcome-modal-description {
+    /* CHANGED: Reduced font-size from 18px to 14px */
+    font-size: 14px;
+    letter-spacing: -0.42px;
+    line-height: 20px;
+  }
+  
+  .welcome-modal-image-section {
+    /* CHANGED: Further reduced padding */
+    padding: 20px 12px;
+  }
+  
+  .welcome-modal-image {
+    /* CHANGED: Further reduced max-height */
+    max-height: 100px;
+  }
+  
+  .welcome-modal-button {
+    /* CHANGED: Further reduced min-height */
+    min-height: 38px;
+    font-size: 14px;
+  }
+  
+  .welcome-modal-button-container {
+    /* CHANGED: Center button on mobile */
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-modal-container {
+    /* CHANGED: Smallest size for very small screens */
+    max-width: 280px;
+  }
+  
+  .welcome-modal-backdrop {
+    padding: 8px;
+  }
+}

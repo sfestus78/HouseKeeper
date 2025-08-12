@@ -1,0 +1,222 @@
+/* TrainersList Component Styles */
+.trainers-list-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  margin-top: 107px;
+}
+
+.trainers-header {
+  width: 604px;
+  max-width: 100%;
+}
+
+.trainers-grid {
+  display: flex;
+  margin-top: 40px;
+  width: 100%;
+  align-items: center;
+  gap: 24px 32px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.trainer-card {
+  align-items: center;
+  border-radius: 16px;
+  border: 1px solid #E1E5EA;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #F9F8FC;
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  gap: 10px;
+  overflow: hidden;
+  justify-content: flex-start;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 198px;
+  margin: auto 0;
+  padding: 12px 24px;
+  transition: all 0.2s ease;
+}
+
+.trainer-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 991px) {
+  .trainer-card {
+    padding: 0 20px;
+  }
+}
+
+.trainer-card-content {
+  align-self: stretch;
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.trainer-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.trainer-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 1;
+  object-position: center;
+}
+
+.trainer-level-badge {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--Gray-600, #475467);
+  border: 1px solid #E1E5EA;
+}
+
+.trainer-info {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.trainer-name {
+  font-size: 16px;
+  color: rgba(43, 45, 66, 1);
+  font-weight: 700;
+  letter-spacing: -0.96px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.trainer-assigned {
+  color: rgba(118, 118, 118, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.98px;
+}
+
+.assignment-count {
+  font-weight: 700;
+  color: rgba(43, 45, 66, 1);
+}
+
+.assign-property-link {
+  color: rgba(239, 35, 60, 1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.56px;
+  text-align: right;
+  text-decoration: underline;
+  margin-top: 24px;
+  cursor: pointer;
+}
+
+/* Pagination styles are shared with ListOfProperties */
+.pagination-container {
+  align-self: center;
+  display: flex;
+  margin-top: 60px;
+  align-items: flex-start;
+  gap: 16px;
+  color: rgba(115, 123, 125, 1);
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: -0.77px;
+  justify-content: flex-start;
+  font: 400 14px/1 Sora, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .pagination-container {
+    margin-top: 40px;
+    white-space: initial;
+  }
+}
+
+.pagination-button {
+  border-radius: 8px;
+  background-color: rgba(225, 229, 234, 1);
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0 19px 0 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+@media (max-width: 991px) {
+  .pagination-button {
+    white-space: initial;
+  }
+}
+
+.pagination-button.active {
+  border-radius: 8px;
+  background-color: rgba(43, 45, 66, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 700;
+  border: 2px solid rgba(225, 229, 234, 1);
+}
+
+.pagination-ellipsis {
+  border-radius: 20px;
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  gap: 10px;
+  font-size: 36px;
+  letter-spacing: -1.98px;
+  justify-content: center;
+  padding: 5px 8px;
+}
+
+@media (max-width: 991px) {
+  .pagination-ellipsis {
+    white-space: initial;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .trainers-list-container {
+    max-width: 100%;
+    margin-top: 40px;
+  }
+  
+  .trainers-header {
+    max-width: 100%;
+  }
+  
+  .trainers-grid {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,302 @@
+/* Modal Overlay */
+.congratulations-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 20px;
+  animation: congratulations-fade-in 0.3s ease-out;
+}
+
+@keyframes congratulations-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Container */
+.congratulations-modal-container {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  animation: congratulations-scale-in 0.3s ease-out;
+  overflow: hidden;
+}
+
+@keyframes congratulations-scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Close Button */
+.congratulations-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: rgba(118, 118, 118, 1);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+}
+
+.congratulations-modal-close-btn:hover {
+  background-color: rgba(240, 239, 247, 1);
+}
+
+/* Success Icon */
+.congratulations-modal-icon {
+  display: flex;
+  justify-content: center;
+  padding: 40px 40px 20px 40px;
+}
+
+.congratulations-success-icon {
+  color: rgba(45, 159, 70, 1);
+  animation: congratulations-bounce 0.6s ease-out;
+}
+
+@keyframes congratulations-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Content */
+.congratulations-modal-content {
+  padding: 0 40px 20px 40px;
+  text-align: center;
+}
+
+.congratulations-modal-title {
+  font-size: 28px;
+  color: rgba(43, 45, 66, 1);
+  font-weight: 700;
+  letter-spacing: -1.12px;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+.congratulations-modal-message {
+  font-size: 16px;
+  color: rgba(118, 118, 118, 1);
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+}
+
+/* Trainer Summary */
+.congratulations-trainer-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(249, 248, 252, 1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.congratulations-trainer-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.congratulations-trainer-info {
+  flex: 1;
+}
+
+.congratulations-trainer-name {
+  font-size: 18px;
+  color: rgba(43, 45, 66, 1);
+  font-weight: 700;
+  letter-spacing: -0.72px;
+  line-height: 1.2;
+  margin: 0 0 4px 0;
+}
+
+.congratulations-trainer-email {
+  font-size: 14px;
+  color: rgba(118, 118, 118, 1);
+  font-weight: 400;
+  margin: 0 0 4px 0;
+}
+
+.congratulations-trainer-level {
+  font-size: 14px;
+  color: rgba(239, 35, 60, 1);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Next Steps */
+.congratulations-next-steps {
+  text-align: left;
+  background-color: rgba(240, 247, 255, 1);
+  border: 1px solid rgba(191, 219, 254, 1);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.congratulations-next-steps-title {
+  font-size: 16px;
+  color: rgba(43, 45, 66, 1);
+  font-weight: 600;
+  letter-spacing: -0.64px;
+  margin: 0 0 12px 0;
+}
+
+.congratulations-next-steps-list {
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(118, 118, 118, 1);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.congratulations-next-steps-list li {
+  margin-bottom: 6px;
+}
+
+.congratulations-next-steps-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.congratulations-modal-footer {
+  padding: 20px 40px 32px 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.congratulations-modal-close-btn-text {
+  background-color: rgba(239, 35, 60, 1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 120px;
+}
+
+.congratulations-modal-close-btn-text:hover {
+  background-color: rgba(220, 32, 55, 1);
+}
+
+/* Auto-close indicator */
+.congratulations-auto-close {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: rgba(225, 229, 234, 1);
+  overflow: hidden;
+}
+
+.congratulations-auto-close-bar {
+  height: 100%;
+  background-color: rgba(239, 35, 60, 1);
+  width: 100%;
+  transform-origin: left;
+  animation: congratulations-auto-close-progress 5s linear;
+}
+
+@keyframes congratulations-auto-close-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .congratulations-modal-container {
+    margin: 20px;
+    max-width: none;
+  }
+  
+  .congratulations-modal-icon {
+    padding: 30px 30px 16px 30px;
+  }
+  
+  .congratulations-modal-content {
+    padding: 0 30px 16px 30px;
+  }
+  
+  .congratulations-modal-footer {
+    padding: 16px 30px 24px 30px;
+  }
+  
+  .congratulations-trainer-summary {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal-title {
+    font-size: 24px;
+  }
+  
+  .congratulations-modal-message {
+    font-size: 14px;
+  }
+  
+  .congratulations-modal-icon {
+    padding: 24px 24px 16px 24px;
+  }
+  
+  .congratulations-modal-content {
+    padding: 0 24px 16px 24px;
+  }
+  
+  .congratulations-modal-footer {
+    padding: 16px 24px 20px 24px;
+  }
+  
+  .congratulations-next-steps {
+    padding: 16px;
+  }
+  
+  .congratulations-trainer-summary {
+    padding: 16px;
+  }
+}

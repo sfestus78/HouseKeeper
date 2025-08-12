@@ -1,0 +1,400 @@
+/* Modal Backdrop */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 20px;
+}
+
+/* Modal Container */
+.modal {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: assign-property-modal-appear 0.3s ease-out;
+}
+
+@keyframes assign-property-modal-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+/* Modal Header */
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 0 24px;
+  border-bottom: 1px solid rgba(229, 231, 235, 1);
+  padding-bottom: 16px;
+}
+
+.modalTitle {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgba(43, 45, 66, 1);
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: rgba(115, 123, 125, 1);
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  background-color: rgba(243, 244, 246, 1);
+  color: rgba(75, 85, 99, 1);
+}
+
+.closeButton:focus {
+  outline: none;
+  background-color: rgba(243, 244, 246, 1);
+}
+
+/* Modal Content */
+.modalContent {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.sectionTitle {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(43, 45, 66, 1);
+  letter-spacing: -0.64px;
+  margin: 0 0 20px 0;
+}
+
+/* No Properties State */
+.noProperties {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.noPropertiesIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.noPropertiesText {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(75, 85, 99, 1);
+  letter-spacing: -0.72px;
+  margin: 0 0 8px 0;
+}
+
+.noPropertiesSubtext {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(115, 123, 125, 1);
+  letter-spacing: -0.56px;
+  margin: 0;
+  max-width: 300px;
+}
+
+/* Properties List */
+.propertiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.propertyItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 2px solid rgba(229, 231, 235, 1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.propertyItem:hover {
+  border-color: rgba(199, 210, 254, 1);
+  background-color: rgba(249, 250, 251, 1);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.propertyItemSelected {
+  border-color: rgba(239, 35, 60, 1);
+  background-color: rgba(254, 242, 242, 1);
+  box-shadow: 0 0 0 1px rgba(239, 35, 60, 0.1);
+}
+
+.propertyItemSelected:hover {
+  border-color: rgba(220, 30, 55, 1);
+  background-color: rgba(254, 242, 242, 1);
+}
+
+.propertyImage {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.propertyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.propertyInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.propertyName {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(43, 45, 66, 1);
+  letter-spacing: -0.64px;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.propertyAddress {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(118, 118, 118, 1);
+  letter-spacing: -0.56px;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.propertyStatus {
+  display: flex;
+  align-items: center;
+}
+
+.statusBadge {
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(249, 115, 22, 1);
+  background-color: rgba(255, 237, 213, 1);
+  border: 1px solid rgba(249, 115, 22, 1);
+  border-radius: 12px;
+  padding: 4px 8px;
+  letter-spacing: -0.48px;
+}
+
+.selectIndicator {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px 24px 24px;
+  border-top: 1px solid rgba(229, 231, 235, 1);
+}
+
+.cancelButton {
+  padding: 12px 20px;
+  border: 1px solid rgba(208, 213, 221, 1);
+  background-color: white;
+  color: rgba(75, 85, 99, 1);
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.56px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cancelButton:hover {
+  background-color: rgba(249, 250, 251, 1);
+  border-color: rgba(156, 163, 175, 1);
+}
+
+.cancelButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(208, 213, 221, 0.3);
+}
+
+.assignButton {
+  padding: 12px 20px;
+  background-color: rgba(239, 35, 60, 1);
+  color: white;
+  border: none;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.assignButton:hover {
+  background-color: rgba(220, 30, 55, 1);
+  transform: translateY(-1px);
+}
+
+.assignButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.3);
+}
+
+.assignButton:active {
+  transform: translateY(0);
+}
+
+.assignButtonDisabled {
+  background-color: rgba(156, 163, 175, 1);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.assignButtonDisabled:hover {
+  background-color: rgba(156, 163, 175, 1);
+  transform: none;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: assign-property-spin 1s linear infinite;
+}
+
+@keyframes assign-property-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .modalBackdrop {
+    padding: 16px;
+  }
+  
+  .modal {
+    max-width: 100%;
+    margin: 0;
+  }
+  
+  .modalHeader {
+    padding: 20px 20px 0 20px;
+  }
+  
+  .modalContent {
+    padding: 20px;
+  }
+  
+  .modalFooter {
+    padding: 16px 20px 20px 20px;
+    flex-direction: column;
+  }
+  
+  .cancelButton,
+  .assignButton {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .propertyItem {
+    padding: 12px;
+    gap: 12px;
+  }
+  
+  .propertyImage {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .propertyName {
+    font-size: 14px;
+  }
+  
+  .propertyAddress {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .propertyItem {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  .propertyImage {
+    width: 100%;
+    height: 120px;
+  }
+  
+  .selectIndicator {
+    align-self: flex-end;
+    margin-top: -24px;
+  }
+}

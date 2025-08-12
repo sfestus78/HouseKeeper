@@ -1,0 +1,72 @@
+/* Pagination */
+.pagination {
+  align-self: center;
+  display: flex;
+  margin-top: 65px;
+  align-items: flex-start;
+  gap: 16px;
+  color: rgba(115, 123, 125, 1);
+  white-space: nowrap;
+  text-align: center;
+  letter-spacing: -0.77px;
+  justify-content: flex-start;
+  font: 400 14px/1 Sora, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.pageButton {
+  border-radius: 8px;
+  background-color: rgba(225, 229, 234, 1);
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0 19px 0 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+.pageButton:hover:not(.pageButtonActive):not(.pageButtonEllipsis) {
+  background-color: rgba(200, 205, 210, 1);
+}
+
+.pageButtonActive {
+  border-radius: 8px;
+  background-color: rgba(43, 45, 66, 1);
+  color: rgba(255, 255, 255, 1);
+  font-weight: 700;
+  border: 2px solid rgba(225, 229, 234, 1);
+}
+
+.pageButtonEllipsis {
+  border-radius: 20px;
+  background: transparent;
+  font-size: 36px;
+  letter-spacing: -1.98px;
+  padding: 5px 8px;
+  cursor: default;
+  min-height: 50px;
+}
+
+.pageButtonEllipsis:hover {
+  background: transparent;
+}
+
+@media (max-width: 991px) {
+  .pagination {
+    margin-top: 40px;
+    white-space: initial;
+  }
+  
+  .pageButton {
+    white-space: initial;
+  }
+  
+  .pageButtonEllipsis {
+    white-space: initial;
+  }
+}

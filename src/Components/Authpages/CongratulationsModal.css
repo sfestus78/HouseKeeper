@@ -1,0 +1,277 @@
+/* CongratulationsModal.css */
+.congratulations-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  /* CHANGED: Added to prevent scrolling on backdrop */
+  overflow: hidden;
+}
+
+.congratulations-modal {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 1);
+  /* CHANGED: Further reduced max-width from 480px to 380px */
+  max-width: 380px;
+  width: 100%;
+  /* CHANGED: Removed fixed height and max-height for more flexible sizing */
+  overflow: hidden;
+  padding: 20px;
+  margin: 0 15px;
+  /* CHANGED: Added max-height with viewport units and scroll for very small screens */
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal {
+    padding: 0 15px;
+    /* CHANGED: Reduce max-width further on mobile */
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal {
+    /* CHANGED: Even smaller on very small screens */
+    max-width: 280px;
+    margin: 0 8px;
+  }
+}
+
+.congratulations-modal-container {
+  width: 100%;
+}
+
+.congratulations-modal-image-section {
+  border-radius: 12px;
+  background-color: rgba(240, 239, 247, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* CHANGED: Further reduced padding from 20px 40px to 15px 30px */
+  padding: 15px 30px;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-image-section {
+    max-width: 100%;
+    margin-right: 2px;
+    padding: 0 15px;
+  }
+}
+
+.congratulations-modal-image {
+  aspect-ratio: 1.44;
+  object-fit: contain;
+  object-position: center;
+  /* CHANGED: Further reduced width from 280px to 220px and height from 194px to 153px */
+  width: 220px;
+  height: 153px;
+  max-width: 100%;
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal-image {
+    /* CHANGED: Even smaller image on mobile */
+    width: 180px;
+    height: 125px;
+  }
+}
+
+.congratulations-modal-text-section {
+  /* CHANGED: Further reduced margin from 24px to 18px */
+  margin-top: 18px;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-text-section {
+    max-width: 100%;
+    margin-right: 4px;
+  }
+}
+
+.congratulations-modal-title {
+  color: rgba(43, 45, 66, 1);
+  /* CHANGED: Further reduced font-size from 28px to 24px */
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.2px;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-title {
+    max-width: 100%;
+    /* CHANGED: Smaller on mobile */
+    font-size: 20px;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal-title {
+    font-size: 18px;
+    letter-spacing: -0.9px;
+  }
+}
+
+.congratulations-modal-description {
+  margin-top: 6px;
+  width: 100%;
+  /* CHANGED: Further reduced font-size from 18px to 16px */
+  font-size: 16px;
+  color: rgba(115, 123, 125, 1);
+  font-weight: 400;
+  letter-spacing: -0.48px;
+  /* CHANGED: Reduced line-height from 28px to 24px */
+  line-height: 24px;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-description {
+    max-width: 100%;
+    /* CHANGED: Smaller on mobile */
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal-description {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+.congratulations-modal-divider {
+  /* CHANGED: Further reduced margin from 20px to 16px */
+  margin-top: 16px;
+  width: 100%;
+  flex-shrink: 0;
+  height: 1px;
+  border: 1px dashed rgba(221, 221, 225, 1);
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-divider {
+    margin-right: 2px;
+  }
+}
+
+.congratulations-modal-actions {
+  display: flex;
+  /* CHANGED: Further reduced margin from 20px to 16px */
+  margin-top: 16px;
+  width: 100%;
+  align-items: stretch;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font: 700 16px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-actions {
+    max-width: 100%;
+    /* CHANGED: Smaller font on mobile */
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal-actions {
+    /* CHANGED: Stack buttons vertically on very small screens */
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+.congratulations-modal-skip {
+  min-height: 16px;
+  color: var(--Gray-600, #475467);
+  white-space: nowrap;
+  text-decoration: underline;
+  letter-spacing: -0.72px;
+  line-height: 1;
+  margin: auto 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-skip {
+    white-space: initial;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal-skip {
+    /* CHANGED: Center align on mobile when stacked */
+    align-self: center;
+    margin: 0;
+  }
+}
+
+.congratulations-modal-skip:hover {
+  color: #374151;
+}
+
+.congratulations-modal-button {
+  border-radius: 8px;
+  display: flex;
+  /* CHANGED: Further reduced min-height from 48px to 42px */
+  min-height: 42px;
+  align-items: center;
+  color: rgba(255, 255, 255, 1);
+  letter-spacing: -0.96px;
+  line-height: 1;
+  justify-content: center;
+  border: 1px solid #EF233C;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #EF233C;
+  gap: 6px;
+  overflow: hidden;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+@media (max-width: 991px) {
+  .congratulations-modal-button {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .congratulations-modal-button {
+    /* CHANGED: Full width on mobile when stacked */
+    width: 100%;
+    min-height: 38px;
+  }
+}
+
+.congratulations-modal-button:hover {
+  background-color: #d61e36;
+  border-color: #d61e36;
+}
+
+.congratulations-modal-button:active {
+  background-color: #c41d33;
+  border-color: #c41d33;
+}

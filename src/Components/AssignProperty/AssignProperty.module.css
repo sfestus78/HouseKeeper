@@ -1,0 +1,1142 @@
+/* Main Container */
+.assignPropertyContainer {
+  width: 100%;
+  min-height: 100%;
+  padding: 0;
+  margin-left: 40px;
+  margin-top: 30px;
+  background-color: #FFF;
+}
+
+/* Header */
+.header {
+  margin-bottom: 40px;
+}
+
+.title {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -1.44px;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #7A7A7A;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.64px;
+}
+
+/* Step Container */
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Step Header */
+.stepHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stepTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.stepNumber {
+  color: #EF233C;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -1.2px;
+}
+
+.stepLabel {
+  color: #344054;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -1.2px;
+}
+
+.stepDivider {
+  width: 604px;
+  height: 2px;
+  background-color: #DDDDE1;
+}
+
+/* Dropdown Section */
+.dropdownSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.inputLabel {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.96px;
+}
+
+.dropdownContainer {
+  position: relative;
+  width: 604px;
+}
+
+.dropdown {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  padding: 10px 14px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+.dropdownText {
+  color: #101828;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.64px;
+  flex: 1;
+}
+
+.dropdownIcon {
+  width: 20px;
+  height: 20px;
+  color: #667085;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #FFF;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdownItem {
+  padding: 12px 14px;
+  cursor: pointer;
+  color: #101828;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  border-bottom: 1px solid #F2F4F7;
+}
+
+.dropdownItem:hover {
+  background-color: #F9FAFB;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+/* Or Pick Section */
+.orPickSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.orPickText {
+  color: #737B7D;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.96px;
+}
+
+.unassignedText {
+  color: #EF233C;
+}
+
+/* Property Cards Grid */
+.propertyCardsGrid {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.propertyCard {
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 16px;
+  border: 1px solid #E1E5EA;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #F9F8FC;
+  max-width: 240px;
+}
+
+.propertyCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.propertyCardInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.propertyImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.propertyDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.propertyName {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.84px;
+}
+
+.propertyAddress {
+  width: 172px;
+  color: #767676;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: -0.84px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selectPropertyButton {
+  color: #EF233C;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: -0.56px;
+  text-decoration: underline;
+  text-align: right;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Step 2 Styles */
+.selectedPropertyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.selectedPropertyTitle {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.96px;
+}
+
+.selectedPropertyCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #E1E5EA;
+  background-color: #F9FAFB;
+  max-width: 400px;
+}
+
+.selectedPropertyImage {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.selectedPropertyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.selectedPropertyName {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.64px;
+}
+
+.selectedPropertyAddress {
+  color: #767676;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.56px;
+}
+
+/* Trainers Section */
+.trainersSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.trainersTitle {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -1.0px;
+}
+
+.trainersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+}
+
+.trainerCard {
+  display: flex;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #E1E5EA;
+  box-shadow: 0 1px 3px 0 rgba(16, 24, 40, 0.1);
+  background-color: #FFF;
+  transition: all 0.2s ease;
+}
+
+.trainerCard:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.trainerCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.trainerHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.trainerAvatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.levelBadge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  background-color: #F0F9FF;
+  border: 1px solid #BAE6FD;
+}
+
+.levelText {
+  color: #0369A1;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.trainerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trainerName {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.72px;
+}
+
+.trainerAssignments {
+  color: #737B7D;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.56px;
+}
+
+.assignmentCount {
+  color: #EF233C;
+  font-weight: 600;
+}
+
+.assignButton {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #EF233C;
+  background-color: #EF233C;
+  color: #FFF;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.assignButton:hover {
+  background-color: #DC1F37;
+  border-color: #DC1F37;
+}
+
+/* Step Footer */
+.stepFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+  width: 100%;
+  margin-top: 60px;
+}
+
+.navigationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  background-color: #FFF;
+  color: #344054;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #F9FAFB;
+}
+
+.backIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.progressBar {
+  display: flex;
+  height: 4px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  border-radius: 8px;
+  position: relative;
+  background-color: #D0D5DD;
+}
+
+.progressFill {
+  height: 4px;
+  border-radius: 8px;
+  background-color: #2B2D42;
+  transition: width 0.3s ease;
+}
+
+.nextButton {
+  display: flex;
+  width: 118px;
+  height: 52px;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #EF233C;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #EF233C;
+  color: #FFF;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -1.08px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nextButton:hover {
+  background-color: #DC1F37;
+  border-color: #DC1F37;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContainer,
+.confirmationModalContainer,
+.successModalContainer {
+  background-color: #FFF;
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.modalTitle {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.96px;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.closeButton:hover {
+  background-color: #F3F4F6;
+}
+
+.closeIcon {
+  width: 20px;
+  height: 20px;
+  color: #6B7280;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Trainer Profile */
+.trainerProfile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #F9FAFB;
+}
+
+.modalTrainerImage {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.trainerProfileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalTrainerName {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.8px;
+}
+
+.modalLevelBadge {
+  padding: 4px 12px;
+  border-radius: 16px;
+  background-color: #F0F9FF;
+  border: 1px solid #BAE6FD;
+  width: fit-content;
+}
+
+.modalLevelText {
+  color: #0369A1;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+/* Contact Information */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contactIcon {
+  width: 20px;
+  height: 20px;
+  color: #6B7280;
+}
+
+.contactText {
+  color: #374151;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.64px;
+}
+
+/* Assignment Stats */
+.assignmentStats {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.statNumber {
+  color: #EF233C;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.statLabel {
+  color: #6B7280;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-align: center;
+}
+
+/* Modal Property Info */
+.modalPropertyInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modalPropertyTitle {
+  color: #374151;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.modalPropertyCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  background-color: #FFF;
+}
+
+.modalPropertyImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.modalPropertyDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modalPropertyName {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.modalPropertyAddress {
+  color: #6B7280;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+/* Modal Footer */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+}
+
+.cancelButton {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  background-color: #FFF;
+  color: #374151;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelButton:hover {
+  background-color: #F9FAFB;
+}
+
+.assignToPropertyButton,
+.confirmButton {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #EF233C;
+  background-color: #EF233C;
+  color: #FFF;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.assignToPropertyButton:hover,
+.confirmButton:hover {
+  background-color: #DC1F37;
+  border-color: #DC1F37;
+}
+
+/* Confirmation Modal Specific */
+.confirmationContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.confirmationIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #FEF3C7;
+}
+
+.checkIcon {
+  width: 32px;
+  height: 32px;
+  color: #F59E0B;
+}
+
+.assignmentSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.confirmationTitle {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.summarySection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryLabel {
+  color: #6B7280;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: left;
+}
+
+.summaryItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  background-color: #F9FAFB;
+}
+
+.summaryImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.summaryDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.summaryName {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.summaryAddress,
+.summarySubtext {
+  color: #6B7280;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.warningMessage {
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #FEF3E2;
+  border: 1px solid #FDE68A;
+}
+
+.warningMessage p {
+  color: #92400E;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  margin: 0;
+}
+
+/* Success Modal Specific */
+.successContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #D1FAE5;
+}
+
+.successCheckIcon {
+  width: 40px;
+  height: 40px;
+  color: #10B981;
+}
+
+.successMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.successTitle {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.successSubtitle {
+  color: #6B7280;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.successDetails {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #F9FAFB;
+  border: 1px solid #E5E7EB;
+}
+
+.successSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.successImage {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.successInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+}
+
+.successName {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.successSubtext {
+  color: #6B7280;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+}
+
+.assignmentArrow {
+  color: #10B981;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nextSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.nextStepsTitle {
+  color: #2B2D42;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.nextStepsList {
+  color: #6B7280;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.nextStepsList li {
+  margin-bottom: 4px;
+}
+
+.doneButton {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: 1px solid #10B981;
+  background-color: #10B981;
+  color: #FFF;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doneButton:hover {
+  background-color: #059669;
+  border-color: #059669;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .assignPropertyContainer {
+    padding: 40px 16px 16px 16px;
+  }
+
+  .title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .stepDivider {
+    width: 100%;
+  }
+
+  .dropdownContainer {
+    width: 100%;
+  }
+
+  .propertyCardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .trainersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .modalContainer,
+  .confirmationModalContainer,
+  .successModalContainer {
+    margin: 16px;
+    width: calc(100% - 32px);
+  }
+
+  .navigationContainer {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .successDetails {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .assignmentArrow {
+    transform: rotate(90deg);
+  }
+}
