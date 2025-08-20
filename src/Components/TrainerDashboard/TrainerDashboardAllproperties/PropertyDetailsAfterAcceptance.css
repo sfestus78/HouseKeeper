@@ -1,0 +1,503 @@
+/* PropertyDetailsAfterAcceptance Module CSS */
+.propertiesdetailsafteracceptance-container {
+  background-color: #FFF;
+  overflow: hidden;
+  width: 100%;
+  margin-top: -30px;
+  margin-left: -30px;
+  min-height: calc(100vh - 140px);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.propertiesdetailsafteracceptance-content {
+  background-color: #FFF;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 24px;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* Header Section */
+.propertiesdetailsafteracceptance-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.propertiesdetailsafteracceptance-back-btn {
+  border-radius: 8px;
+  background-color: #F0EFF7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  border: none;
+  cursor: pointer;
+  color: #2B2D42;
+  transition: opacity 0.2s ease;
+}
+
+.propertiesdetailsafteracceptance-back-btn:hover {
+  opacity: 0.7;
+}
+
+.propertiesdetailsafteracceptance-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.propertiesdetailsafteracceptance-accept-btn,
+.propertiesdetailsafteracceptance-reject-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.propertiesdetailsafteracceptance-accept-btn {
+  background-color: #10B981;
+  color: white;
+}
+
+.propertiesdetailsafteracceptance-accept-btn:hover {
+  background-color: #059669;
+}
+
+.propertiesdetailsafteracceptance-reject-btn {
+  background-color: #EF4444;
+  color: white;
+}
+
+.propertiesdetailsafteracceptance-reject-btn:hover {
+  background-color: #DC2626;
+}
+
+/* Property Info Header */
+.propertiesdetailsafteracceptance-info-header {
+  margin-bottom: 32px;
+}
+
+.propertiesdetailsafteracceptance-type-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FEF3F2;
+  padding: 4px 12px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #FECDCA;
+}
+
+.propertiesdetailsafteracceptance-status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #EF233C;
+  border-radius: 50%;
+}
+
+.propertiesdetailsafteracceptance-type-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: #EF233C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.propertiesdetailsafteracceptance-title-section {
+  margin-bottom: 12px;
+}
+
+.propertiesdetailsafteracceptance-title {
+  margin: 0;
+  padding: 0;
+  font-size: 36px;
+  color: #2B2D42;
+  font-weight: 700;
+  letter-spacing: -1.44px;
+  line-height: 40px;
+}
+
+.propertiesdetailsafteracceptance-address-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.propertiesdetailsafteracceptance-address {
+  margin: 0;
+  font-size: 16px;
+  color: #6B7280;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.propertiesdetailsafteracceptance-distance {
+  margin: 0;
+  font-size: 14px;
+  color: #10B981;
+  font-weight: 600;
+}
+
+/* Content Grid */
+.propertiesdetailsafteracceptance-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* Main Content */
+.propertiesdetailsafteracceptance-main-content {
+  min-width: 0;
+}
+
+.propertiesdetailsafteracceptance-hero-container {
+  margin-bottom: 32px;
+}
+
+.propertiesdetailsafteracceptance-hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Separators */
+.propertiesdetailsafteracceptance-separator-top,
+.propertiesdetailsafteracceptance-separator-bottom {
+  height: 1px;
+  background-color: #E5E7EB;
+  margin: 32px 0;
+}
+
+/* Description Section */
+.propertiesdetailsafteracceptance-description-section {
+  margin: 32px 0;
+}
+
+.propertiesdetailsafteracceptance-description-header {
+  margin-bottom: 16px;
+}
+
+.propertiesdetailsafteracceptance-description-title {
+  margin: 0;
+  font-size: 20px;
+  color: #2B2D42;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.propertiesdetailsafteracceptance-description-text {
+  margin: 0;
+  font-size: 16px;
+  color: #6B7280;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Action Items Section */
+.propertiesdetailsafteracceptance-actions-section {
+  margin: 32px 0;
+}
+
+.propertiesdetailsafteracceptance-action-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.propertiesdetailsafteracceptance-action-item:last-child {
+  border-bottom: none;
+}
+
+.propertiesdetailsafteracceptance-action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #F8F9FA;
+  border-radius: 8px;
+  color: #6B7280;
+  flex-shrink: 0;
+}
+
+.propertiesdetailsafteracceptance-action-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.propertiesdetailsafteracceptance-action-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.propertiesdetailsafteracceptance-action-title {
+  margin: 0;
+  font-size: 18px;
+  color: #2B2D42;
+  font-weight: 600;
+  line-height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.propertiesdetailsafteracceptance-action-title:hover {
+  opacity: 0.8;
+}
+
+.propertiesdetailsafteracceptance-status-pending {
+  font-size: 12px;
+  color: #F59E0B;
+  font-weight: 600;
+  background-color: #FEF3C7;
+  padding: 4px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.propertiesdetailsafteracceptance-action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.propertiesdetailsafteracceptance-reschedule-btn,
+.propertiesdetailsafteracceptance-cancel-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.propertiesdetailsafteracceptance-reschedule-btn {
+  background-color: #EFF6FF;
+  color: #2563EB;
+  border: 1px solid #DBEAFE;
+}
+
+.propertiesdetailsafteracceptance-reschedule-btn:hover {
+  background-color: #DBEAFE;
+}
+
+.propertiesdetailsafteracceptance-cancel-btn {
+  background-color: #FEF2F2;
+  color: #DC2626;
+  border: 1px solid #FECACA;
+}
+
+.propertiesdetailsafteracceptance-cancel-btn:hover {
+  background-color: #FECACA;
+}
+
+.propertiesdetailsafteracceptance-start-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  line-height: 16px;
+  text-decoration: underline;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: #EF233C;
+  background-color: #FEF3F2;
+  border: 1px solid #FECDCA;
+  align-self: flex-start;
+}
+
+.propertiesdetailsafteracceptance-start-btn:hover {
+  background-color: #FDE8E8;
+}
+
+/* Sidebar */
+.propertiesdetailsafteracceptance-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Image Gallery */
+.propertiesdetailsafteracceptance-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.propertiesdetailsafteracceptance-gallery-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.propertiesdetailsafteracceptance-gallery-image:hover {
+  transform: scale(1.02);
+}
+
+/* Creator Section */
+.propertiesdetailsafteracceptance-creator-section {
+  background-color: #F8F9FA;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+
+.propertiesdetailsafteracceptance-creator-title {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  color: #2B2D42;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+.propertiesdetailsafteracceptance-creator-profile {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.propertiesdetailsafteracceptance-creator-avatar-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.propertiesdetailsafteracceptance-creator-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #E5E7EB;
+}
+
+.propertiesdetailsafteracceptance-creator-status-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: #10B981;
+  border: 2px solid #FFF;
+  border-radius: 50%;
+}
+
+.propertiesdetailsafteracceptance-creator-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.propertiesdetailsafteracceptance-creator-name {
+  margin: 0;
+  font-size: 16px;
+  color: #2B2D42;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.propertiesdetailsafteracceptance-creator-email {
+  margin: 0;
+  font-size: 14px;
+  color: #6B7280;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.propertiesdetailsafteracceptance-creator-phone {
+  margin: 0;
+  font-size: 14px;
+  color: #6B7280;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.propertiesdetailsafteracceptance-contact-btn {
+  width: 100%;
+  padding: 10px 16px;
+  background-color: #2B2D42;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.propertiesdetailsafteracceptance-contact-btn:hover {
+  background-color: #1F2037;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .propertiesdetailsafteracceptance-content-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .propertiesdetailsafteracceptance-sidebar {
+    order: -1;
+  }
+  
+  .propertiesdetailsafteracceptance-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .propertiesdetailsafteracceptance-content {
+    padding: 16px;
+  }
+  
+  .propertiesdetailsafteracceptance-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  
+  .propertiesdetailsafteracceptance-hero-image {
+    height: 300px;
+  }
+  
+  .propertiesdetailsafteracceptance-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .propertiesdetailsafteracceptance-header-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .propertiesdetailsafteracceptance-actions {
+    justify-content: center;
+  }
+}

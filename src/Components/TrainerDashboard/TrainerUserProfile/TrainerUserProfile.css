@@ -1,0 +1,646 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+/* Container */
+.trainerUserProfile-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0;
+  padding: 24px;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  background-color: #ffffff;
+}
+
+/* Header */
+.trainerUserProfile-header {
+  margin-bottom: 32px;
+}
+
+.trainerUserProfile-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #2B2D42;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.trainerUserProfile-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Profile Header */
+.trainerUserProfile-profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 0;
+  margin-bottom: 32px;
+}
+
+.trainerUserProfile-levelBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #F0F9FF;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0ee957ec;
+  line-height: 1;
+}
+
+.trainerUserProfile-levelIcon {
+  width: 16px;
+  height: 16px;
+  /* background-color: #0EA5E9; */
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.trainerUserProfile-levelText {
+  margin: 0;
+}
+
+.trainerUserProfile-levelProgress {
+  width: 60px;
+  height: 60px;
+  margin-left: 8px;
+}
+
+.trainerUserProfile-userDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 16px;
+}
+
+.trainerUserProfile-userRole {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 16px;
+  background-color: #FEF2F2;
+  font-size: 14px;
+  font-weight: 500;
+  color: #DC2626;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.trainerUserProfile-roleDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #DC2626;
+  flex-shrink: 0;
+}
+
+.trainerUserProfile-roleText {
+  margin: 0;
+}
+
+.trainerUserProfile-userName {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.3;
+  margin: 0 0 4px 0;
+}
+
+.trainerUserProfile-assignmentText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.trainerUserProfile-assignmentText strong {
+  font-weight: 600;
+}
+
+/* Dividers */
+.trainerUserProfile-divider {
+  height: 1px;
+  background-color: #E5E7EB;
+  margin: 24px 0;
+  width: 100%;
+  border: none;
+}
+
+/* Sections */
+.trainerUserProfile-section {
+  margin-bottom: 32px;
+}
+
+.trainerUserProfile-sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.trainerUserProfile-sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.trainerUserProfile-editInfoBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #D1D5DB;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.trainerUserProfile-editInfoBtn:hover {
+  background-color: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+/* Info Grid */
+.trainerUserProfile-infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.trainerUserProfile-infoRow {
+  display: contents;
+}
+
+.trainerUserProfile-infoField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trainerUserProfile-fullWidth {
+  grid-column: 1 / -1;
+  max-width: 400px;
+}
+
+.trainerUserProfile-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.trainerUserProfile-value {
+  font-size: 16px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Professional Details */
+.trainerUserProfile-professionalGrid {
+  margin-bottom: 24px;
+}
+
+.trainerUserProfile-propertiesCount {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 200px;
+}
+
+.trainerUserProfile-bigNumber {
+  font-size: 48px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1;
+  margin: 0;
+}
+
+.trainerUserProfile-availabilityRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.trainerUserProfile-availabilityControl {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trainerUserProfile-toggleLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280;
+  line-height: 1.4;
+}
+
+.trainerUserProfile-availabilityToggle {
+  width: 44px;
+  height: 24px;
+  padding: 2px;
+  border: none;
+  background: #D1D5DB;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.trainerUserProfile-availabilityToggle.active {
+  background: #111827;
+}
+
+.trainerUserProfile-availabilityToggle .trainerUserProfile-toggleCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.trainerUserProfile-availabilityToggle.active .trainerUserProfile-toggleCircle {
+  transform: translateX(20px);
+}
+
+.trainerUserProfile-availabilityToggle .trainerUserProfile-toggleCircle::after {
+  display: none;
+}
+
+/* Properties Section */
+.trainerUserProfile-propertiesHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.trainerUserProfile-propertiesContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.trainerUserProfile-propertiesPanel {
+  background-color: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.trainerUserProfile-propertiesTableHeader {
+  display: grid;
+  grid-template-columns: 200px 1fr 140px;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  padding: 16px 20px;
+  background-color: #F9FAFB;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.trainerUserProfile-propertiesTableHeader span:nth-child(1) {
+  text-align: left;
+}
+
+.trainerUserProfile-propertiesTableHeader span:nth-child(2) {
+  text-align: left;
+}
+
+.trainerUserProfile-propertiesTableHeader span:nth-child(3) {
+  text-align: center;
+}
+
+.trainerUserProfile-propertyItem {
+  display: grid;
+  grid-template-columns: 200px 1fr 140px;
+  gap: 16px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #F3F4F6;
+  align-items: center;
+}
+
+.trainerUserProfile-propertyItem:hover {
+  background-color: #F9FAFB;
+}
+
+.trainerUserProfile-propertyItem:last-child {
+  border-bottom: none;
+}
+
+.trainerUserProfile-propertyInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trainerUserProfile-propertyImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid #E5E7EB;
+}
+
+.trainerUserProfile-propertyName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.trainerUserProfile-propertyAddress {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.4;
+}
+
+.trainerUserProfile-propertyStatus {
+  display: flex;
+  justify-content: center;
+}
+
+.trainerUserProfile-statusBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.trainerUserProfile-statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Modals */
+.trainerUserProfile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.trainerUserProfile-imageModal,
+.trainerUserProfile-infoModal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.trainerUserProfile-modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.trainerUserProfile-modalHeader h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.trainerUserProfile-closeBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  color: #6B7280;
+}
+
+.trainerUserProfile-closeBtn:hover {
+  background-color: #F3F4F6;
+}
+
+.trainerUserProfile-modalContent {
+  margin-bottom: 24px;
+}
+
+.trainerUserProfile-imagePreview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.trainerUserProfile-previewImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #E5E7EB;
+}
+
+.trainerUserProfile-fileInput {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.trainerUserProfile-formGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trainerUserProfile-formRow {
+  display: flex;
+  gap: 16px;
+}
+
+.trainerUserProfile-formField {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainerUserProfile-formField label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.trainerUserProfile-formField input {
+  padding: 12px;
+  border: 1px solid #D1D5DB;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.trainerUserProfile-formField input:focus {
+  outline: none;
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.trainerUserProfile-modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.trainerUserProfile-cancelBtn,
+.trainerUserProfile-saveBtn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.trainerUserProfile-cancelBtn {
+  background: #ffffff;
+  border: 1px solid #D1D5DB;
+  color: #374151;
+}
+
+.trainerUserProfile-cancelBtn:hover {
+  background-color: #F9FAFB;
+}
+
+.trainerUserProfile-saveBtn {
+  background-color: #3B82F6;
+  border: 1px solid #3B82F6;
+  color: #ffffff;
+}
+
+.trainerUserProfile-saveBtn:hover {
+  background-color: #2563EB;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .trainerUserProfile-propertiesContent,
+  .trainerUserProfile-propertiesHeader {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .trainerUserProfile-infoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .trainerUserProfile-container {
+    padding: 16px 20px;
+  }
+  
+  .trainerUserProfile-profileHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .trainerUserProfile-infoGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trainerUserProfile-availabilityRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .trainerUserProfile-propertiesTableHeader {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .trainerUserProfile-propertyItem {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .trainerUserProfile-propertyAddress {
+    text-align: left;
+  }
+  
+  .trainerUserProfile-propertyStatus {
+    justify-content: flex-start;
+  }
+  
+  .trainerUserProfile-formRow {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainerUserProfile-title {
+    font-size: 24px;
+  }
+  
+  .trainerUserProfile-sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .trainerUserProfile-imageModal,
+  .trainerUserProfile-infoModal {
+    padding: 16px;
+    margin: 16px;
+  }
+  
+  .trainerUserProfile-modalActions {
+    flex-direction: column;
+  }
+  
+  .trainerUserProfile-cancelBtn,
+  .trainerUserProfile-saveBtn {
+    width: 100%;
+  }
+}

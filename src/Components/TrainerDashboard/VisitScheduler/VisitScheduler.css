@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+.visitscheduler-container {
+  width: 100%;
+  max-width: 604px;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  /* background-color: #FFF; */
+  position: relative;
+}
+
+.visitscheduler-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 0;
+}
+
+/* Header */
+.visitscheduler-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.visitscheduler-back-btn {
+  display: inline-flex;
+  padding: 4px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: #F0EFF7;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.visitscheduler-back-btn:hover {
+  background-color: #E5E3F3;
+}
+
+.visitscheduler-back-btn svg {
+  stroke: #2B2D42;
+  stroke-width: 1.5px;
+}
+
+.visitscheduler-title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.visitscheduler-title {
+  color: #2B2D42;
+  text-align: center;
+  letter-spacing: -1.44px;
+  font: 600 36px/32px Lato;
+  margin: 0;
+}
+
+.visitscheduler-subtitle {
+  color: #7A7A7A;
+  letter-spacing: -0.64px;
+  font: 400 16px/20px Lato;
+  margin: 0;
+}
+
+/* Property Info */
+.visitscheduler-property-info {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  height: 81px;
+}
+
+.visitscheduler-property-image {
+  width: 96px;
+  height: 81px;
+  border-radius: 16px;
+  object-fit: cover;
+  aspect-ratio: 32/27;
+}
+
+.visitscheduler-property-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+}
+
+.visitscheduler-property-name {
+  color: #2B2D42;
+  text-align: center;
+  letter-spacing: -0.96px;
+  font: 600 24px/32px Lato;
+  margin: 0;
+}
+
+.visitscheduler-property-address {
+  color: #737373;
+  letter-spacing: -0.64px;
+  font: 400 16px Lato;
+  margin: 0;
+}
+
+.visitscheduler-property-distance {
+  color: #2D9F46;
+  letter-spacing: -1.26px;
+  font: 600 14px/14px Lato;
+}
+
+.visitscheduler-contact-creator {
+  display: flex;
+  width: 95px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  color: #EF233C;
+  text-align: right;
+  letter-spacing: -0.56px;
+  text-decoration-line: underline;
+  font: 700 14px/16px Lato;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.visitscheduler-contact-creator:hover {
+  color: #dc2626;
+}
+
+/* Form Container */
+.visitscheduler-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.visitscheduler-separator {
+  width: 100%;
+  height: 2px;
+  background-color: #DDDDE1;
+}
+
+/* Form Fields */
+.visitscheduler-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.visitscheduler-label {
+  color: #344054;
+  letter-spacing: -0.96px;
+  font: 700 16px/24px Lato;
+}
+
+/* Date Inputs */
+.visitscheduler-date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.visitscheduler-date-input {
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+  width: 88px;
+  text-align: center;
+}
+
+.visitscheduler-date-input:focus {
+  outline: none;
+  border-color: #2B2D42;
+  box-shadow: 0 0 0 3px rgba(43, 45, 66, 0.1);
+}
+
+.visitscheduler-date-input.visitscheduler-input-error {
+  border-color: #EF233C;
+}
+
+.visitscheduler-date-separator {
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+}
+
+/* Visit Type */
+.visitscheduler-visit-type {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.visitscheduler-type-btn {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 90px;
+}
+
+.visitscheduler-type-btn:hover {
+  border-color: #2B2D42;
+}
+
+.visitscheduler-type-btn-active {
+  border-color: #2B2D42;
+  background-color: #F0EFF7;
+}
+
+.visitscheduler-type-icon {
+  color: #767676;
+}
+
+.visitscheduler-type-btn span {
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+}
+
+/* Time Input */
+.visitscheduler-time-input {
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+  width: 150px;
+}
+
+.visitscheduler-time-input:focus {
+  outline: none;
+  border-color: #2B2D42;
+  box-shadow: 0 0 0 3px rgba(43, 45, 66, 0.1);
+}
+
+.visitscheduler-time-input.visitscheduler-input-error {
+  border-color: #EF233C;
+}
+
+/* Textarea */
+.visitscheduler-textarea {
+  display: flex;
+  height: 131px;
+  padding: 10px 14px;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+  resize: vertical;
+}
+
+.visitscheduler-textarea:focus {
+  outline: none;
+  border-color: #2B2D42;
+  box-shadow: 0 0 0 3px rgba(43, 45, 66, 0.1);
+}
+
+.visitscheduler-textarea::placeholder {
+  color: #737B7D;
+}
+
+/* Submit Button */
+.visitscheduler-submit-btn {
+  display: flex;
+  height: 52px;
+  align-items: flex-start;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #2B2D42;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #2B2D42;
+  color: #FFF;
+  letter-spacing: -1.08px;
+  font: 700 18px/24px Lato;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.visitscheduler-submit-btn:hover {
+  background-color: #1E1F36;
+}
+
+/* Error Text */
+.visitscheduler-error-text {
+  color: #EF233C;
+  font: 400 14px/16px Lato;
+  letter-spacing: -0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .visitscheduler-container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  .visitscheduler-title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .visitscheduler-property-info {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 12px;
+  }
+
+  .visitscheduler-property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .visitscheduler-date-inputs {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .visitscheduler-date-input {
+    width: 100%;
+  }
+
+  .visitscheduler-visit-type {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .visitscheduler-type-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .visitscheduler-time-input {
+    width: 100%;
+  }
+}

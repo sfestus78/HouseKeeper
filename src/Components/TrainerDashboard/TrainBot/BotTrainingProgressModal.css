@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+.botTrainingProgress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.botTrainingProgress-modal {
+  display: flex;
+  width: 400px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border-radius: 12px;
+  box-shadow: 0 20px 24px -4px rgba(16, 24, 40, 0.08), 0 8px 8px -4px rgba(16, 24, 40, 0.03);
+  margin: 0 auto;
+  max-width: 90vw;
+  background-color: #FFF;
+  position: relative;
+}
+
+.botTrainingProgress-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: #667085;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.botTrainingProgress-close-btn:hover {
+  color: #344054;
+}
+
+.botTrainingProgress-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+  position: relative;
+}
+
+.botTrainingProgress-icon-container {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  border: 8px solid #FFFAEB;
+  position: relative;
+  background-color: #FEF0C7;
+}
+
+.botTrainingProgress-success-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+  border: 8px solid #ECFDF3;
+  background-color: #D1FAE5;
+}
+
+.botTrainingProgress-check-icon {
+  color: #059669;
+}
+
+.botTrainingProgress-warning-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botTrainingProgress-alert-icon {
+  color: #DC6803;
+}
+
+.botTrainingProgress-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  position: relative;
+}
+
+.botTrainingProgress-title {
+  color: #101828;
+  letter-spacing: -0.8px;
+  position: relative;
+  text-align: center;
+  font: 700 20px/20px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.botTrainingProgress-description {
+  align-self: stretch;
+  color: #475467;
+  text-align: center;
+  letter-spacing: -0.56px;
+  position: relative;
+  font: 400 14px/20px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.botTrainingProgress-progress-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  position: relative;
+}
+
+.botTrainingProgress-stage {
+  color: #344054;
+  font: 600 14px/20px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  letter-spacing: -0.56px;
+  text-align: center;
+  align-self: stretch;
+}
+
+.botTrainingProgress-bar-container {
+  display: flex;
+  height: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+  position: relative;
+  background-color: #D0D5DD;
+}
+
+.botTrainingProgress-bar-fill {
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  position: relative;
+  transition: width 0.3s ease-in-out;
+  min-width: 0;
+}
+
+.botTrainingProgress-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+  position: relative;
+}
+
+.botTrainingProgress-primary-btn {
+  display: flex;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid #EF233C;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  position: relative;
+  cursor: pointer;
+  background-color: #EF233C;
+  color: #FFF;
+  font: 400 14px/20px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  letter-spacing: -0.56px;
+  transition: background-color 0.2s;
+}
+
+.botTrainingProgress-primary-btn:hover {
+  background-color: #DC2626;
+  border-color: #DC2626;
+}
+
+.botTrainingProgress-secondary-btn {
+  display: flex;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  position: relative;
+  cursor: pointer;
+  background-color: #FFF;
+  color: #344054;
+  font: 400 14px/20px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  letter-spacing: -0.56px;
+  transition: background-color 0.2s;
+}
+
+.botTrainingProgress-secondary-btn:hover {
+  background-color: #F9FAFB;
+}
+
+.botTrainingProgress-disabled-btn {
+  display: flex;
+  padding: 10px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  position: relative;
+  cursor: not-allowed;
+  background-color: #F9FAFB;
+  color: #98A2B3;
+  font: 400 14px/20px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  letter-spacing: -0.56px;
+  opacity: 0.6;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .botTrainingProgress-modal {
+    width: 90vw;
+    max-width: 400px;
+    padding: 20px;
+    gap: 28px;
+  }
+
+  .botTrainingProgress-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .botTrainingProgress-description {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .botTrainingProgress-modal {
+    width: 95vw;
+    padding: 16px;
+    gap: 24px;
+  }
+
+  .botTrainingProgress-icon-container,
+  .botTrainingProgress-success-icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: 6px solid #FFFAEB;
+  }
+
+  .botTrainingProgress-success-icon {
+    border-color: #ECFDF3;
+  }
+
+  .botTrainingProgress-title {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .botTrainingProgress-description {
+    font-size: 12px;
+    line-height: 16px;
+  }
+}

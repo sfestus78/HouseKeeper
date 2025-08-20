@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+.rescheduleVisit-container {
+  width: 100%;
+  max-width: 604px;
+  /* margin-top: -30px;
+  margin-left: -30px; */
+  font-family: 'Lato', sans-serif;
+  position: relative;
+}
+
+.rescheduleVisit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 30px;
+}
+
+/* Header */
+.rescheduleVisit-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.rescheduleVisit-back-btn {
+  display: inline-flex;
+  padding: 4px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background-color: #F0EFF7;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.rescheduleVisit-back-btn:hover {
+  background-color: #E5E3F3;
+}
+
+.rescheduleVisit-back-btn:focus {
+  outline: 2px solid #2B2D42;
+  outline-offset: 2px;
+}
+
+.rescheduleVisit-back-btn svg {
+  stroke: #2B2D42;
+  stroke-width: 1.5px;
+}
+
+.rescheduleVisit-title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+}
+
+.rescheduleVisit-title {
+  color: #2B2D42;
+  text-align: center;
+  letter-spacing: -1.44px;
+  font: 600 36px/32px Lato;
+  margin: 0;
+}
+
+.rescheduleVisit-subtitle {
+  color: #7A7A7A;
+  letter-spacing: -0.64px;
+  font: 400 16px/20px Lato;
+  margin: 0;
+}
+
+/* Property Info */
+.rescheduleVisit-property-info {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  min-height: 81px;
+}
+
+.rescheduleVisit-property-image {
+  width: 96px;
+  height: 81px;
+  border-radius: 16px;
+  object-fit: cover;
+  aspect-ratio: 1.18;
+  flex-shrink: 0;
+}
+
+.rescheduleVisit-property-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex: 1;
+  min-width: 240px;
+}
+
+.rescheduleVisit-property-name {
+  color: #2B2D42;
+  text-align: center;
+  letter-spacing: -0.96px;
+  font: 600 24px/32px Lato;
+  margin: 0;
+}
+
+.rescheduleVisit-property-address {
+  color: #737373;
+  letter-spacing: -0.64px;
+  font: 400 16px Lato;
+  margin: 0;
+}
+
+.rescheduleVisit-property-distance {
+  color: #2D9F46;
+  letter-spacing: -1.26px;
+  font: 600 14px/14px Lato;
+}
+
+.rescheduleVisit-contact-creator {
+  display: flex;
+  width: 95px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  color: #EF233C;
+  text-align: right;
+  letter-spacing: -0.56px;
+  text-decoration-line: underline;
+  font: 700 14px/16px Lato;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rescheduleVisit-contact-creator:hover {
+  color: #dc2626;
+}
+
+.rescheduleVisit-contact-creator:focus {
+  outline: 2px solid #EF233C;
+  outline-offset: 2px;
+}
+
+/* Form Container */
+.rescheduleVisit-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.rescheduleVisit-separator {
+  width: 100%;
+  height: 2px;
+  background: none;
+  border: 2px dashed #DDDDE1;
+}
+
+/* Form Fields */
+.rescheduleVisit-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.rescheduleVisit-label {
+  color: #344054;
+  letter-spacing: -0.96px;
+  font: 700 16px/24px Lato;
+}
+
+/* Date Inputs */
+.rescheduleVisit-date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rescheduleVisit-date-input {
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  color: #2B2D42;
+  letter-spacing: -0.96px;
+  font: 700 16px/24px Lato;
+  text-align: center;
+  min-height: 44px;
+}
+
+.rescheduleVisit-date-input:nth-child(1) {
+  width: 65px;
+}
+
+.rescheduleVisit-date-input:nth-child(3) {
+  width: 65px;
+}
+
+.rescheduleVisit-date-input:nth-child(5) {
+  width: 80px;
+}
+
+.rescheduleVisit-date-input:focus {
+  outline: none;
+  border-color: #2B2D42;
+  box-shadow: 0 0 0 3px rgba(43, 45, 66, 0.1);
+}
+
+.rescheduleVisit-date-input.rescheduleVisit-input-error {
+  border-color: #EF233C;
+}
+
+.rescheduleVisit-date-separator {
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+}
+
+/* Visit Type */
+.rescheduleVisit-visit-type {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rescheduleVisit-type-btn {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 90px;
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+}
+
+.rescheduleVisit-type-btn:hover {
+  border-color: #2B2D42;
+}
+
+.rescheduleVisit-type-btn:focus {
+  outline: 2px solid #2B2D42;
+  outline-offset: 2px;
+}
+
+.rescheduleVisit-type-btn-active {
+  border-color: #2B2D42;
+  background-color: #2B2D42;
+  color: #FFF;
+}
+
+.rescheduleVisit-type-btn:first-child {
+  width: 90px;
+}
+
+.rescheduleVisit-type-btn:last-child {
+  width: 99px;
+}
+
+.rescheduleVisit-type-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Time Input */
+.rescheduleVisit-time-input {
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  color: #737B7D;
+  letter-spacing: -0.96px;
+  font: 400 16px/24px Lato;
+  min-height: 44px;
+}
+
+.rescheduleVisit-time-input:focus {
+  outline: none;
+  border-color: #2B2D42;
+  box-shadow: 0 0 0 3px rgba(43, 45, 66, 0.1);
+}
+
+.rescheduleVisit-time-input.rescheduleVisit-input-error {
+  border-color: #EF233C;
+}
+
+/* Textarea */
+.rescheduleVisit-textarea {
+  display: flex;
+  min-height: 131px;
+  padding: 11px 14px;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #FFF;
+  color: #344054;
+  letter-spacing: -0.56px;
+  font: 400 14px/24px Lato;
+  resize: vertical;
+}
+
+.rescheduleVisit-textarea:focus {
+  outline: none;
+  border-color: #2B2D42;
+  box-shadow: 0 0 0 3px rgba(43, 45, 66, 0.1);
+}
+
+.rescheduleVisit-textarea::placeholder {
+  color: #737B7D;
+}
+
+/* Submit Button */
+.rescheduleVisit-submit-btn {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #2B2D42;
+  box-shadow: 0 1px 2px 0 rgba(16,24,40,0.05);
+  background-color: #2B2D42;
+  color: #FFF;
+  letter-spacing: -1.08px;
+  font: 700 18px/24px Lato;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  padding: 10px 18px;
+}
+
+.rescheduleVisit-submit-btn:hover:not(:disabled) {
+  background-color: #1E1F36;
+}
+
+.rescheduleVisit-submit-btn:focus {
+  outline: 2px solid #2B2D42;
+  outline-offset: 2px;
+}
+
+.rescheduleVisit-submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.rescheduleVisit-submit-btn-loading {
+  pointer-events: none;
+}
+
+/* Loading Spinner */
+.rescheduleVisit-loading-spinner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rescheduleVisit-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: rescheduleVisit-spin 1s linear infinite;
+}
+
+@keyframes rescheduleVisit-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Text */
+.rescheduleVisit-error-text {
+  color: #EF233C;
+  font: 400 14px/16px Lato;
+  letter-spacing: -0.5px;
+}
+
+.rescheduleVisit-submit-error {
+  color: #EF233C;
+  font: 400 16px/20px Lato;
+  letter-spacing: -0.5px;
+  padding: 8px;
+  background-color: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .rescheduleVisit-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .rescheduleVisit-title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .rescheduleVisit-property-info {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+    gap: 12px;
+  }
+
+  .rescheduleVisit-property-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .rescheduleVisit-property-details {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .rescheduleVisit-contact-creator {
+    align-self: flex-end;
+    width: auto;
+  }
+
+  .rescheduleVisit-date-inputs {
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .rescheduleVisit-date-input {
+    flex: 1;
+    min-width: 80px;
+    width: auto;
+  }
+
+  .rescheduleVisit-date-input:nth-child(1),
+  .rescheduleVisit-date-input:nth-child(3),
+  .rescheduleVisit-date-input:nth-child(5) {
+    width: auto;
+  }
+
+  .rescheduleVisit-visit-type {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .rescheduleVisit-type-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .rescheduleVisit-type-btn:first-child,
+  .rescheduleVisit-type-btn:last-child {
+    width: 100%;
+  }
+
+  .rescheduleVisit-time-input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .rescheduleVisit-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .rescheduleVisit-back-btn {
+    align-self: flex-start;
+  }
+
+  .rescheduleVisit-title-section {
+    width: 100%;
+  }
+
+  .rescheduleVisit-date-inputs {
+    flex-direction: column;
+  }
+
+  .rescheduleVisit-date-separator {
+    display: none;
+  }
+}

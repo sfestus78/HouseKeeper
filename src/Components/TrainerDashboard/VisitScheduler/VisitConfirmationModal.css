@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+.visitschedulermodal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: 'Lato', sans-serif;
+}
+
+.visitschedulermodal-container {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px; /* Reduced from 500px */
+  margin: 20px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: visitschedulermodal-slide-up 0.3s ease-out;
+}
+
+@keyframes visitschedulermodal-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visitschedulermodal-header {
+  display: flex;
+  flex-direction: column; /* Changed to column layout */
+  align-items: center;
+  justify-content: center;
+  padding: 20px 20px 16px 20px; /* Reduced padding */
+  border-bottom: 1px solid #E5E7EB;
+  position: relative; /* Added for close button positioning */
+}
+
+.visitschedulermodal-title {
+  color: #2B2D42;
+  font: 700 18px/22px Lato; /* Reduced font size */
+  letter-spacing: -0.8px;
+  margin: 8px 0 0 0; /* Added top margin */
+  text-align: center;
+}
+
+.visitschedulermodal-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6B7280;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  position: absolute; /* Position absolutely */
+  top: 16px;
+  right: 16px;
+}
+
+.visitschedulermodal-close-btn:hover {
+  background-color: #F3F4F6;
+}
+
+.visitschedulermodal-ptag{
+  color: #1E1F36;
+  font-weight: 500;
+  margin: 12px 0 0 0; /* Added margin to push to next line */
+  text-align: center;
+  font-size: 14px; /* Reduced font size */
+  line-height: 1.4;
+}
+
+.visitschedulermodal-content {
+  padding: 20px; /* Reduced from 24px */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Reduced from 24px */
+}
+
+.visitschedulermodal-property-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: #F9FAFB;
+  border-radius: 12px;
+}
+
+.visitschedulermodal-property-name {
+  color: #6B7280; 
+  font: 400 16px/22px Lato; /* Reduced font size */
+  letter-spacing: -0.72px;
+  margin: 0;
+}
+
+.visitschedulermodal-property-address {
+  color: #6B7280;
+  font: 600 14px/20px Lato;
+  letter-spacing: -0.56px;
+  margin: 0;
+}
+
+.visitschedulermodal-visit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.visitschedulermodal-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.visitschedulermodal-detail-label {
+  color: #374151;
+  font: 400 14px/20px Lato;
+  letter-spacing: -0.56px;
+  min-width: 90px; /* Reduced from 100px */
+}
+
+.visitschedulermodal-detail-value {
+  color: #2B2D42;
+  font:  600 14px/20px Lato;
+  letter-spacing: -0.56px;
+  flex: 1;
+  text-align: right;
+}
+
+.visitschedulermodal-notes {
+  text-align: left;
+  background-color: #F9FAFB;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #E5E7EB;
+}
+
+.visitschedulermodal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #E5E7EB;
+}
+
+.visitschedulermodal-cancel-btn {
+  padding: 10px 20px; /* Slightly reduced padding */
+  border: 1px solid #D1D5DB;
+  background: white;
+  color: #374151;
+  border-radius: 8px;
+  font: 600 14px/20px Lato;
+  letter-spacing: -0.56px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.visitschedulermodal-cancel-btn:hover {
+  background-color: #F9FAFB;
+  border-color: #9CA3AF;
+}
+
+.visitschedulermodal-confirm-btn {
+  padding: 10px 20px; /* Slightly reduced padding */
+  border: 1px solid #2B2D42;
+  background: #2B2D42;
+  color: white;
+  border-radius: 8px;
+  font: 600 14px/20px Lato;
+  letter-spacing: -0.56px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.visitschedulermodal-confirm-btn:hover {
+  background-color: #1E1F36;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .visitschedulermodal-container {
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+  }
+
+  .visitschedulermodal-header {
+    padding: 16px 16px 12px 16px;
+  }
+
+  .visitschedulermodal-content {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .visitschedulermodal-detail-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .visitschedulermodal-detail-label {
+    min-width: auto;
+  }
+
+  .visitschedulermodal-detail-value {
+    text-align: left;
+  }
+
+  .visitschedulermodal-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .visitschedulermodal-cancel-btn,
+  .visitschedulermodal-confirm-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

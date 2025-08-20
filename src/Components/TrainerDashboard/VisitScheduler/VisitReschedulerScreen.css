@@ -1,0 +1,792 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap');
+
+.visitReschedulerScreen-container {
+  background-color: rgba(255, 255, 255, 1);
+  padding-bottom: 8px;
+  overflow: hidden;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* Browser Header */
+.visitReschedulerScreen-browser-header {
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: 40px 100px;
+  color: rgba(76, 76, 76, 1);
+  white-space: nowrap;
+  flex-wrap: wrap;
+  padding: 12px 21px 12px 80px;
+  font: 500 13px 'SF Pro Text', -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-browser-header {
+    max-width: 100%;
+    white-space: initial;
+    padding: 0 20px;
+  }
+}
+
+.visitReschedulerScreen-browser-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: start;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-browser-controls {
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-browser-icon {
+  aspect-ratio: 0.82;
+  object-fit: contain;
+  object-position: center;
+  width: 14px;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-url-bar {
+  border-radius: 5px;
+  background-color: rgba(242, 242, 242, 1);
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  align-items: stretch;
+  gap: 40px 79px;
+  width: 360px;
+  margin: auto 0;
+  padding: 6px 6px 6px 72px;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-url-bar {
+    padding-left: 20px;
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-url-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: start;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-url-content {
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-dropdown-icon {
+  aspect-ratio: 0.92;
+  object-fit: contain;
+  object-position: center;
+  width: 11px;
+  flex-shrink: 0;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-browser-controls-right {
+  aspect-ratio: 5.15;
+  object-fit: contain;
+  object-position: center;
+  width: 98px;
+  flex-shrink: 0;
+  margin: auto 0;
+}
+
+/* Main Layout */
+.visitReschedulerScreen-layout {
+  margin-top: 8px;
+  width: 100%;
+  max-width: 1467px;
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-layout {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+}
+
+/* Sidebar */
+.visitReschedulerScreen-sidebar {
+  border-radius: 8px;
+  background-color: rgba(240, 239, 247, 1);
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 0 auto;
+  padding: 16px 16px 10px;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-sidebar {
+    width: 100%;
+    margin-top: 40px;
+    padding-right: 20px;
+  }
+}
+
+.visitReschedulerScreen-logo {
+  align-self: start;
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  color: rgba(239, 35, 60, 1);
+  white-space: nowrap;
+  letter-spacing: -1.44px;
+  font: 700 24px/1 Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-logo {
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-logo-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 48px;
+  flex-shrink: 0;
+}
+
+.visitReschedulerScreen-logo-text {
+  flex-basis: auto;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-nav {
+  margin-top: 67px;
+  width: 100%;
+  color: rgba(115, 123, 125, 1);
+  letter-spacing: -0.72px;
+  font: 400 18px/1 Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-nav {
+    margin-top: 40px;
+  }
+}
+
+.visitReschedulerScreen-nav-item {
+  border-radius: 8px;
+  display: flex;
+  min-height: 54px;
+  width: 100%;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  justify-content: start;
+  padding: 15px 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-nav-item {
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-nav-item-active {
+  background-color: rgba(239, 35, 60, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.visitReschedulerScreen-nav-icon-placeholder {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.visitReschedulerScreen-sidebar-divider {
+  margin-top: 236px;
+  width: 244px;
+  flex-shrink: 0;
+  height: 1px;
+  border: 1px dashed rgba(43, 45, 66, 1);
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-sidebar-divider {
+    margin-top: 40px;
+  }
+}
+
+.visitReschedulerScreen-profile {
+  align-self: start;
+  display: flex;
+  margin-top: 16px;
+  align-items: stretch;
+  gap: 12px;
+  justify-content: start;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-profile {
+    margin-left: 8px;
+  }
+}
+
+.visitReschedulerScreen-profile-info {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  justify-content: start;
+}
+
+.visitReschedulerScreen-profile-avatar {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 40px;
+  border-radius: 8px;
+}
+
+.visitReschedulerScreen-profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  justify-content: center;
+}
+
+.visitReschedulerScreen-profile-name {
+  color: rgba(43, 45, 66, 1);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.96px;
+  line-height: 1;
+}
+
+.visitReschedulerScreen-profile-email {
+  color: rgba(118, 118, 118, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.56px;
+  margin-top: 8px;
+}
+
+.visitReschedulerScreen-profile-logout {
+  color: rgba(239, 35, 60, 1);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.64px;
+  text-align: right;
+  text-decoration: underline;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* Main Content */
+.visitReschedulerScreen-main {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  align-self: stretch;
+  align-items: start;
+  margin: auto 0;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-main {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 40px;
+  }
+}
+
+.visitReschedulerScreen-header {
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-header {
+    max-width: 100%;
+  }
+}
+
+.visitReschedulerScreen-back-btn {
+  border-radius: 8px;
+  background-color: rgba(240, 239, 247, 1);
+  align-self: start;
+  display: flex;
+  margin-top: 14px;
+  align-items: center;
+  gap: 10px;
+  width: 32px;
+  justify-content: start;
+  height: 32px;
+  padding: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.visitReschedulerScreen-back-icon {
+  align-self: stretch;
+  display: flex;
+  min-height: 24px;
+  width: 24px;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-search-and-notifications {
+  display: flex;
+  align-items: center;
+  gap: 40px 80px;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-search-and-notifications {
+    max-width: 100%;
+  }
+}
+
+.visitReschedulerScreen-search-container {
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  align-items: center;
+  gap: 24px;
+  justify-content: start;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-search-bar {
+  border-radius: 16px;
+  background-color: rgba(246, 246, 246, 1);
+  align-self: stretch;
+  display: flex;
+  min-width: 240px;
+  min-height: 48px;
+  align-items: center;
+  color: rgba(115, 123, 125, 1);
+  letter-spacing: -0.96px;
+  justify-content: space-between;
+  width: 294px;
+  margin: auto 0;
+  padding: 12px 16px;
+  font: 400 16px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  border: 1px solid rgba(208, 213, 221, 1);
+}
+
+.visitReschedulerScreen-search-text {
+  align-self: stretch;
+  flex: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-search-icon {
+  align-self: stretch;
+  display: flex;
+  width: 24px;
+  flex-shrink: 0;
+  height: 24px;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-notifications {
+  align-self: stretch;
+  width: 48px;
+  margin: auto 0;
+  border-radius: 12px;
+  background-color: rgba(246, 246, 246, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 48px;
+  padding: 10px 5px 30px;
+  border: 1px solid rgba(208, 213, 221, 1);
+}
+
+.visitReschedulerScreen-notification-dot {
+  background-color: rgba(239, 35, 60, 1);
+  border-radius: 50%;
+  display: flex;
+  width: 8px;
+  flex-shrink: 0;
+  height: 8px;
+}
+
+.visitReschedulerScreen-account-switch {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-switch-label {
+  color: var(--Gray-600, #475467);
+  text-align: center;
+  letter-spacing: -0.64px;
+  align-self: start;
+  font: 400 16px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.visitReschedulerScreen-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: start;
+}
+
+.visitReschedulerScreen-toggle-label {
+  color: var(--Gray-600, #475467);
+  text-align: center;
+  letter-spacing: -0.56px;
+  align-self: stretch;
+  margin: auto 0;
+  font: 700 14px/24px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.visitReschedulerScreen-toggle {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 40px;
+  margin: auto 0;
+  padding: 3px;
+  border-radius: 10px;
+  background-color: rgba(43, 45, 66, 1);
+}
+
+.visitReschedulerScreen-toggle-handle {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  display: flex;
+  width: 12px;
+  flex-shrink: 0;
+  height: 12px;
+  margin: 4px;
+}
+
+/* Page Header */
+.visitReschedulerScreen-page-header {
+  margin-top: 31px;
+  width: 604px;
+  max-width: 100%;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.visitReschedulerScreen-page-title {
+  color: rgba(43, 45, 66, 1);
+  text-align: center;
+  letter-spacing: -1.44px;
+  font: 600 36px/1 Lato;
+  margin: 0;
+}
+
+.visitReschedulerScreen-page-subtitle {
+  color: rgba(122, 122, 122, 1);
+  letter-spacing: -0.64px;
+  font: 400 16px/1 Lato;
+  margin-top: 16px;
+}
+
+/* Property Info */
+.visitReschedulerScreen-property-info {
+  display: flex;
+  margin-top: 32px;
+  align-items: end;
+  gap: 16px;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.visitReschedulerScreen-property-image {
+  aspect-ratio: 1.18;
+  object-fit: contain;
+  object-position: center;
+  width: 96px;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.visitReschedulerScreen-property-details {
+  min-width: 240px;
+  font-weight: 600;
+  flex: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+}
+
+.visitReschedulerScreen-property-name {
+  color: rgba(43, 45, 66, 1);
+  text-align: center;
+  letter-spacing: -0.96px;
+  font: 600 24px/1 Lato;
+  margin: 0;
+}
+
+.visitReschedulerScreen-property-address {
+  color: rgba(115, 115, 115, 1);
+  letter-spacing: -0.64px;
+  font: 400 16px Lato;
+  margin: 8px 0;
+}
+
+.visitReschedulerScreen-property-distance {
+  color: rgba(45, 159, 70, 1);
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: -1.26px;
+}
+
+.visitReschedulerScreen-contact-creator {
+  color: rgba(239, 35, 60, 1);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.56px;
+  text-align: right;
+  text-decoration: underline;
+  width: 95px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Form */
+.visitReschedulerScreen-form-container {
+  margin-top: 24px;
+  width: 604px;
+  max-width: 100%;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.visitReschedulerScreen-separator {
+  min-height: 2px;
+  width: 100%;
+  border: 2px dashed rgba(221, 221, 225, 1);
+  margin: 16px 0;
+}
+
+.visitReschedulerScreen-field {
+  margin-top: 16px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.96px;
+}
+
+.visitReschedulerScreen-label {
+  color: var(--Gray-700, #344054);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.visitReschedulerScreen-date-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(43, 45, 66, 1);
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-date-inputs {
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-date-input {
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-300, #D0D5DD);
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: var(--White, #FFF);
+  display: flex;
+  min-height: 44px;
+  gap: 8px;
+  overflow: hidden;
+  margin: auto 0;
+  padding: 10px 14px;
+  text-align: center;
+  font: 700 16px Lato;
+  letter-spacing: -0.96px;
+}
+
+.visitReschedulerScreen-date-input:nth-child(1) { width: 52px; }
+.visitReschedulerScreen-date-input:nth-child(3) { width: 57px; }
+.visitReschedulerScreen-date-input:nth-child(5) { width: 66px; }
+
+.visitReschedulerScreen-date-separator {
+  color: rgba(115, 123, 125, 1);
+  font-weight: 400;
+  align-self: stretch;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-visit-type {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-visit-type {
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-type-btn {
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 1);
+  justify-content: start;
+  margin: auto 0;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.visitReschedulerScreen-type-btn:first-child {
+  background-color: #2B2D42;
+  width: 90px;
+}
+
+.visitReschedulerScreen-type-btn:last-child {
+  border: 1px solid var(--Gray-300, #D0D5DD);
+  background-color: var(--White, #FFF);
+  color: rgba(115, 123, 125, 1);
+  width: 99px;
+}
+
+.visitReschedulerScreen-type-btn-active {
+  background-color: #2B2D42;
+  color: rgba(255, 255, 255, 1);
+}
+
+.visitReschedulerScreen-type-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 24px;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: auto 0;
+}
+
+.visitReschedulerScreen-time-input {
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-300, #D0D5DD);
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: var(--White, #FFF);
+  display: flex;
+  gap: 8px;
+  overflow: hidden;
+  color: rgba(115, 123, 125, 1);
+  font-weight: 400;
+  white-space: nowrap;
+  padding: 10px 14px;
+  margin-top: 8px;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-time-input {
+    white-space: initial;
+  }
+}
+
+.visitReschedulerScreen-textarea {
+  align-items: start;
+  border-radius: 8px;
+  border: 1px solid var(--Gray-300, #D0D5DD);
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: var(--White, #FFF);
+  display: flex;
+  min-height: 131px;
+  width: 100%;
+  gap: 8px;
+  overflow: hidden;
+  font-size: 14px;
+  color: rgba(52, 64, 84, 1);
+  font-weight: 400;
+  letter-spacing: -0.56px;
+  line-height: 24px;
+  padding: 11px 14px;
+  margin-top: 8px;
+  resize: vertical;
+  font-family: Lato;
+}
+
+.visitReschedulerScreen-submit-btn {
+  border-radius: 8px;
+  display: flex;
+  min-height: 52px;
+  width: 100%;
+  align-items: stretch;
+  justify-content: center;
+  border: 1px solid #2B2D42;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #2B2D42;
+  color: rgba(255, 255, 255, 1);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -1.08px;
+  line-height: 1;
+  padding: 10px 18px;
+  margin-top: 32px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.visitReschedulerScreen-submit-btn:hover:not(:disabled) {
+  background-color: #1E1F36;
+}
+
+.visitReschedulerScreen-submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.visitReschedulerScreen-submit-btn-loading {
+  pointer-events: none;
+}
+
+@media (max-width: 991px) {
+  .visitReschedulerScreen-submit-btn {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,572 @@
+/* ScheduledVisits Component Styles - Main Content Only */
+
+.scheduled-visits-main-container {
+  width: 100%;
+  /* padding: 20px; */
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+/* Page Layout */
+.scheduled-visits-page-layout {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.scheduled-visits-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 62%;
+  margin-left: 0;
+}
+
+.scheduled-visits-sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  line-height: normal;
+  width: 38%;
+  margin-left: 18px;
+}
+
+/* Page Header */
+.scheduled-visits-page-header {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 24px;
+}
+
+.scheduled-visits-title {
+  font-size: 32px;
+  color: #2b2d42;
+  font-weight: 600;
+  letter-spacing: -1.44px;
+  line-height: 1;
+  margin: 0 0 12px 0;
+}
+
+.scheduled-visits-subtitle {
+  font-size: 16px;
+  color: #7a7a7a;
+  font-weight: 400;
+  letter-spacing: -0.64px;
+  line-height: 1;
+  margin: 0;
+}
+
+/* Visits Container */
+.scheduled-visits-visits-container {
+  border-radius: 16px;
+  background-color: #f9f8fc;
+  padding: 17px 20px;
+  border: 1px solid #d0d5dd;
+}
+
+.scheduled-visits-visits-list {
+  width: 100%;
+}
+
+/* Time Sections */
+.scheduled-visits-time-section {
+  width: 100%;
+  font-size: 13px;
+}
+
+.scheduled-visits-period-title {
+  color: #ef233c;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.84px;
+  margin: 0 0 16px 0;
+}
+
+/* Visit Cards */
+.scheduled-visits-card {
+  position: relative;
+  display: flex;
+  min-height: 64px;
+  width: 100%;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.scheduled-visits-card-content {
+  display: flex;
+  min-width: 240px;
+  min-height: 64px;
+  align-items: center;
+  gap: 16px;
+  letter-spacing: -0.56px;
+  line-height: 1;
+  justify-content: start;
+  z-index: 1;
+}
+
+.scheduled-visits-card-image {
+  aspect-ratio: 1.19;
+  object-fit: contain;
+  object-position: center;
+  width: 62px;
+  border-radius: 12px;
+  align-self: stretch;
+  flex-shrink: 0;
+  margin: auto 0;
+}
+
+.scheduled-visits-card-details {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: start;
+  margin: auto 0;
+  min-width: 200px;
+}
+
+.scheduled-visits-card-title {
+  color: #2b2d42;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 4px 0;
+  font-size: 14px;
+}
+
+.scheduled-visits-card-address {
+  color: #737373;
+  font-weight: 400;
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.scheduled-visits-card-distance {
+  color: #2d9f46;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -1.08px;
+  margin: 0;
+}
+
+.scheduled-visits-card-actions {
+  color: #2b2d42;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.48px;
+  text-align: right;
+  text-decoration: underline;
+  z-index: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+/* Time Badge */
+.scheduled-visits-card-time {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  color: #ef233c;
+  font-weight: 700;
+  letter-spacing: -0.84px;
+  line-height: 1;
+  right: 0;
+  top: 0;
+}
+
+.scheduled-visits-time-badge {
+  border-radius: 16px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+}
+
+.scheduled-visits-time-dot {
+  background-color: #ef233c;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.scheduled-visits-time-text {
+  font-size: 14px;
+}
+
+/* Dividers */
+.scheduled-visits-divider {
+  min-height: 2px;
+  margin: 24px 0;
+  width: 100%;
+  border: 2px dashed #dddde1;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.scheduled-visits-section-divider {
+  min-height: 2px;
+  margin: 24px 0;
+  width: 100%;
+  border: 2px dashed #dddde1;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+/* Create Card */
+.scheduled-visits-create-card {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.scheduled-visits-create-background {
+  border-radius: 16px;
+  background-color: #2b2d42;
+  width: 100%;
+  color: #ffffff;
+  border: 1px solid #d0d5dd;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  aspect-ratio: 4.074;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  padding: 12px;
+  background-size: cover;
+  background-position: center;
+}
+
+.scheduled-visits-create-content {
+  position: relative;
+  flex: 1;
+}
+
+.scheduled-visits-create-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -1.4px;
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.scheduled-visits-create-subtitle {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 18px;
+  letter-spacing: 0.6px;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.scheduled-visits-create-btn {
+  position: relative;
+  border-radius: 8px;
+  display: flex;
+  flex-shrink: 0;
+  min-height: 52px;
+  min-width: 140px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -1.08px;
+  line-height: 1;
+  justify-content: center;
+  border: 1px solid #ef233c;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
+  background-color: #ef233c;
+  gap: 8px;
+  overflow: hidden;
+  padding: 10px 16px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.scheduled-visits-create-btn:hover {
+  background-color: #d41e3a;
+}
+
+/* Filter Tabs */
+.scheduledvisit-filter-tabs {
+  border-radius: 13px;
+  background-color: #f9f8fc;
+  display: flex;
+  margin-bottom: 10px;
+  min-height: 130px;
+  width: 100%;
+  flex-direction: row;
+  align-items:flex-start;
+  color: #2b2d42;
+  justify-content:left;
+  padding: 13px 6px;
+  font: 400 14px/1 Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  border: 1px dashed #d0d5dd;
+}
+
+.scheduledvisit-filter-tabs-compact {
+  display: flex;
+  width: 100%;
+  align-items: start;
+  gap: 5px;
+  justify-content: start;
+  flex-wrap: wrap;
+  padding:11px 15px;
+  margin-bottom: 12px;
+}
+
+.scheduledvisit-tab {
+  border-radius: 6px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  justify-content: start;
+  padding: 10px 16px;
+  border: none;
+  cursor: pointer;
+  font: 400 14px/1 Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  color: #2b2d42;
+  transition: background-color 0.2s ease;
+}
+
+.scheduledvisit-tab:hover {
+  background-color: #f0f0f0;
+}
+
+.scheduledvisit-tab-active {
+  background-color: #2b2d42 !important;
+  color: #ffffff !important;
+}
+
+/* Calendar */
+.scheduledvisit-calendar {
+  border-radius: 16px;
+  background-color: #f9f8fc;
+  display: flex;
+  min-height: 428px;
+  align-items: center;
+  gap: 10px;
+  justify-content: start;
+  padding: 16px 29px;
+  border: 1px solid #d0d5dd;
+}
+
+.scheduledvisit-calendar-content {
+  display: flex;
+  min-width: 240px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.scheduledvisit-calendar-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 47px;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.scheduledvisit-calendar-nav {
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.scheduledvisit-calendar-nav-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 20px;
+  height: 20px;
+}
+
+.scheduledvisit-calendar-month {
+  color: #2b2d42;
+  text-align: center;
+  font: 700 16px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.scheduledvisit-calendar-grid {
+  width: 100%;
+  color: #2b2d42;
+  white-space: nowrap;
+  text-align: center;
+  font: 700 14px/1 Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.scheduledvisit-calendar-weekdays {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  color: #ef233c;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.scheduledvisit-calendar-weekday {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+}
+
+.scheduledvisit-calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.scheduledvisit-calendar-day {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+}
+
+.scheduledvisit-calendar-day:hover {
+  background-color: rgba(239, 35, 60, 0.1);
+}
+
+.scheduledvisit-calendar-day-other {
+  color: #737b7d;
+  font-weight: 400;
+}
+
+.scheduledvisit-calendar-day-today {
+  background-color: #ef233c;
+  color: #ffffff;
+}
+
+.scheduledvisit-calendar-day-active {
+  background-color: #2b2d42;
+  color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .scheduled-visits-main-container {
+    padding: 20px 10px;
+  }
+
+  .scheduled-visits-page-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .scheduled-visits-main-content {
+    width: 100%;
+  }
+
+  .scheduled-visits-sidebar-content {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .scheduled-visits-title {
+    font-size: 28px;
+  }
+
+  .scheduled-visits-visits-container {
+    padding: 16px;
+  }
+
+  .scheduled-visits-card-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .scheduled-visits-card-details {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .scheduledvisit-filter-tabs-compact {
+    gap: 6px;
+    padding: 8px 12px;
+  }
+
+  .scheduledvisit-tab {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .scheduledvisit-calendar {
+    padding: 16px 20px;
+  }
+
+  .scheduledvisit-calendar-nav {
+    width: 36px;
+    height: 36px;
+  }
+
+  .scheduledvisit-calendar-weekday,
+  .scheduledvisit-calendar-day {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scheduled-visits-main-container {
+    padding: 15px 5px;
+  }
+
+  .scheduled-visits-title {
+    font-size: 24px;
+  }
+
+  .scheduledvisit-filter-tabs-compact {
+    gap: 4px;
+    padding: 6px 8px;
+  }
+
+  .scheduledvisit-tab {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .scheduledvisit-calendar-weekday,
+  .scheduledvisit-calendar-day {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+}

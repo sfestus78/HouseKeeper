@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { 
-  Home, 
-  Building2, 
-  Bell, 
-  Calendar, 
-  FileText, 
-  Bot, 
-  Settings, 
-  HelpCircle, 
+import {
+  Home,
+  Building2,
+  Bell,
+  Calendar,
+  FileText,
+  Bot,
+  Settings,
+  HelpCircle,
   Search,
   LogOut,
   User,
@@ -15,14 +15,36 @@ import {
   CheckCircle,
   XCircle,
   Eye,
-  Plus
+  Plus,
+  BellIcon,
+  X,
+  Check
 } from 'lucide-react';
-import './TrainerDashboard.css'
+
+// Import existing components from TrainerDashboard
+import PropertyAssignmentNotification from './TrainerpropertyNotification/PropertyAssignmentNotification';
+import TrainerDashboardAllproperties from './TrainerDashboardAllproperties';
+import ScheduledVisits from './ScheduledVisits';
+import { TrainBot } from './TrainBot';
+import { VisitScheduler, VisitRescheduler, VisitInspectionChecklist } from './VisitScheduler';
+import { TrainerVisitLogs } from './VisitLogs';
+import TrainerUserProfile from './TrainerUserProfile/TrainerUserProfile';
+
+import './TrainerDashboard.css';
 
 const TrainerDashboard = () => {
+  // Preserve all existing state from original component
   const [activeMenu, setActiveMenu] = useState('overview');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showVisitScheduler, setShowVisitScheduler] = useState(false);
+  const [schedulerProperty, setSchedulerProperty] = useState(null);
+  const [scheduledVisits, setScheduledVisits] = useState([]);
+  const [showVisitRescheduler, setShowVisitRescheduler] = useState(false);
+  const [reschedulerData, setReschedulerData] = useState(null);
+  const [showInspectionChecklist, setShowInspectionChecklist] = useState(false);
+  const [checklistProperty, setChecklistProperty] = useState(null);
 
+  // Menu items with icons
   const menuItems = [
     { id: 'overview', label: 'Overview', icon: Home },
     { id: 'properties', label: 'All Properties', icon: Building2 },
@@ -34,47 +56,48 @@ const TrainerDashboard = () => {
     { id: 'help', label: 'Help Center', icon: HelpCircle },
   ];
 
+  // Mock data - preserve existing data structure
   const properties = [
     { 
       id: 1, 
       name: 'Prime Estate', 
-      address: '4093 Overlook Drive, Richmond',
-      distance: '4KM',
+      address: '4093 Overlook Drive, Richmond, IN 47374',
+      distance: '4 KM',
       image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=100&h=100&fit=crop&crop=center'
     },
     { 
       id: 2, 
       name: 'The Oxford Residences', 
-      address: '467 Stutler Lane, Altoona, PA',
-      distance: '4KM',
+      address: '467 Stutler Lane, Altoona, PA 16602',
+      distance: '4 KM',
       image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=100&h=100&fit=crop&crop=center'
     },
     { 
       id: 3, 
       name: 'Greenwich Park Apartments', 
-      address: '3522 West Fork Street, Missouri',
-      distance: '4KM',
+      address: '3522 West Fork Street, Missoula, MT 59801',
+      distance: '4 KM',
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=100&h=100&fit=crop&crop=center'
     },
     { 
       id: 4, 
       name: 'The Stratford Apartments', 
-      address: '199 Oakway Lane, Woodland',
-      distance: '4KM',
+      address: '199 Oakway Lane, Woodland Hills, CA 91303',
+      distance: '4 KM',
       image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=100&h=100&fit=crop&crop=center'
     },
     { 
       id: 5, 
       name: 'Cambridge Gardens', 
-      address: '105 Jerry Dove Drive, Florence',
-      distance: '4KM',
+      address: '105 Jerry Dove Drive, Florence, SC 29501',
+      distance: '4 KM',
       image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=100&h=100&fit=crop&crop=center'
     },
     { 
       id: 6, 
       name: 'The Chesterfield Lofts', 
-      address: '3274 Doe Meadow Drive',
-      distance: '4KM',
+      address: '3274 Doe Meadow Drive, Annapolis Junction, MD 20701',
+      distance: '4 KM',
       image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=100&h=100&fit=crop&crop=center'
     }
   ];
@@ -83,7 +106,7 @@ const TrainerDashboard = () => {
     {
       id: 1,
       property: 'Somerset House Apartments',
-      address: '3274 Doe Meadow Drive, Annandale, VA',
+      address: '3274 Doe Meadow Drive, Annapolis Junction, MD 20701',
       distance: '4KM',
       period: 'Today',
       image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=100&h=100&fit=crop&crop=center'
@@ -91,7 +114,7 @@ const TrainerDashboard = () => {
     {
       id: 2,
       property: 'The Covent Garden Flats',
-      address: '417 Bizetown Road, New York, NY',
+      address: '417 Bicetown Road, New York, NY 10018',
       distance: '4KM',
       period: 'This Week',
       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=100&h=100&fit=crop&crop=center'
@@ -99,231 +122,349 @@ const TrainerDashboard = () => {
     {
       id: 3,
       property: 'The Regent Residences',
-      address: '2825 Wincing Way, Providence, RI',
+      address: '2825 Winding Way, Providence, RI 02908',
       distance: '4KM',
       period: 'This Week',
       image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=100&h=100&fit=crop&crop=center'
+    },
+    {
+      id: 4,
+      property: 'Victoria Square Flats',
+      address: '105 Jerry Dove Drive, Florence, SC 29501',
+      distance: '4KM',
+      period: 'This Week',
+      image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=100&h=100&fit=crop&crop=center'
+    },
+    {
+      id: 5,
+      property: 'Mayfair Mansions',
+      address: '1406 Mattson Street, Astoria, OR 97103',
+      distance: '4KM',
+      period: 'Next Week',
+      image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=100&h=100&fit=crop&crop=center'
+    },
+    {
+      id: 6,
+      property: 'Thames View Apartments',
+      address: '3831 Cedar Lane, Somerville, MA 02143',
+      distance: '4KM',
+      period: 'Next Week',
+      image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=100&h=100&fit=crop&crop=center'
+    },
+    {
+      id: 7,
+      property: 'Eton Place',
+      address: '1949 Linda Street, West Brunswick Twp, PA 19549',
+      distance: '4KM',
+      period: 'Next Week',
+      image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=100&h=100&fit=crop&crop=center'
     }
   ];
 
-  const renderOverview = () => (
-    <div className="trainerdashboard-overview">
-      <div className="trainerdashboard-top-section">
-        <div className="trainerdashboard-create-visit-card">
-          <h2>Create a Visit Schedule</h2>
-          <p>Add a new visit and inspection schedule for a property</p>
-          <button className="trainerdashboard-select-btn">
-            Select Property
-          </button>
-        </div>
+  // Preserve all existing handlers
+  const handleOpenVisitScheduler = (property) => {
+    setSchedulerProperty(property);
+    setShowVisitScheduler(true);
+  };
 
-        <div className="trainerdashboard-overview-stats">
-          <h3>Assigned Properties Overview</h3>
-          
-          <div className="trainerdashboard-overview-stats-content">
-            <div className="trainerdashboard-main-stat-card">
-              <div className="trainerdashboard-stats-icon">
-                <Building2 size={24} />
-              </div>
-              <div className="trainerdashboard-main-stat-number">48</div>
-              <p className="trainerdashboard-main-stat-label">No. of Properties</p>
-            </div>
+  const handleCloseVisitScheduler = () => {
+    setShowVisitScheduler(false);
+    setSchedulerProperty(null);
+  };
 
-            <div className="trainerdashboard-bot-stats-card">
-              <div className="trainerdashboard-bot-stats-item">
-                <span className="trainerdashboard-bot-stats-label">No. Bot Training Complete</span>
-                <span className="trainerdashboard-bot-stats-number">16</span>
-              </div>
+  const handleScheduleVisit = (visitData) => {
+    const newVisit = {
+      id: Date.now(),
+      property: visitData.propertyName,
+      address: visitData.propertyAddress,
+      date: visitData.date,
+      time: visitData.time,
+      visitType: visitData.visitType,
+      notes: visitData.notes,
+      status: 'scheduled'
+    };
 
-              <div className="trainerdashboard-bot-stats-item">
-                <span className="trainerdashboard-bot-stats-label">No. Bot Training Pending</span>
-                <span className="trainerdashboard-bot-stats-number">22</span>
-              </div>
+    setScheduledVisits(prev => [...prev, newVisit]);
+    console.log('Visit scheduled:', newVisit);
+    handleCloseVisitScheduler();
+    alert('Visit scheduled successfully!');
+  };
 
-              <div className="trainerdashboard-bot-stats-item">
-                <span className="trainerdashboard-bot-stats-label">No. Bot Training In progress</span>
-                <span className="trainerdashboard-bot-stats-number">10</span>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
+  const handleOpenVisitRescheduler = (visitData, propertyData) => {
+    setReschedulerData({ visitData, propertyData });
+    setShowVisitRescheduler(true);
+  };
 
-      <div className="trainerdashboard-content-grid">
-        <div className="trainerdashboard-properties-section">
-          <h3>Properties Assigned</h3>
-          <div className="trainerdashboard-table-wrapper">
-            <table className="trainerdashboard-properties-table">
-              <thead>
-                <tr>
-                  <th>Property Info</th>
-                  <th>Address</th>
-                  <th>Distance</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {properties.map((property) => (
-                  <tr key={property.id}>
-                    <td>
-                      <div className="trainerdashboard-property-info">
-                        <img src={property.image} alt={property.name} />
-                        <span>{property.name}</span>
-                      </div>
-                    </td>
-                    <td>{property.address}</td>
-                    <td>{property.distance}</td>
-                    <td>
-                      <div className="trainerdashboard-action-buttons">
-                        <button className="trainerdashboard-action-btn trainerdashboard-reject-btn">
-                          <XCircle size={16} />
-                        </button>
-                        <button className="trainerdashboard-action-btn trainerdashboard-accept-btn">
-                          <CheckCircle size={16} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <button className="trainerdashboard-see-all-btn">See all</button>
-        </div>
+  const handleCloseVisitRescheduler = () => {
+    setShowVisitRescheduler(false);
+    setReschedulerData(null);
+  };
 
-        <div className="trainerdashboard-visits-section">
-          <h3>Scheduled Visits</h3>
-          <div className="trainerdashboard-visits-list">
-            {upcomingVisits.map((visit) => (
-              <div key={visit.id} className="trainerdashboard-visit-item">
-                <div className="trainerdashboard-visit-period">{visit.period}</div>
-                <div className="trainerdashboard-visit-card">
-                  <img src={visit.image} alt={visit.property} className="trainerdashboard-visit-image" />
-                  <div className="trainerdashboard-visit-details">
-                    <h4>{visit.property}</h4>
-                    <p>{visit.address}</p>
-                    <span>{visit.distance} away</span>
+  const handleRescheduleVisit = (updatedVisitData) => {
+    setScheduledVisits(prev =>
+      prev.map(visit =>
+        visit.id === updatedVisitData.id ? { ...visit, ...updatedVisitData, status: 'rescheduled' } : visit
+      )
+    );
+
+    console.log('Visit rescheduled:', updatedVisitData);
+    handleCloseVisitRescheduler();
+    alert('Visit rescheduled successfully!');
+  };
+
+  const handleOpenInspectionChecklist = (property) => {
+    setChecklistProperty(property);
+    setShowInspectionChecklist(true);
+  };
+
+  const handleCloseInspectionChecklist = () => {
+    setShowInspectionChecklist(false);
+    setChecklistProperty(null);
+  };
+
+  const handleSaveChecklist = (checklistData) => {
+    console.log('Checklist saved:', checklistData);
+    handleCloseInspectionChecklist();
+  };
+
+  const handleContactCreator = (property) => {
+    const creator = property.creator;
+    if (creator && creator.email) {
+      window.location.href = `mailto:${creator.email}`;
+    } else {
+      alert('Creator contact information not available');
+    }
+  };
+
+  // Group visits by period for the new design
+  const groupVisitsByPeriod = () => {
+    const grouped = {};
+    upcomingVisits.forEach(visit => {
+      if (!grouped[visit.period]) {
+        grouped[visit.period] = [];
+      }
+      grouped[visit.period].push(visit);
+    });
+    return grouped;
+  };
+
+  const renderOverview = () => {
+    const groupedVisits = groupVisitsByPeriod();
+
+    return (
+      <div className="trainerDashboardnew-main-content">
+        <div className="trainerDashboardnew-overview-grid">
+          <div className="trainerDashboardnew-overview-left">
+            <div className="trainerDashboardnew-grid-row">
+              <div className="trainerDashboardnew-create-visit-section">
+                <div className="trainerDashboardnew-create-visit-card">
+                  <div className="trainerDashboardnew-create-visit-content">
+                    <h2 className="trainerDashboardnew-create-visit-title">Create a Visit Schedule</h2>
+                    <p className="trainerDashboardnew-create-visit-description">
+                      Add a new visit and inspection schedule for a property
+                    </p>
+                    <button 
+                      className="trainerDashboardnew-select-property-btn"
+                      onClick={() => handleOpenVisitScheduler(properties[0])}
+                    >
+                      Select Property
+                    </button>
                   </div>
-                  <button className="trainerdashboard-view-details-btn">
-                    <Eye size={16} />
-                    View Details
-                  </button>
                 </div>
               </div>
-            ))}
+
+              <div className="trainerDashboardnew-overview-stats-section">
+                <div className="trainerDashboardnew-overview-stats-card">
+                  <div className="trainerDashboardnew-overview-stats-header">
+                    <h3 className="trainerDashboardnew-overview-stats-title">Assigned Properties Overview</h3>
+                    <div className="trainerDashboardnew-stats-divider"></div>
+                  </div>
+                  
+                  <div className="trainerDashboardnew-stats-content">
+                    <div className="trainerDashboardnew-main-stat-card">
+                      <div className="trainerDashboardnew-main-stat-icon">
+                        <Building2 size={40} />
+                      </div>
+                      <div className="trainerDashboardnew-main-stat-info">
+                        <p className="trainerDashboardnew-main-stat-label">No. of Properties</p>
+                        <div className="trainerDashboardnew-main-stat-number">48</div>
+                      </div>
+                    </div>
+
+                    <div className="trainerDashboardnew-bot-stats-container">
+                      <div className="trainerDashboardnew-bot-stats-item">
+                        <span className="trainerDashboardnew-bot-stats-label">No. Bot Training Complete</span>
+                        <span className="trainerDashboardnew-bot-stats-number">16</span>
+                      </div>
+                      <div className="trainerDashboardnew-bot-stats-item">
+                        <span className="trainerDashboardnew-bot-stats-label">No. Bot Training Pending</span>
+                        <span className="trainerDashboardnew-bot-stats-number">22</span>
+                      </div>
+                      <div className="trainerDashboardnew-bot-stats-item">
+                        <span className="trainerDashboardnew-bot-stats-label">No. Bot Training In progress</span>
+                        <span className="trainerDashboardnew-bot-stats-number">10</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="trainerDashboardnew-properties-assigned-section">
+              <div className="trainerDashboardnew-properties-assigned-card">
+                <h3 className="trainerDashboardnew-properties-assigned-title">Properties Assigned</h3>
+                <div className="trainerDashboardnew-properties-divider"></div>
+
+                <div className="trainerDashboardnew-properties-table-header">
+                  <div className="trainerDashboardnew-header-property-info">Property Info</div>
+                  <div className="trainerDashboardnew-header-address">Address</div>
+                  <div className="trainerDashboardnew-header-distance">Distance</div>
+                  <div className="trainerDashboardnew-header-action">Action</div>
+                </div>
+                <div className="trainerDashboardnew-properties-divider"></div>
+
+                {properties.map((property) => (
+                  <div key={property.id}>
+                    <div className="trainerDashboardnew-property-row">
+                      <div className="trainerDashboardnew-property-info">
+                        <img src={property.image} alt={property.name} className="trainerDashboardnew-property-image" />
+                        <span className="trainerDashboardnew-property-name">{property.name}</span>
+                      </div>
+                      <div className="trainerDashboardnew-property-address">{property.address}</div>
+                      <div className="trainerDashboardnew-property-distance">{property.distance}</div>
+                      <div className="trainerDashboardnew-property-actions">
+                        <button className="trainerDashboardnew-action-btn trainerDashboardnew-view-btn">
+                          <X size={20} />
+                        </button>
+                        <button className="trainerDashboardnew-action-btn trainerDashboardnew-accept-btn">
+                          <Check size={20} />
+                        </button>
+                      </div>
+                    </div>
+                    <div className="trainerDashboardnew-properties-divider"></div>
+                  </div>
+                ))}
+
+                <button 
+                  className="trainerDashboardnew-see-all-btn"
+                  onClick={() => setActiveMenu('properties')}
+                >
+                  See all
+                </button>
+              </div>
+            </div>
           </div>
-          <button className="trainerdashboard-view-all-btn">View all</button>
+
+          <div className="trainerDashboardnew-overview-right">
+            <div className="trainerDashboardnew-scheduled-visits-section">
+              <div className="trainerDashboardnew-scheduled-visits-card">
+                <div className="trainerDashboardnew-scheduled-visits-header">
+                  <h3 className="trainerDashboardnew-scheduled-visits-title">Scheduled Visits</h3>
+                  <div className="trainerDashboardnew-scheduled-visits-divider"></div>
+                </div>
+
+                <div className="trainerDashboardnew-visits-list">
+                  {Object.entries(groupedVisits).map(([period, visits]) => (
+                    <div key={period} className="trainerDashboardnew-visit-period-group">
+                      <div className="trainerDashboardnew-visit-period-label">{period}</div>
+                      {visits.map((visit) => (
+                        <div key={visit.id} className="trainerDashboardnew-visit-item">
+                          <div className="trainerDashboardnew-visit-card">
+                            <img src={visit.image} alt={visit.property} className="trainerDashboardnew-visit-image" />
+                            <div className="trainerDashboardnew-visit-details">
+                              <h4 className="trainerDashboardnew-visit-property-name">{visit.property}</h4>
+                              <p className="trainerDashboardnew-visit-address">{visit.address}</p>
+                              <span className="trainerDashboardnew-visit-distance">{visit.distance} away</span>
+                            </div>
+                            <button className="trainerDashboardnew-view-details-btn">View Details</button>
+                          </div>
+                        </div>
+                      ))}
+                      <div className="trainerDashboardnew-scheduled-visits-divider"></div>
+                    </div>
+                  ))}
+                </div>
+
+                <button 
+                  className="trainerDashboardnew-view-all-visits-btn"
+                  onClick={() => setActiveMenu('visits')}
+                >
+                  View all
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   const renderContent = () => {
+    // Show overlays/modals if active
+    if (showInspectionChecklist && checklistProperty) {
+      return (
+        <VisitInspectionChecklist
+          property={checklistProperty}
+          onBack={handleCloseInspectionChecklist}
+          onSave={handleSaveChecklist}
+          onContactCreator={handleContactCreator}
+        />
+      );
+    }
+
+    if (showVisitRescheduler && reschedulerData) {
+      return (
+        <VisitRescheduler
+          visitData={reschedulerData.visitData}
+          propertyData={reschedulerData.propertyData}
+          onSave={handleRescheduleVisit}
+          onCancel={handleCloseVisitRescheduler}
+          onBack={handleCloseVisitRescheduler}
+        />
+      );
+    }
+
+    if (showVisitScheduler && schedulerProperty) {
+      return (
+        <VisitScheduler
+          propertyName={schedulerProperty.name}
+          propertyAddress={schedulerProperty.address}
+          propertyImage={schedulerProperty.image}
+          onScheduleVisit={handleScheduleVisit}
+          onClose={handleCloseVisitScheduler}
+        />
+      );
+    }
+
     switch(activeMenu) {
       case 'overview':
         return renderOverview();
       case 'properties':
-        return (
-          <div className="trainerdashboard-content-section">
-            <h2>All Properties</h2>
-            <div className="trainerdashboard-properties-grid">
-              {properties.map((property) => (
-                <div key={property.id} className="trainerdashboard-property-card">
-                  <img src={property.image} alt={property.name} />
-                  <div className="trainerdashboard-property-details">
-                    <h3>{property.name}</h3>
-                    <p><MapPin size={14} /> {property.address}</p>
-                    <span>{property.distance} away</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
+        return <TrainerDashboardAllproperties
+          onOpenVisitScheduler={handleOpenVisitScheduler}
+          onOpenVisitRescheduler={handleOpenVisitRescheduler}
+          onOpenInspectionChecklist={handleOpenInspectionChecklist}
+        />;
       case 'notifications':
-        return (
-          <div className="trainerdashboard-content-section">
-            <h2>Properties Notifications</h2>
-            <div className="trainerdashboard-notifications-list">
-              <div className="trainerdashboard-notification-item">
-                <Bell className="trainerdashboard-notification-icon" />
-                <div>
-                  <h4>New property assignment</h4>
-                  <p>You have been assigned to Prime Estate property</p>
-                  <span>2 hours ago</span>
-                </div>
-              </div>
-              <div className="trainerdashboard-notification-item">
-                <Bell className="trainerdashboard-notification-icon" />
-                <div>
-                  <h4>Visit scheduled</h4>
-                  <p>Somerset House Apartments visit scheduled for today</p>
-                  <span>4 hours ago</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
+        return <PropertyAssignmentNotification />;
       case 'visits':
-        return (
-          <div className="trainerdashboard-content-section">
-            <h2>Scheduled Visits</h2>
-            <div className="trainerdashboard-visits-calendar">
-              {upcomingVisits.map((visit) => (
-                <div key={visit.id} className="trainerdashboard-visit-card-large">
-                  <img src={visit.image} alt={visit.property} />
-                  <div className="trainerdashboard-visit-info">
-                    <h3>{visit.property}</h3>
-                    <p>{visit.address}</p>
-                    <span>{visit.distance} away</span>
-                    <div className="trainerdashboard-visit-period-badge">{visit.period}</div>
-                  </div>
-                  <button className="trainerdashboard-manage-btn">Manage Visit</button>
-                </div>
-              ))}
-            </div>
-          </div>
-        );
+        return <ScheduledVisits />;
       case 'logs':
-        return (
-          <div className="trainerdashboard-content-section">
-            <h2>Visit Logs</h2>
-            <div className="trainerdashboard-logs-list">
-              <div className="trainerdashboard-log-item">
-                <FileText className="trainerdashboard-log-icon" />
-                <div>
-                  <h4>Prime Estate - Visit Completed</h4>
-                  <p>Inspection completed successfully. All systems operational.</p>
-                  <span>Yesterday, 3:30 PM</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
+        return <TrainerVisitLogs />;
       case 'trainbots':
-        return (
-          <div className="trainerdashboard-content-section">
-            <h2>Train Bots</h2>
-            <div className="trainerdashboard-bot-training">
-              <div className="trainerdashboard-training-card">
-                <Bot className="trainerdashboard-bot-icon" />
-                <h3>Property Assistant Bot</h3>
-                <p>Train the bot to handle property-specific queries</p>
-                <button className="trainerdashboard-train-btn">Start Training</button>
-              </div>
-            </div>
-          </div>
-        );
+        return <TrainBot />;
+      case 'userProfile':
+        return <TrainerUserProfile />;
       case 'settings':
         return (
-          <div className="trainerdashboard-content-section">
+          <div className="trainerDashboardnew-settings-content">
             <h2>Settings</h2>
-            <div className="trainerdashboard-settings-grid">
-              <div className="trainerdashboard-settings-card">
+            <div className="trainerDashboardnew-settings-grid">
+              <div className="trainerDashboardnew-settings-card">
                 <h3>Profile Settings</h3>
                 <p>Update your personal information</p>
               </div>
-              <div className="trainerdashboard-settings-card">
+              <div className="trainerDashboardnew-settings-card">
                 <h3>Notification Preferences</h3>
                 <p>Manage your notification settings</p>
               </div>
@@ -332,11 +473,11 @@ const TrainerDashboard = () => {
         );
       case 'help':
         return (
-          <div className="trainerdashboard-content-section">
+          <div className="trainerDashboardnew-help-content">
             <h2>Help Center</h2>
-            <div className="trainerdashboard-help-content">
+            <div className="trainerDashboardnew-help-section">
               <h3>Frequently Asked Questions</h3>
-              <div className="trainerdashboard-faq-item">
+              <div className="trainerDashboardnew-faq-item">
                 <h4>How do I schedule a visit?</h4>
                 <p>You can schedule visits from the overview page by clicking "Select Property"</p>
               </div>
@@ -348,101 +489,151 @@ const TrainerDashboard = () => {
     }
   };
 
+  const handleNavClick = (menuId) => {
+    // Close any open modals/overlays when navigating
+    setShowInspectionChecklist(false);
+    setChecklistProperty(null);
+    setShowVisitScheduler(false);
+    setSchedulerProperty(null);
+    setShowVisitRescheduler(false);
+    setReschedulerData(null);
+
+    setActiveMenu(menuId);
+    setIsSidebarOpen(false); // Close mobile menu after selection
+  };
+
   return (
-    <div className="trainerdashboard-container">
-      {/* Fixed Header */}
-      <header className="trainerdashboard-header">
-        <div className="trainerdashboard-header-left">
-          <div className="trainerdashboard-logo">
-            <div className="trainerdashboard-logo-icon">H</div>
-            <span>Housekeepers</span>
-          </div>
-        </div>
-        
-        <div className="trainerdashboard-header-center">
-          <h1>Welcome Anthony,</h1>
-          <p>Here is your dashboard</p>
-        </div>
-        
-        <div className="trainerdashboard-header-right">
-          <div className="trainerdashboard-search-container">
-            <Search className="trainerdashboard-search-icon" size={20} />
-            <input 
-              type="text" 
-              placeholder="Enter Property Name"
-              className="trainerdashboard-search-input"
-            />
-          </div>
-          <div className="trainerdashboard-notifications">
-            <Bell size={20} />
-          </div>
-          <div className="trainerdashboard-account-switch">
-            <span>Switch account type</span>
-            <div className="trainerdashboard-toggle">
-              <span>Creator</span>
-              <div className="trainerdashboard-toggle-switch"></div>
-              <span className="trainerdashboard-active">Trainer</span>
+    <div className="trainerDashboardnew-container">
+      
+      <div className="trainerDashboardnew-layout">
+        {/* Sidebar - matching Builder.io design */}
+        <div className={`trainerDashboardnew-sidebar ${isSidebarOpen ? 'trainerDashboardnew-sidebar-open' : ''}`}>
+          <div className="trainerDashboardnew-sidebar-content">
+            <div className="trainerDashboardnew-logo-section">
+              <img
+                src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/f59cfd379b0660c1dc6b0e7ac118e100d0156d3d?placeholderIfAbsent=true"
+                alt="Housekeepers Logo"
+                className="trainerDashboardnew-logo-icon"
+              />
+              <span className="trainerDashboardnew-logo-text">Housekeepers</span>
             </div>
-          </div>
-        </div>
 
-        {/* Mobile menu button */}
-        <button 
-          className="trainerdashboard-mobile-menu-btn"
-          onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        >
-          ☰
-        </button>
-      </header>
+            <nav className="trainerDashboardnew-nav">
+              {menuItems.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <button
+                    key={item.id}
+                    className={`trainerDashboardnew-nav-item ${activeMenu === item.id ? 'trainerDashboardnew-nav-active' : ''}`}
+                    onClick={() => handleNavClick(item.id)}
+                  >
+                    <div className="trainerDashboardnew-nav-icon">
+                      {item.id === 'visits' && (
+                        <img
+                          src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/aa3a4e0c1f96066ff4bb10202c64def1bcd99d75?placeholderIfAbsent=true"
+                          alt=""
+                          className="trainerDashboardnew-nav-icon-img"
+                        />
+                      )}
+                      {item.id === 'trainbots' && (
+                        <img
+                          src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/e1c8ad187675a4b8102c2312297de8e46d1e25f2?placeholderIfAbsent=true"
+                          alt=""
+                          className="trainerDashboardnew-nav-icon-img"
+                        />
+                      )}
+                      {item.id === 'help' && (
+                        <img
+                          src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/eb04e19b734f40615a0437afcb57df342f9d438e?placeholderIfAbsent=true"
+                          alt=""
+                          className="trainerDashboardnew-nav-icon-img"
+                        />
+                      )}
+                      {!['visits', 'trainbots', 'help'].includes(item.id) && (
+                        <div className="trainerDashboardnew-nav-icon-placeholder"></div>
+                      )}
+                    </div>
+                    <span className="trainerDashboardnew-nav-label">{item.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
 
-      <div className="trainerdashboard-layout">
-        {/* Fixed Sidebar */}
-        <aside className={`trainerdashboard-sidebar ${isSidebarOpen ? 'trainerdashboard-sidebar-open' : ''}`}>
-          <nav className="trainerdashboard-nav">
-            {menuItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <button
-                  key={item.id}
-                  className={`trainerdashboard-nav-item ${activeMenu === item.id ? 'trainerdashboard-nav-active' : ''}`}
-                  onClick={() => {
-                    setActiveMenu(item.id);
-                    setIsSidebarOpen(false); // Close mobile menu after selection
-                  }}
+            <div className="trainerDashboardnew-sidebar-divider"></div>
+
+            <div className="trainerDashboardnew-user-profile">
+              <div
+                className="trainerDashboardnew-user-avatar"
+                onClick={() => handleNavClick('userProfile')}
+                style={{ cursor: 'pointer' }}
+              >
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/f15455d755e0110c54a8cb1e09bd9f3449d967e3?placeholderIfAbsent=true"
+                  alt="Anthony Bridge"
+                  className="trainerDashboardnew-avatar-img"
+                />
+              </div>
+              <div className="trainerDashboardnew-user-info">
+                <div
+                  className="trainerDashboardnew-user-name"
+                  onClick={() => handleNavClick('userProfile')}
+                  style={{ cursor: 'pointer' }}
                 >
-                  <Icon size={20} />
-                  <span>{item.label}</span>
-                </button>
-              );
-            })}
-          </nav>
-          
-          {/* User Profile */}
-          <div className="trainerdashboard-user-profile">
-            <div className="trainerdashboard-user-avatar">
-              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=50&h=50&fit=crop&crop=center" alt="Anthony Bridge" />
+                  Anthony Bridge
+                </div>
+                <div className="trainerDashboardnew-user-email">a.bridge@gmail.com</div>
+                <button className="trainerDashboardnew-logout-btn">Log out</button>
+              </div>
             </div>
-            <div className="trainerdashboard-user-info">
-              <h4>Anthony Bridge</h4>
-              <p>a.bridge@gmail.com</p>
-            </div>
-            <button className="trainerdashboard-logout-btn">
-              <LogOut size={16} />
-              Log out
-            </button>
           </div>
-        </aside>
+        </div>
 
-        {/* Main Content Area */}
-        <main className="trainerdashboard-main">
+        {/* Main Content Area - matching Builder.io design */}
+        <div className="trainerDashboardnew-main">
+          <div className="trainerDashboardnew-main-header">
+            <div className="trainerDashboardnew-welcome-section">
+              <h1 className="trainerDashboardnew-welcome-title">Welcome Anthony,</h1>
+              <p className="trainerDashboardnew-welcome-subtitle">Here is your dashboard</p>
+            </div>
+
+            <div className="trainerDashboardnew-header-controls">
+              <div className="trainerDashboardnew-search-and-notifications">
+                <div className="trainerDashboardnew-search-bar">
+                  <input
+                    type="text"
+                    placeholder="Enter Property Name"
+                    className="trainerDashboardnew-search-input"
+                  />
+                  <div className="trainerDashboardnew-search-icon"></div>
+                </div>
+                <div className="trainerDashboardnew-notifications">
+                  <div className="trainerDashboardnew-notification-dot">
+                    <BellIcon/>
+                  </div>
+                </div>
+              </div>
+
+              <div className="trainerDashboardnew-account-switch">
+                <p className="trainerDashboardnew-switch-label">Switch account type</p>
+                <div className="trainerDashboardnew-toggle-section">
+                  <span className="trainerDashboardnew-toggle-label">Creator</span>
+                  <div className="trainerDashboardnew-toggle">
+                    <div className="trainerDashboardnew-toggle-circle"></div>
+                  </div>
+                  <span className="trainerDashboardnew-toggle-label trainerDashboardnew-toggle-active">Trainer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {renderContent()}
-        </main>
+        </div>
       </div>
 
       {/* Mobile sidebar overlay */}
       {isSidebarOpen && (
         <div 
-          className="trainerdashboard-sidebar-overlay"
+          className="trainerDashboardnew-sidebar-overlay"
           onClick={() => setIsSidebarOpen(false)}
         />
       )}

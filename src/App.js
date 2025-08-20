@@ -70,6 +70,7 @@ const DemoNavigation = ({ currentPage, onNavigate, pages, onShowWelcome, onShowC
            page === 'trainerListAvailable' ? 'Available Trainers' :
            page === 'trainers' ? 'Trainers Page' :
            page === 'assignProperty' ? 'Assign Property' :
+           page === 'trainerDashboard' ? 'Trainer Dashboard' :
            page.charAt(0).toUpperCase() + page.slice(1)}
         </button>
       ))}
@@ -80,7 +81,7 @@ const DemoNavigation = ({ currentPage, onNavigate, pages, onShowWelcome, onShowC
 // Main App Component
 const App = () => {
   const [accountType, setAccountType] = useState('Creator');
-  const [currentPage, setCurrentPage] = useState('creatorDashboard');
+  const [currentPage, setCurrentPage] = useState('trainerDashboard');
   const [showWelcomeModal, setShowWelcomeModal] = useState(false);
   const [showCongratulationsModal, setShowCongratulationsModal] = useState(false);
 
@@ -281,13 +282,13 @@ const App = () => {
         />
 
         {/* Demo Navigation Controls */}
-        <DemoNavigation
+        {/* <DemoNavigation
           currentPage={currentPage}
           onNavigate={navigateToPage}
           pages={Authpages}
           onShowWelcome={showWelcomeModalHandler}
           onShowCongratulations={showCongratulationsModalHandler}
-        />
+        /> */}
 
         {/* Current Page Content */}
         {Authpages[currentPage]}
