@@ -3,8 +3,8 @@
 .rescheduleVisit-container {
   width: 100%;
   max-width: 604px;
-  /* margin-top: -30px;
-  margin-left: -30px; */
+  margin-top: 100px;
+  margin-left: 15px;
   font-family: 'Lato', sans-serif;
   position: relative;
 }

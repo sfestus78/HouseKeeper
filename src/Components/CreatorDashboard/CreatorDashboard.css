@@ -354,6 +354,8 @@
 
 .creatordashboard-create-property-title {
   font-size: 26px;
+  /* background: #ffffff; */
+  color: #fff;
   font-weight: 700;
   margin-bottom: 6px;
   line-height: 1.2;
@@ -361,6 +363,8 @@
 
 .creatordashboard-create-property-subtitle {
   font-size: 13px;
+  /* background: #ffffff; */
+  color: #fff;
   opacity: 0.9;
   margin-bottom: 16px;
 }

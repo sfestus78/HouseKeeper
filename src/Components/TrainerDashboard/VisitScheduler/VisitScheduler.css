@@ -3,7 +3,8 @@
 .visitscheduler-container {
   width: 100%;
   max-width: 604px;
-  margin: 0;
+  margin-top: 105px;
+  margin-left:35px;
   font-family: 'Lato', sans-serif;
   /* background-color: #FFF; */
   position: relative;

@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
+*{
+  box-sizing: border-box;
+}
+
 /* Main Container */
 .trainbot-container {
   max-width: 1124px;
   width: 100%;
-  margin: 0 auto;
+  margin: 100px 0 auto 20px;
   font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
 }
 
@@ -160,8 +164,8 @@
   border-radius: 16px;
   border: 1px solid #E1E5EA;
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-  width: calc(25% - 12px);
-  min-width: 200px;
+  width: calc(25% - 20px);
+  min-width: 180px;
   background-color: #F9F8FC;
   transition: all 0.2s ease;
   cursor: pointer;

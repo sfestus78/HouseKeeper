@@ -4,14 +4,14 @@ import AcceptModal from './AcceptModal';
 import RejectModal from './RejectModal';
 import './PropertyDetailsAfterAcceptance.css';
 
-const PropertyDetailsAfterAcceptance = ({ 
-  property, 
-  onBack, 
-  onScheduleVisit, 
-  onStartChecklist, 
-  onReschedule, 
+const PropertyDetailsAfterAcceptance = ({
+  property,
+  onBack,
+  onScheduleVisit,
+  onStartChecklist,
+  onReschedule,
   onCancel,
-  onStartBotTraining 
+  onStartBotTraining
 }) => {
   const [showAcceptModal, setShowAcceptModal] = useState(false);
   const [showRejectModal, setShowRejectModal] = useState(false);
@@ -68,9 +68,11 @@ const PropertyDetailsAfterAcceptance = ({
     if (onCancel) onCancel(property.id);
   };
 
-  const handleStartBotTraining = () => {
+  const handleStartAIBotTraining = () => {
     console.log('Start bot training for property:', property.id);
-    if (onStartBotTraining) onStartBotTraining(property.id);
+    if (onStartBotTraining) {
+      onStartBotTraining(property);
+    }
   };
 
   const handleContactCreator = () => {
@@ -217,7 +219,7 @@ const PropertyDetailsAfterAcceptance = ({
                     </div>
                     <button 
                       className="propertiesdetailsafteracceptance-start-btn"
-                      onClick={handleStartBotTraining}
+                      onClick={handleStartAIBotTraining}
                     >
                       Start
                     </button>

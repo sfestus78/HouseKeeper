@@ -1,0 +1,359 @@
+/* Notification Dropdown Container */
+.TrainerNotification-container {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  padding-top: 10px;
+}
+
+.TrainerNotification-dropdown {
+  border-radius: 16px;
+  background-color: rgba(249, 248, 252, 1);
+  width: 380px;
+  max-height: 660px;
+  overflow: hidden;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  border: 1px solid rgba(208, 213, 221, 1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.TrainerNotification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 24px 0;
+  gap: 40px;
+}
+
+.TrainerNotification-title {
+  font-size: 16px;
+  color: rgba(43, 45, 66, 1);
+  font-weight: 700;
+  letter-spacing: -0.96px;
+  line-height: 1;
+}
+
+.TrainerNotification-markAll {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: rgba(43, 45, 66, 1);
+  font-weight: 700;
+  letter-spacing: -0.64px;
+  line-height: 1;
+  text-decoration: underline;
+  text-align: right;
+}
+
+.TrainerNotification-markAll:hover {
+  opacity: 0.8;
+}
+
+.TrainerNotification-markAll-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.TrainerNotification-divider {
+  height: 2px;
+  margin: 14px 24px 16px;
+  border: 2px dashed rgba(221, 221, 225, 1);
+}
+
+/* Tabs */
+.TrainerNotification-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  margin-bottom: 16px;
+}
+
+.TrainerNotification-tab {
+  border-radius: 8px;
+  background-color: rgba(240, 239, 247, 1);
+  color: rgba(115, 123, 125, 1);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.96px;
+  line-height: 1;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.TrainerNotification-tab-active {
+  background-color: rgba(43, 45, 66, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.TrainerNotification-tab:hover:not(.TrainerNotification-tab-active) {
+  background-color: rgba(230, 229, 237, 1);
+}
+
+/* Content */
+.TrainerNotification-content {
+  max-height: 514px;
+  overflow-y: auto;
+  padding: 0 24px;
+}
+
+.TrainerNotification-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.TrainerNotification-content::-webkit-scrollbar-track {
+  background: rgba(240, 239, 247, 1);
+  border-radius: 3px;
+}
+
+.TrainerNotification-content::-webkit-scrollbar-thumb {
+  background: rgba(208, 213, 221, 1);
+  border-radius: 3px;
+}
+
+.TrainerNotification-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(190, 195, 203, 1);
+}
+
+/* Category */
+.TrainerNotification-category {
+  padding-bottom: 8px;
+}
+
+.TrainerNotification-category-title {
+  font-size: 14px;
+  color: rgba(239, 35, 60, 1);
+  font-weight: 700;
+  letter-spacing: -0.84px;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+/* Notification Item */
+.TrainerNotification-item {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.TrainerNotification-item:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.TrainerNotification-item:last-child {
+  margin-bottom: 0;
+}
+
+.TrainerNotification-unread {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.TrainerNotification-read {
+  opacity: 0.7;
+}
+
+.TrainerNotification-item-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.TrainerNotification-content-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Avatar */
+.TrainerNotification-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Details */
+.TrainerNotification-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.TrainerNotification-message {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px;
+  font-size: 16px;
+  color: rgba(43, 45, 66, 1);
+  font-weight: 700;
+  letter-spacing: -0.64px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.TrainerNotification-user-name {
+  font-weight: 700;
+  text-align: center;
+}
+
+.TrainerNotification-action-text {
+  color: rgba(115, 115, 115, 1);
+  font-weight: 400;
+}
+
+.TrainerNotification-action-highlight {
+  color: rgba(45, 159, 70, 1);
+  font-weight: 400;
+}
+
+.TrainerNotification-action-complete {
+  color: rgba(45, 159, 70, 1);
+  font-weight: 400;
+}
+
+.TrainerNotification-property-name {
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Time */
+.TrainerNotification-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  font-size: 14px;
+  color: rgba(118, 118, 118, 1);
+}
+
+.TrainerNotification-time-absolute {
+  font-weight: 600;
+  letter-spacing: -1.26px;
+  line-height: 1;
+}
+
+.TrainerNotification-time-relative {
+  font-weight: 700;
+  letter-spacing: -0.56px;
+  line-height: 1;
+  text-align: right;
+}
+
+/* Property Thumbnail */
+.TrainerNotification-propertyThumb {
+  width: 74px;
+  height: 62px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Special layout for property listing notifications */
+.TrainerNotification-item:has(.TrainerNotification-propertyThumb) .TrainerNotification-content-wrapper {
+  gap: 39px;
+}
+
+.TrainerNotification-item:not(:has(.TrainerNotification-propertyThumb)) .TrainerNotification-content-wrapper {
+  gap: 16px;
+}
+
+.TrainerNotification-item:not(:has(.TrainerNotification-propertyThumb)) .TrainerNotification-avatar {
+  width: 62px;
+  height: 52px;
+}
+
+/* View All Button */
+.TrainerNotification-viewAll {
+  color: rgba(239, 35, 60, 1);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.64px;
+  text-align: right;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 16px 24px 22px;
+  width: 100%;
+  text-align: right;
+}
+
+.TrainerNotification-viewAll:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .TrainerNotification-dropdown {
+    width: 320px;
+    max-height: 500px;
+  }
+  
+  .TrainerNotification-header {
+    padding: 16px 20px 0;
+    gap: 20px;
+  }
+  
+  .TrainerNotification-divider {
+    margin: 12px 20px 14px;
+  }
+  
+  .TrainerNotification-tabs {
+    padding: 0 20px;
+  }
+  
+  .TrainerNotification-content {
+    padding: 0 20px;
+    max-height: 400px;
+  }
+  
+  .TrainerNotification-viewAll {
+    padding: 14px 20px 18px;
+  }
+  
+  .TrainerNotification-message {
+    font-size: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+  
+  .TrainerNotification-time {
+    gap: 40px;
+    font-size: 12px;
+  }
+  
+  .TrainerNotification-propertyThumb {
+    width: 60px;
+    height: 50px;
+  }
+  
+  .TrainerNotification-item-main {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .TrainerNotification-dropdown {
+    width: 300px;
+    right: -20px;
+  }
+}

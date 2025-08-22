@@ -1,0 +1,67 @@
+/* Unified Dashboard Styles */
+.unified-dashboard-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+}
+
+.unified-dashboard-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.unified-dashboard-trainbot-overlay {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1000;
+  background-color: #ffffff;
+  overflow: auto;
+}
+
+/* Ensure child dashboards take full space */
+.unified-dashboard-content > * {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+/* Override any conflicting positioning from child components */
+.unified-dashboard-content .creatordashboard-container,
+.unified-dashboard-content .trainerDashboardnew-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .unified-dashboard-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+/* Ensure no scroll bars on the main container */
+.unified-dashboard-container {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.unified-dashboard-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* Chrome, Safari, Opera */
+}

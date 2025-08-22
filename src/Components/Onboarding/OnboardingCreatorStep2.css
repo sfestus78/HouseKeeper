@@ -1,53 +1,56 @@
+*{
+  box-sizing: border-box;
+}
 /* Main Container */
-.onboarding-creator-step2 {
+.OnboardingCreatorStep2-container {
   background-color: #F0EFF7;
   position: relative;
   min-height: 100vh;
   width: 100%;
   font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
-  box-sizing: border-box;
 }
 
 /* Main Content */
-.main-content {
+.OnboardingCreatorStep2-mainContent {
   margin-top: 70px;
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.content-container {
+.OnboardingCreatorStep2-contentContainer {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 140px);
 }
 
-.content-columns {
-  gap: 40px;
+.OnboardingCreatorStep2-columns {
   display: flex;
+  gap: 60px;
   align-items: flex-start;
   width: 100%;
-}
-
-.left-column {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  line-height: normal;
   flex: 1;
-  max-width: 600px;
 }
 
-.left-content {
+.OnboardingCreatorStep2-leftColumn {
   display: flex;
-  margin-top: 20px;
-  width: 100%;
   flex-direction: column;
   align-items: stretch;
-  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  width: 50%;
+  max-width: 500px;
+  padding-top: 40px;
 }
 
-.status-pill {
+.OnboardingCreatorStep2-leftContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.OnboardingCreatorStep2-statusPill {
   border-radius: 16px;
   background-color: #FFF;
   align-self: start;
@@ -57,133 +60,111 @@
   font-size: 14px;
   color: #475467;
   font-weight: 400;
-  letter-spacing: -0.4px;
-  line-height: 1;
   padding: 6px 12px;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 }
 
-.pill-dot {
+.OnboardingCreatorStep2-pillDot {
   background-color: #EF233C;
   border-radius: 50%;
-  display: flex;
   width: 8px;
-  flex-shrink: 0;
   height: 8px;
 }
 
-.pill-text {
+.OnboardingCreatorStep2-pillText {
   color: #475467;
 }
 
-.content-section {
+.OnboardingCreatorStep2-contentSection {
   width: 100%;
 }
 
-.main-title {
+.OnboardingCreatorStep2-mainTitle {
   color: #2B2D42;
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: 48px;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -1.5px;
   margin-bottom: 20px;
 }
 
-.description-section {
-  width: 100%;
+.OnboardingCreatorStep2-descriptionSection {
   font-size: 16px;
   color: #475467;
-  font-weight: 400;
-  letter-spacing: -0.4px;
   line-height: 1.4;
 }
 
-.description-text {
+.OnboardingCreatorStep2-descriptionText {
   color: #475467;
 }
 
 /* Right Column */
-.right-column {
+.OnboardingCreatorStep2-rightColumn {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  line-height: normal;
-  flex: 1;
-  max-width: 450px;
+  width: 50%;
+  padding-top: 40px;
   position: relative;
 }
 
-.right-content {
-  flex-grow: 1;
+.OnboardingCreatorStep2-rightContent {
   display: flex;
-  align-items: flex-start;
   gap: 20px;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
-.step-number {
+.OnboardingCreatorStep2-stepNumber {
   color: #DDDDE4;
-  white-space: nowrap;
   letter-spacing: -4px;
-  font: 900 clamp(120px, 15vw, 160px)/0.8 Lato, -apple-system, Roboto, Helvetica, sans-serif;
-  margin-top: 0;
+  font: 900 160px/0.8 Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  font-style: italic;
   position: absolute;
   left: 0;
   top: 0;
   z-index: 1;
 }
 
-.step-content {
+.OnboardingCreatorStep2-stepContent {
   flex: 1;
   margin-top: 50px;
-  font-family: 'Lato', sans-serif;
+  margin-left: 80px;
   position: relative;
   z-index: 2;
-  margin-left: 80px;
 }
 
-.step-title {
-  width: 100%;
-  font-size: 22px;
+.OnboardingCreatorStep2-stepTitle {
+  font-size: 28px;
   color: #2B2D42;
   font-weight: 700;
-  letter-spacing: -0.6px;
-  line-height: 1.2;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-.step-description {
-  width: 100%;
+.OnboardingCreatorStep2-stepDescription {
   font-size: 16px;
   color: #475467;
-  font-weight: 400;
-  letter-spacing: -0.4px;
-  line-height: 1.4;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 /* Trainers List */
-.trainers-section {
+.OnboardingCreatorStep2-trainersSection {
   background-color: #FFF;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  margin-top: 24px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 320px;
+  max-width: 400px;
 }
 
-.trainers-title {
-  font-size: 16px;
+.OnboardingCreatorStep2-trainersTitle {
+  font-size: 18px;
   font-weight: 600;
   color: #2B2D42;
-  margin-bottom: 14px;
-  letter-spacing: -0.4px;
+  margin-bottom: 16px;
 }
 
-.assignment-message {
-  margin-bottom: 14px;
+.OnboardingCreatorStep2-assignmentMessage {
+  margin-bottom: 16px;
   padding: 10px 12px;
   background-color: #dcfce7;
   border: 1px solid #bbf7d0;
@@ -193,314 +174,256 @@
   font-weight: 500;
 }
 
-.trainers-list {
+.OnboardingCreatorStep2-trainersList {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.OnboardingCreatorStep2-trainerItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.OnboardingCreatorStep2-trainerItem:last-child {
+  border-bottom: none;
+}
+
+.OnboardingCreatorStep2-trainerInfo {
+  display: flex;
+  align-items: center;
   gap: 12px;
 }
 
-.trainer-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0;
-}
-
-.trainer-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.trainer-image {
-  width: 36px;
-  height: 36px;
+.OnboardingCreatorStep2-trainerImage {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
-.trainer-name {
+.OnboardingCreatorStep2-trainerName {
   font-weight: 500;
+  font-size: 16px;
   color: #2B2D42;
-  font-size: 15px;
-  letter-spacing: -0.4px;
 }
 
-.assign-button {
+.OnboardingCreatorStep2-assignButton {
   background-color: #2B2D42;
   color: white;
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 6px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  letter-spacing: -0.3px;
 }
 
-.assign-button:hover {
+.OnboardingCreatorStep2-assignButton:hover {
   background-color: #1e2040;
 }
 
 /* Bottom Section */
-.bottom-section {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+.OnboardingCreatorStep2-bottomSection {
+  margin-top: auto;
+  padding-top: 40px;
 }
 
-.progress-container {
-  width: 100%;
-  margin-bottom: 20px;
+.OnboardingCreatorStep2-progressContainer {
+  margin-bottom: 24px;
 }
 
-.progress-bar {
+.OnboardingCreatorStep2-progressBar {
   border-radius: 8px;
   background-color: #FFF;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  height: 4px;
+  height: 6px;
+  width: 100%;
 }
 
-.progress-fill {
+.OnboardingCreatorStep2-progressFill {
   border-radius: 8px;
   background-color: #2B2D42;
-  display: flex;
   width: 66.67%;
-  flex-shrink: 0;
-  height: 4px;
+  height: 6px;
 }
 
-.navigation-buttons {
+.OnboardingCreatorStep2-navigationButtons {
   display: flex;
-  width: 100%;
-  align-items: center;
   justify-content: space-between;
-  font: 700 16px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  align-items: center;
 }
 
-.back-button {
-  min-height: 16px;
+.OnboardingCreatorStep2-backButton {
   color: #475467;
   text-decoration: underline;
-  letter-spacing: -0.4px;
-  line-height: 1;
   cursor: pointer;
-  transition: color 0.2s ease;
   background: none;
   border: none;
   font: 700 16px Lato, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
-.back-button:hover {
+.OnboardingCreatorStep2-backButton:hover {
   color: #1D2939;
 }
 
-.next-button {
+.OnboardingCreatorStep2-nextButton {
   border-radius: 8px;
-  display: flex;
   min-height: 44px;
-  align-items: center;
-  justify-content: center;
+  width: 120px;
   color: #FFF;
-  letter-spacing: -0.6px;
-  line-height: 1;
-  width: 100px;
-  cursor: pointer;
   border: 1px solid #EF233C;
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   background-color: #EF233C;
-  padding: 8px 16px;
-  transition: all 0.2s ease;
   font: 700 16px Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.next-button:hover {
+.OnboardingCreatorStep2-nextButton:hover {
   background-color: #dc2626;
   border-color: #dc2626;
 }
 
-.next-button:active {
+.OnboardingCreatorStep2-nextButton:active {
   transform: translateY(1px);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .content-columns {
-    gap: 30px;
+  .OnboardingCreatorStep2-columns {
+    gap: 40px;
   }
-  
-  .main-title {
-    font-size: clamp(28px, 4.5vw, 40px);
+
+  .OnboardingCreatorStep2-mainTitle {
+    font-size: 40px;
+  }
+
+  .OnboardingCreatorStep2-stepNumber {
+    font-size: 140px;
+    left: -30px;
   }
 }
 
 @media (max-width: 768px) {
-  .header-container {
-    min-height: 60px;
-    padding: 0 16px;
-  }
-
-  .header-content {
-    padding: 0;
-  }
-
-  .main-content {
+  .OnboardingCreatorStep2-mainContent {
     margin-top: 60px;
     padding: 20px 16px;
   }
 
-  .content-columns {
+  .OnboardingCreatorStep2-columns {
     flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
+    gap: 40px;
   }
 
-  .left-column {
+  .OnboardingCreatorStep2-leftColumn {
     width: 100%;
-    max-width: none;
+    padding-top: 20px;
   }
 
-  .left-content {
-    margin-top: 16px;
+  .OnboardingCreatorStep2-statusPill {
+    margin-bottom: 24px;
   }
 
-  .main-title {
-    font-size: clamp(24px, 6vw, 36px);
-    line-height: 1.2;
-    letter-spacing: -1px;
+  .OnboardingCreatorStep2-mainTitle {
+    font-size: 36px;
+    text-align: center;
   }
 
-  .right-column {
+  .OnboardingCreatorStep2-descriptionSection {
+    text-align: center;
+  }
+
+  .OnboardingCreatorStep2-rightColumn {
     width: 100%;
-    max-width: none;
+    padding-top: 0;
   }
 
-  .right-content {
+  .OnboardingCreatorStep2-rightContent {
     flex-direction: column;
     gap: 16px;
     align-items: center;
   }
 
-  .step-number {
-    font-size: clamp(100px, 12vw, 140px);
+  .OnboardingCreatorStep2-stepNumber {
+    font-size: 120px;
     position: relative;
     left: 0;
     top: 0;
+    margin-bottom: -40px;
     text-align: center;
     width: auto;
   }
 
-  .step-content {
-    margin-top: 16px;
-    margin-left: 0;
+  .OnboardingCreatorStep2-stepContent {
+    margin: 0;
     text-align: center;
   }
 
-  .trainers-section {
-    margin-top: 20px;
-    max-width: none;
-    width: 100%;
+  .OnboardingCreatorStep2-stepTitle {
+    font-size: 24px;
   }
 
-  .bottom-section {
-    position: fixed;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
+  .OnboardingCreatorStep2-trainersSection {
+    margin: 0 auto;
+    max-width: 100%;
   }
 
-  .navigation-buttons {
-    flex-wrap: nowrap;
+  .OnboardingCreatorStep2-bottomSection {
+    padding-top: 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .account-toggle-section {
-    display: none;
-  }
-
-  .header-content {
-    justify-content: center;
-  }
-
-  .main-content {
+  .OnboardingCreatorStep2-mainContent {
     padding: 20px 12px;
   }
 
-  .main-title {
-    font-size: clamp(20px, 7vw, 28px);
-    text-align: center;
+  .OnboardingCreatorStep2-mainTitle {
+    font-size: 28px;
   }
 
-  .description-section {
-    text-align: center;
-    font-size: 14px;
+  .OnboardingCreatorStep2-stepNumber {
+    font-size: 100px;
   }
 
-  .step-number {
-    font-size: clamp(80px, 15vw, 120px);
+  .OnboardingCreatorStep2-stepTitle {
+    font-size: 22px;
   }
 
-  .step-content {
-    text-align: center;
+  .OnboardingCreatorStep2-stepDescription {
+    font-size: 15px;
   }
 
-  .step-title {
-    font-size: 18px;
+  .OnboardingCreatorStep2-trainersSection {
+    padding: 20px;
   }
 
-  .step-description {
-    font-size: 14px;
-  }
-
-  .trainers-section {
-    padding: 16px;
-  }
-
-  .trainer-item {
-    flex-direction: column;
-    gap: 8px;
-    align-items: stretch;
-    padding: 8px 0;
-    border-bottom: 1px solid #F3F4F6;
-  }
-
-  .trainer-item:last-child {
-    border-bottom: none;
-  }
-
-  .trainer-info {
-    justify-content: center;
-  }
-
-  .assign-button {
-    width: 100%;
-    padding: 8px 16px;
-  }
-
-  .navigation-buttons {
+  .OnboardingCreatorStep2-trainerItem {
     flex-direction: column;
     gap: 12px;
     align-items: stretch;
+    text-align: center;
+    padding: 16px 0;
   }
 
-  .back-button {
-    align-self: flex-start;
+  .OnboardingCreatorStep2-trainerInfo {
+    justify-content: center;
   }
 
-  .next-button {
+  .OnboardingCreatorStep2-assignButton {
     width: 100%;
+    padding: 10px 16px;
   }
 
-  .bottom-section {
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
+  .OnboardingCreatorStep2-navigationButtons {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .OnboardingCreatorStep2-nextButton {
+    width: 100%;
   }
 }

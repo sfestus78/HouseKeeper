@@ -17,6 +17,7 @@ import { AllPropertiesPage } from '../AllProperties';
 import { TrainersContent } from '../Trainers';
 import { AssignPropertyContent } from '../AssignProperty';
 import LOGO from '../../Assets/Logo/LOGO2.png'
+import { HelpCenter } from '../HelpCenter';
 import './CreatorDashboard.css';
 
 // Mock data
@@ -146,12 +147,12 @@ const mockTrainers = [
   }
 ];
 
-const CreatorDashboard = () => {
+const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
   const [properties, setProperties] = useState(mockProperties);
   const [trainers] = useState(mockTrainers);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeSection, setActiveSection] = useState('overview');
-  const [accountType, setAccountType] = useState('creator');
+  // Account type is now managed by parent component
   const [showNotifications, setShowNotifications] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -357,7 +358,7 @@ const CreatorDashboard = () => {
                   <div className="creatordashboard-switch-container">
                     <span className="creatordashboard-switch-text">Creator</span>
                     <button
-                      onClick={() => setAccountType(accountType === 'creator' ? 'trainer' : 'creator')}
+                      onClick={onAccountTypeToggle}
                       className={`creatordashboard-toggle-switch ${accountType === 'trainer' ? 'creatordashboard-active' : ''}`}
                     >
                       <div className="creatordashboard-toggle-handle" />
@@ -378,6 +379,8 @@ const CreatorDashboard = () => {
           <TrainersContent />
         ) : activeSection === 'assign' ? (
           <AssignPropertyContent />
+        ) : activeSection === 'help' ? (
+          <HelpCenter onNavigate={handleNavigate} />
         ) : (
           <div className="creatordashboard-grid">
             {/* Left Column */}

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import './OnboardingTrainer.css';
 
-const OnboardingTrainer = ({ onNavigate }) => {
+const OnboardingTrainer = ({accountType, onNavigate }) => {
   const [showPropertyDetails, setShowPropertyDetails] = useState(false);
 
   const handleNextClick = () => {
     // Navigate to the next step in the trainer onboarding process
-    if (onNavigate) {
+    
       onNavigate('onboardingTrainerStep2');
-    }
+    
   };
 
   // const handleFinishClick = () => {
@@ -22,16 +22,16 @@ const OnboardingTrainer = ({ onNavigate }) => {
     setShowPropertyDetails(!showPropertyDetails);
   };
 
-  const handleToggleToCreator = () => {
-    if (onNavigate) {
-      onNavigate('toggleToCreator');
-    }
-  };
+  // const handleToggleToCreator = () => {
+  //   if (onNavigate) {
+  //     onNavigate('toggleToCreator');
+  //   }
+  // };
 
   return (
     <div className="onboarding-trainer-container">
       {/* Header Navigation */}
-      <div className="dropdown-header-navigation">
+      {/* <div className="dropdown-header-navigation">
         <div className="header">
           <div className="container">
             <div className="logo-section">
@@ -61,7 +61,7 @@ const OnboardingTrainer = ({ onNavigate }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Content */}
       <div className="main-content">

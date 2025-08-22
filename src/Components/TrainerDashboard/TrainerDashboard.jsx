@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Home,
   Building2,
@@ -17,6 +17,7 @@ import {
   Eye,
   Plus,
   BellIcon,
+  Menu,
   X,
   Check
 } from 'lucide-react';
@@ -29,10 +30,12 @@ import { TrainBot } from './TrainBot';
 import { VisitScheduler, VisitRescheduler, VisitInspectionChecklist } from './VisitScheduler';
 import { TrainerVisitLogs } from './VisitLogs';
 import TrainerUserProfile from './TrainerUserProfile/TrainerUserProfile';
+import TrainerNotificationDropdown from './TrainerNotificationDropdown';
+import { HelpCenter } from '../HelpCenter';
 
 import './TrainerDashboard.css';
 
-const TrainerDashboard = () => {
+const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccountTypeToggle }) => {
   // Preserve all existing state from original component
   const [activeMenu, setActiveMenu] = useState('overview');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -43,6 +46,11 @@ const TrainerDashboard = () => {
   const [reschedulerData, setReschedulerData] = useState(null);
   const [showInspectionChecklist, setShowInspectionChecklist] = useState(false);
   const [checklistProperty, setChecklistProperty] = useState(null);
+  const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
+  const [showTrainBot, setShowTrainBot] = useState(false);
+  const [trainBotProperty, setTrainBotProperty] = useState(null);
+
+  const notificationRef = useRef(null);
 
   // Menu items with icons
   const menuItems = [
@@ -236,6 +244,38 @@ const TrainerDashboard = () => {
     }
   };
 
+  const toggleNotificationDropdown = () => {
+    setShowNotificationDropdown(prev => !prev);
+  };
+
+  const closeNotificationDropdown = () => {
+    setShowNotificationDropdown(false);
+  };
+
+  const handleOpenTrainBot = (property) => {
+    setTrainBotProperty(property);
+    setShowTrainBot(true);
+  };
+
+  const handleCloseTrainBot = () => {
+    setShowTrainBot(false);
+    setTrainBotProperty(null);
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (notificationRef.current && !notificationRef.current.contains(event.target)) {
+        closeNotificationDropdown();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   // Group visits by period for the new design
   const groupVisitsByPeriod = () => {
     const grouped = {};
@@ -334,10 +374,10 @@ const TrainerDashboard = () => {
                       <div className="trainerDashboardnew-property-distance">{property.distance}</div>
                       <div className="trainerDashboardnew-property-actions">
                         <button className="trainerDashboardnew-action-btn trainerDashboardnew-view-btn">
-                          <X size={20} />
+                          <X size={13} />
                         </button>
                         <button className="trainerDashboardnew-action-btn trainerDashboardnew-accept-btn">
-                          <Check size={20} />
+                          <Check size={13} />
                         </button>
                       </div>
                     </div>
@@ -401,6 +441,17 @@ const TrainerDashboard = () => {
 
   const renderContent = () => {
     // Show overlays/modals if active
+    if (showTrainBot && trainBotProperty) {
+      return (
+        <TrainBot
+          selectedPropertyForBot={trainBotProperty}
+          onClose={handleCloseTrainBot}
+          onBack={handleCloseTrainBot}
+          onNavigate={onNavigate}
+        />
+      );
+    }
+
     if (showInspectionChecklist && checklistProperty) {
       return (
         <VisitInspectionChecklist
@@ -444,6 +495,8 @@ const TrainerDashboard = () => {
           onOpenVisitScheduler={handleOpenVisitScheduler}
           onOpenVisitRescheduler={handleOpenVisitRescheduler}
           onOpenInspectionChecklist={handleOpenInspectionChecklist}
+          onStartBotTraining={handleOpenTrainBot}
+          onNavigate={onNavigate}
         />;
       case 'notifications':
         return <PropertyAssignmentNotification />;
@@ -452,7 +505,7 @@ const TrainerDashboard = () => {
       case 'logs':
         return <TrainerVisitLogs />;
       case 'trainbots':
-        return <TrainBot />;
+        return <TrainBot onNavigate={onNavigate} />;
       case 'userProfile':
         return <TrainerUserProfile />;
       case 'settings':
@@ -472,18 +525,7 @@ const TrainerDashboard = () => {
           </div>
         );
       case 'help':
-        return (
-          <div className="trainerDashboardnew-help-content">
-            <h2>Help Center</h2>
-            <div className="trainerDashboardnew-help-section">
-              <h3>Frequently Asked Questions</h3>
-              <div className="trainerDashboardnew-faq-item">
-                <h4>How do I schedule a visit?</h4>
-                <p>You can schedule visits from the overview page by clicking "Select Property"</p>
-              </div>
-            </div>
-          </div>
-        );
+        return <HelpCenter onNavigate={onNavigate} />;
       default:
         return renderOverview();
     }
@@ -497,6 +539,8 @@ const TrainerDashboard = () => {
     setSchedulerProperty(null);
     setShowVisitRescheduler(false);
     setReschedulerData(null);
+    setShowTrainBot(false);
+    setTrainBotProperty(null);
 
     setActiveMenu(menuId);
     setIsSidebarOpen(false); // Close mobile menu after selection
@@ -505,6 +549,14 @@ const TrainerDashboard = () => {
   return (
     <div className="trainerDashboardnew-container">
       
+      {/* Mobile hamburger menu button */}
+      <button 
+        className="trainerDashboardnew-mobile-menu-btn"
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      >
+        <Menu size={24} color="#374151" />
+      </button>
+
       <div className="trainerDashboardnew-layout">
         {/* Sidebar - matching Builder.io design */}
         <div className={`trainerDashboardnew-sidebar ${isSidebarOpen ? 'trainerDashboardnew-sidebar-open' : ''}`}>
@@ -528,30 +580,7 @@ const TrainerDashboard = () => {
                     onClick={() => handleNavClick(item.id)}
                   >
                     <div className="trainerDashboardnew-nav-icon">
-                      {item.id === 'visits' && (
-                        <img
-                          src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/aa3a4e0c1f96066ff4bb10202c64def1bcd99d75?placeholderIfAbsent=true"
-                          alt=""
-                          className="trainerDashboardnew-nav-icon-img"
-                        />
-                      )}
-                      {item.id === 'trainbots' && (
-                        <img
-                          src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/e1c8ad187675a4b8102c2312297de8e46d1e25f2?placeholderIfAbsent=true"
-                          alt=""
-                          className="trainerDashboardnew-nav-icon-img"
-                        />
-                      )}
-                      {item.id === 'help' && (
-                        <img
-                          src="https://api.builder.io/api/v1/image/assets/7cd3f6b89ed04e55a0afa12e39c219f2/eb04e19b734f40615a0437afcb57df342f9d438e?placeholderIfAbsent=true"
-                          alt=""
-                          className="trainerDashboardnew-nav-icon-img"
-                        />
-                      )}
-                      {!['visits', 'trainbots', 'help'].includes(item.id) && (
-                        <div className="trainerDashboardnew-nav-icon-placeholder"></div>
-                      )}
+                      <Icon size={20} color={activeMenu === item.id ? '#ffffff' : '#6B7280'} />
                     </div>
                     <span className="trainerDashboardnew-nav-label">{item.label}</span>
                   </button>
@@ -591,6 +620,7 @@ const TrainerDashboard = () => {
         {/* Main Content Area - matching Builder.io design */}
         <div className="trainerDashboardnew-main">
           <div className="trainerDashboardnew-main-header">
+            <div className="trainerDashboardnew-main-header-content">
             <div className="trainerDashboardnew-welcome-section">
               <h1 className="trainerDashboardnew-welcome-title">Welcome Anthony,</h1>
               <p className="trainerDashboardnew-welcome-subtitle">Here is your dashboard</p>
@@ -604,25 +634,43 @@ const TrainerDashboard = () => {
                     placeholder="Enter Property Name"
                     className="trainerDashboardnew-search-input"
                   />
-                  <div className="trainerDashboardnew-search-icon"></div>
-                </div>
-                <div className="trainerDashboardnew-notifications">
-                  <div className="trainerDashboardnew-notification-dot">
-                    <BellIcon/>
+                  <div className="trainerDashboardnew-search-icon">
+                    <Search size={20} color="#737b7d"/>
                   </div>
+                </div>
+                <div
+                  className="trainerDashboardnew-notifications"
+                  ref={notificationRef}
+                >
+                  <div
+                    className="trainerDashboardnew-notification-dot"
+                    onClick={toggleNotificationDropdown}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <BellIcon size={20} color="#737B7D"/>
+                  </div>
+                  <TrainerNotificationDropdown
+                    isVisible={showNotificationDropdown}
+                    onClose={closeNotificationDropdown}
+                  />
                 </div>
               </div>
 
               <div className="trainerDashboardnew-account-switch">
                 <p className="trainerDashboardnew-switch-label">Switch account type</p>
                 <div className="trainerDashboardnew-toggle-section">
-                  <span className="trainerDashboardnew-toggle-label">Creator</span>
-                  <div className="trainerDashboardnew-toggle">
-                    <div className="trainerDashboardnew-toggle-circle"></div>
+                  <span className={`trainerDashboardnew-toggle-label ${accountType === 'creator' ? 'trainerDashboardnew-toggle-active' : ''}`}>Creator</span>
+                  <div
+                    className={`trainerDashboardnew-toggle ${accountType === 'trainer' ? 'trainerDashboardnew-toggle-active' : ''}`}
+                    onClick={onAccountTypeToggle}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div className={`trainerDashboardnew-toggle-circle ${accountType === 'trainer' ? 'trainerDashboardnew-toggle-circle-active' : ''}`}></div>
                   </div>
-                  <span className="trainerDashboardnew-toggle-label trainerDashboardnew-toggle-active">Trainer</span>
+                  <span className={`trainerDashboardnew-toggle-label ${accountType === 'trainer' ? 'trainerDashboardnew-toggle-active' : ''}`}>Trainer</span>
                 </div>
               </div>
+            </div>
             </div>
           </div>
 
@@ -633,7 +681,7 @@ const TrainerDashboard = () => {
       {/* Mobile sidebar overlay */}
       {isSidebarOpen && (
         <div 
-          className="trainerDashboardnew-sidebar-overlay"
+          className={`trainerDashboardnew-sidebar-overlay ${isSidebarOpen ? 'show' : ''}`}
           onClick={() => setIsSidebarOpen(false)}
         />
       )}

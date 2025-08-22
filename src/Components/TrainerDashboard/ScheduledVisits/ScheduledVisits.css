@@ -3,6 +3,8 @@
 .scheduled-visits-main-container {
   width: 100%;
   /* padding: 20px; */
+  margin-top: 30px;
+  margin-left: 25px;
   font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
@@ -11,8 +13,8 @@
   width: 100%;
   max-width: 1200px;
   display: flex;
-  gap: 10px;
-  margin: 0 auto;
+  gap: 8px;
+  margin: 85px auto 0;
 }
 
 .scheduled-visits-main-content {
@@ -29,7 +31,7 @@
   flex-direction: column;
   align-items: stretch;
   line-height: normal;
-  width: 38%;
+  width: 33%;
   margin-left: 18px;
 }
 

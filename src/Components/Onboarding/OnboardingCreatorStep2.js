@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OnboardingCreatorStep2.css';
 
-const OnboardingCreatorStep2 = ({ onNavigate }) => {
+const OnboardingCreatorStep2 = ({accountType, onNavigate }) => {
   const [trainersList] = useState([
     {
       id: 1,
@@ -34,12 +34,6 @@ const OnboardingCreatorStep2 = ({ onNavigate }) => {
     }
   };
 
-  // const handleToggleToTrainer = () => {
-  //   if (onNavigate) {
-  //     onNavigate('toggleToTrainer');
-  //   }
-  // };
-
   const handleAssignTrainer = (trainerName) => {
     setAssignmentMessage(`Property successfully assigned to ${trainerName}`);
     setTimeout(() => {
@@ -48,26 +42,25 @@ const OnboardingCreatorStep2 = ({ onNavigate }) => {
   };
 
   return (
-    <div className="onboarding-creator-step2">
-
+    <div className="OnboardingCreatorStep2-container">
       {/* Main Content */}
-      <div className="main-content">
-        <div className="content-container">
-          <div className="content-columns">
-            <div className="left-column">
-              <div className="left-content">
-                <div className="status-pill">
-                  <div className="pill-dot" />
-                  <div className="pill-text">
+      <div className="OnboardingCreatorStep2-mainContent">
+        <div className="OnboardingCreatorStep2-contentContainer">
+          <div className="OnboardingCreatorStep2-columns">
+            <div className="OnboardingCreatorStep2-leftColumn">
+              <div className="OnboardingCreatorStep2-leftContent">
+                <div className="OnboardingCreatorStep2-statusPill">
+                  <div className="OnboardingCreatorStep2-pillDot" />
+                  <div className="OnboardingCreatorStep2-pillText">
                     Creator Onboarding
                   </div>
                 </div>
-                <div className="content-section">
-                  <div className="main-title">
+                <div className="OnboardingCreatorStep2-contentSection">
+                  <div className="OnboardingCreatorStep2-mainTitle">
                     Become a creator by following a few steps
                   </div>
-                  <div className="description-section">
-                    <div className="description-text">
+                  <div className="OnboardingCreatorStep2-descriptionSection">
+                    <div className="OnboardingCreatorStep2-descriptionText">
                       As a creator, you would be able to list properties and assign them to trainers.
                     </div>
                   </div>
@@ -75,47 +68,47 @@ const OnboardingCreatorStep2 = ({ onNavigate }) => {
               </div>
             </div>
 
-            <div className="onboarding-right-content">
-              <div className="onboarding-step-container">
-                <div className="onboarding-step-number">
+            <div className="OnboardingCreatorStep2-rightColumn">
+              <div className="OnboardingCreatorStep2-rightContent">
+                <div className="OnboardingCreatorStep2-stepNumber">
                   2
                 </div>
-                <div className="onboarding-step-content">
-                  <div className="onboarding-step-title">
+                <div className="OnboardingCreatorStep2-stepContent">
+                  <div className="OnboardingCreatorStep2-stepTitle">
                     Assign to Trainers
                   </div>
-                  <div className="onboarding-step-description">
+                  <div className="OnboardingCreatorStep2-stepDescription">
                     From a wide database of trainers in our system, select and assign a trainer to your property.
                   </div>
 
                   {/* List of Trainers */}
-                  <div className="trainers-section">
-                    <div className="trainers-title">
+                  <div className="OnboardingCreatorStep2-trainersSection">
+                    <div className="OnboardingCreatorStep2-trainersTitle">
                       List of Trainers
                     </div>
 
                     {assignmentMessage && (
-                      <div className="assignment-message">
+                      <div className="OnboardingCreatorStep2-assignmentMessage">
                         {assignmentMessage}
                       </div>
                     )}
 
-                    <div className="trainers-list">
+                    <div className="OnboardingCreatorStep2-trainersList">
                       {trainersList.map((trainer) => (
-                        <div key={trainer.id} className="trainer-item">
-                          <div className="trainer-info">
+                        <div key={trainer.id} className="OnboardingCreatorStep2-trainerItem">
+                          <div className="OnboardingCreatorStep2-trainerInfo">
                             <img
                               src={trainer.image}
                               alt={trainer.name}
-                              className="trainer-image"
+                              className="OnboardingCreatorStep2-trainerImage"
                             />
-                            <span className="trainer-name">
+                            <span className="OnboardingCreatorStep2-trainerName">
                               {trainer.name}
                             </span>
                           </div>
                           <button
                             onClick={() => handleAssignTrainer(trainer.name)}
-                            className="assign-button"
+                            className="OnboardingCreatorStep2-assignButton"
                           >
                             Assign
                           </button>
@@ -129,17 +122,17 @@ const OnboardingCreatorStep2 = ({ onNavigate }) => {
           </div>
 
           {/* Bottom Progress and Navigation */}
-          <div className="bottom-section">
-            <div className="progress-container">
-              <div className="progress-bar">
-                <div className="progress-fill" />
+          <div className="OnboardingCreatorStep2-bottomSection">
+            <div className="OnboardingCreatorStep2-progressContainer">
+              <div className="OnboardingCreatorStep2-progressBar">
+                <div className="OnboardingCreatorStep2-progressFill" />
               </div>
             </div>
-            <div className="navigation-buttons">
-              <button className="back-button" onClick={handleBackClick}>
+            <div className="OnboardingCreatorStep2-navigationButtons">
+              <button className="OnboardingCreatorStep2-backButton" onClick={handleBackClick}>
                 Back
               </button>
-              <button className="next-button" onClick={handleNextClick}>
+              <button className="OnboardingCreatorStep2-nextButton" onClick={handleNextClick}>
                 Next
               </button>
             </div>

@@ -1,10 +1,11 @@
 /* PropertyDetailsAfterAcceptance Module CSS */
 .propertiesdetailsafteracceptance-container {
   background-color: #FFF;
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100%;
-  margin-top: -30px;
-  margin-left: -30px;
+  /* margin-top: -30px; */
+  /* margin-left: 20px; */
+  margin-top: 85px;
   min-height: calc(100vh - 140px);
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);

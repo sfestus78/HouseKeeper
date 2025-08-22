@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './OnboardingCreator.css';
 
-const OnboardingCreator = ({ onNavigate }) => {
+const OnboardingCreator = ({accountType, onNavigate }) => {
   const [showPropertyForm, setShowPropertyForm] = useState(false);
   const [isEditingProperty, setIsEditingProperty] = useState(false);
   const [propertyData, setPropertyData] = useState({

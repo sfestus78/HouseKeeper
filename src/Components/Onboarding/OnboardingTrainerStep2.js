@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import './OnboardingTrainerStep2.css';
 
-const OnboardingTrainerStep2 = ({ onNavigate }) => {
+const OnboardingTrainerStep2 = ({accountType, onNavigate }) => {
   const [propertyStatus, setPropertyStatus] = useState(null);
 
+
+   const handleComplete = () => {
+    onNavigate('finish', 'step2')
+  }
+
   const handleBackClick = () => {
-    if (onNavigate) {
       onNavigate('onboardingTrainer');
-    }
   };
+
+ 
 
   const handleAcceptClick = () => {
     setPropertyStatus('accepted');
@@ -30,16 +35,16 @@ const OnboardingTrainerStep2 = ({ onNavigate }) => {
     }
   };
 
-  const handleToggleToCreator = () => {
-    if (onNavigate) {
-      onNavigate('toggleToCreator');
-    }
-  };
+  // const handleToggleToCreator = () => {
+  //   if (onNavigate) {
+  //     onNavigate('toggleToCreator');
+  //   }
+  // };
 
   return (
     <div className="trainer-step2-container">
       {/* Header Navigation */}
-      <div className="trainer-step2-header-navigation">
+      {/* <div className="trainer-step2-header-navigation">
         <div className="trainer-step2-header">
           <div className="trainer-step2-header-container">
             <div className="trainer-step2-logo-section">
@@ -73,7 +78,7 @@ const OnboardingTrainerStep2 = ({ onNavigate }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Content */}
       <div className="trainer-step2-main-content">
@@ -209,7 +214,7 @@ const OnboardingTrainerStep2 = ({ onNavigate }) => {
             </div>
             <div
               className="trainer-step2-next-button"
-              onClick={handleNextClick}
+              onClick={handleComplete}
             >
               <div className="trainer-step2-button-base">
                 <div className="trainer-step2-button-text">Finish</div>

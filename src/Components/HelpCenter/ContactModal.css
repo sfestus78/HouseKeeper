@@ -1,0 +1,350 @@
+/* Contact Modal Styles */
+.helpcenter-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.helpcenter-modal-container {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.helpcenter-contact-modal {
+  width: 100%;
+  max-width: 800px;
+}
+
+.helpcenter-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.helpcenter-modal-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(43, 45, 66, 1);
+  margin: 0;
+}
+
+.helpcenter-modal-close {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.helpcenter-modal-close:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.helpcenter-contact-content {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  padding: 24px 32px 32px;
+}
+
+/* Form Section */
+.helpcenter-contact-form-section {
+  flex: 1;
+}
+
+.helpcenter-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.helpcenter-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.helpcenter-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.helpcenter-form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(43, 45, 66, 1);
+}
+
+.helpcenter-form-input,
+.helpcenter-form-textarea {
+  padding: 12px 16px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  background-color: white;
+  transition: all 0.2s ease;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.helpcenter-form-input:focus,
+.helpcenter-form-textarea:focus {
+  outline: none;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.helpcenter-form-input::placeholder,
+.helpcenter-form-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.helpcenter-form-input.helpcenter-error,
+.helpcenter-form-textarea.helpcenter-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.helpcenter-phone-input {
+  display: flex;
+  gap: 8px;
+}
+
+.helpcenter-country-select {
+  padding: 12px 16px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  background-color: white;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.helpcenter-mobile-input {
+  flex: 1;
+}
+
+.helpcenter-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.helpcenter-error-message {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 4px;
+}
+
+.helpcenter-submit-button {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+}
+
+.helpcenter-submit-button:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.helpcenter-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Contact Info Section */
+.helpcenter-contact-info-section {
+  background-color: #f9fafb;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.helpcenter-contact-info-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(43, 45, 66, 1);
+  margin-bottom: 20px;
+}
+
+.helpcenter-contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.helpcenter-contact-info-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.helpcenter-contact-info-icon {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(239, 68, 68, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.helpcenter-contact-info-content {
+  flex: 1;
+}
+
+.helpcenter-contact-info-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(43, 45, 66, 1);
+  margin-bottom: 4px;
+}
+
+.helpcenter-contact-info-content p {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.helpcenter-contact-info-content a {
+  font-size: 13px;
+  color: #ef4444;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.helpcenter-contact-info-content a:hover {
+  text-decoration: underline;
+}
+
+.helpcenter-contact-info-content address {
+  font-size: 13px;
+  color: #6b7280;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .helpcenter-modal-overlay {
+    padding: 16px;
+  }
+
+  .helpcenter-contact-modal {
+    max-width: 100%;
+  }
+
+  .helpcenter-modal-header {
+    padding: 20px 24px 16px;
+  }
+
+  .helpcenter-modal-title {
+    font-size: 20px;
+  }
+
+  .helpcenter-contact-content {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px 24px 24px;
+  }
+
+  .helpcenter-contact-info-section {
+    order: -1;
+    padding: 20px;
+  }
+
+  .helpcenter-form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .helpcenter-phone-input {
+    flex-direction: column;
+  }
+
+  .helpcenter-country-select {
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .helpcenter-modal-overlay {
+    padding: 12px;
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .helpcenter-modal-header {
+    padding: 16px 20px 12px;
+  }
+
+  .helpcenter-modal-title {
+    font-size: 18px;
+  }
+
+  .helpcenter-contact-content {
+    padding: 16px 20px 20px;
+    gap: 20px;
+  }
+
+  .helpcenter-contact-info-section {
+    padding: 16px;
+  }
+
+  .helpcenter-contact-info-title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .helpcenter-contact-info-list {
+    gap: 16px;
+  }
+
+  .helpcenter-contact-info-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .helpcenter-submit-button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}

@@ -6,12 +6,12 @@ import TrainBotStep2 from './TrainBotStep2';
 import TrainBotStep3 from './TrainBotStep3';
 import TrainBotStep4 from './TrainBotStep4';
 
-const TrainBot = () => {
-  const [selectedProperty, setSelectedProperty] = useState('');
-  const [selectedFromGrid, setSelectedFromGrid] = useState(null);
+const TrainBot = ({ selectedPropertyForBot, onClose, onBack, onNavigate }) => {
+  const [selectedProperty, setSelectedProperty] = useState(selectedPropertyForBot?.name || '');
+  const [selectedFromGrid, setSelectedFromGrid] = useState(selectedPropertyForBot?.id || null);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentStep, setCurrentStep] = useState('selection'); // 'selection', 'step1', 'step2', 'step3', 'step4', etc.
-  const [selectedPropertyObj, setSelectedPropertyObj] = useState(null);
+  const [currentStep, setCurrentStep] = useState(selectedPropertyForBot ? 'step1' : 'selection'); // 'selection', 'step1', 'step2', 'step3', 'step4', etc.
+  const [selectedPropertyObj, setSelectedPropertyObj] = useState(selectedPropertyForBot || null);
   const [step1Data, setStep1Data] = useState(null);
   const [step2Data, setStep2Data] = useState(null);
   const [step3Data, setStep3Data] = useState(null);

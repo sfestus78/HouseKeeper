@@ -1,19 +1,15 @@
-import React, { useEffect } from 'react'; // CHANGED: Added useEffect import
+import React, { useEffect } from 'react';
 import './WelcomeModal.css';
 import welcomeImage from '../../Assets/welcome.png'
 
 const WelcomeModal = ({ isOpen, onClose, onGetStarted, accountType = 'creator' }) => {
-  // CHANGED: Added useEffect to handle body scroll
   useEffect(() => {
     if (isOpen) {
-      // Disable scrolling on the body
       document.body.style.overflow = 'hidden';
     } else {
-      // Re-enable scrolling when modal is closed
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup function to ensure scroll is re-enabled if component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -28,7 +24,6 @@ const WelcomeModal = ({ isOpen, onClose, onGetStarted, accountType = 'creator' }
   };
 
   const handleGetStarted = () => {
-    // Call the onGetStarted prop function passed from App.js
     if (onGetStarted) {
       onGetStarted();
     }

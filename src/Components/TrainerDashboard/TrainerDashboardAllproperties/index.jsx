@@ -9,7 +9,7 @@ import RejectModal from './RejectModal';
 import { mockProperties } from '../../shared/propertiesData';
 import './TrainerDashboardAllproperties.css';
 
-const TrainerDashboardAllproperties = ({ onOpenVisitScheduler, onOpenVisitRescheduler, onOpenInspectionChecklist }) => {
+const TrainerDashboardAllproperties = ({ onOpenVisitScheduler, onOpenVisitRescheduler, onOpenInspectionChecklist, onStartBotTraining, onNavigate }) => {
   const [selectedProperty, setSelectedProperty] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [showAcceptModal, setShowAcceptModal] = useState(false);
@@ -141,9 +141,13 @@ const TrainerDashboardAllproperties = ({ onOpenVisitScheduler, onOpenVisitResche
     // Implement visit cancellation logic
   };
 
-  const handleStartBotTraining = (propertyId) => {
-    console.log('Start bot training for property:', propertyId);
-    // Implement bot training logic
+  const handleStartBotTraining = (property) => {
+    console.log('Start bot training for property:', property);
+    if (onStartBotTraining) {
+      onStartBotTraining(property);
+    } else {
+      console.log('onStartBotTraining not provided');
+    }
   };
 
   if (selectedProperty) {
