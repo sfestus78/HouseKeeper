@@ -30,11 +30,13 @@ import TrainerListSimple from './Components/TrainerListSimple';
 import { AllPropertiesPage } from './Components/AllProperties';
 import AssignPropertyPage from './Components/AssignProperty/AssignPropertyPage';
 import { TrainersPage } from './Components/Trainers';
+import SettingsPageDemo from './Components/SettingsPageDemo';
 
 import './Components/Authshared/generalstyles.css';
 import TrainerDashboard from './Components/TrainerDashboard/TrainerDashboard';
 import TrainerNotificationDropdownDemo from './Components/TrainerDashboard/TrainerNotificationDropdownDemo';
 import Notifications from './Components/Notifications/Notifications';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 // Demo Navigation Component
 const DemoNavigation = ({ currentPage, onNavigate, pages, onShowWelcome, onShowCongratulations }) => ( 
@@ -74,6 +76,8 @@ const DemoNavigation = ({ currentPage, onNavigate, pages, onShowWelcome, onShowC
            page === 'trainers' ? 'Trainers Page' :
            page === 'assignProperty' ? 'Assign Property' :
            page === 'trainerDashboard' ? 'Trainer Dashboard' :
+           page === 'settings' ? 'Settings' :
+           page === 'errorPage' ? 'Error Page' :
            page.charAt(0).toUpperCase() + page.slice(1)}
         </button>
       ))}
@@ -148,6 +152,12 @@ const App = () => {
       const targetPage = getDashboardForAccountType();
       setCurrentPage(targetPage);
     } else {
+      // Auto-set accountType when navigating to specific dashboards
+      if (page === 'trainerDashboard') {
+        setAccountType('Trainer');
+      } else if (page === 'creatorDashboard') {
+        setAccountType('Creator');
+      }
       setCurrentPage(page);
     }
   };
@@ -358,6 +368,12 @@ const App = () => {
         onStartBotTraining={() => console.log('Starting bot training')}
       />
     ),
+    settings: (
+      <SettingsPageDemo />
+    ),
+    errorPage: (
+      <ErrorPage onNavigate={navigateToPage} />
+    ),
     // ... other commented out components
   };
 
@@ -381,7 +397,7 @@ const App = () => {
         /> */}
 
         {/* Current Page Content */}
-        {Authpages[currentPage]}
+        {Authpages[currentPage] || <ErrorPage onNavigate={navigateToPage} message={`Unknown page: ${currentPage}`} />}
 
         {/* Welcome Modal */}
         <WelcomeModal

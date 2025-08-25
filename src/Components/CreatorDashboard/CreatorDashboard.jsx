@@ -17,7 +17,8 @@ import { AllPropertiesPage } from '../AllProperties';
 import { TrainersContent } from '../Trainers';
 import { AssignPropertyContent } from '../AssignProperty';
 import LOGO from '../../Assets/Logo/LOGO2.png'
-import { HelpCenter } from '../HelpCenter';
+import { HelpCenter, ContactPage, FeedbackPage } from '../HelpCenter';
+import { IntegratedSettings } from '../Settings';
 import './CreatorDashboard.css';
 
 // Mock data
@@ -233,9 +234,26 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
       case 'allProperties':
         setActiveSection('properties');
         break;
+      case 'helpCenterContact':
+        setActiveSection('helpCenterContact');
+        break;
+      case 'helpCenterFeedback':
+        setActiveSection('helpCenterFeedback');
+        break;
+      case 'errorPage':
+        onNavigate && onNavigate('errorPage');
+        break;
       default:
-        setActiveSection('overview');
+        // Unknown section - redirect to error page
+        onNavigate && onNavigate('errorPage');
+        break;
     }
+  };
+
+  // Error handling function for components
+  const handleError = (error) => {
+    console.error('CreatorDashboard Error:', error);
+    onNavigate && onNavigate('errorPage');
   };
 
   return (
@@ -290,6 +308,13 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
             </div>
           </div>
           <button className="creatordashboard-logout-btn">Log out</button>
+          <button
+            onClick={() => onNavigate && onNavigate('errorPage')}
+            className="creatordashboard-logout-btn"
+            style={{ marginTop: '8px', backgroundColor: '#dc2626' }}
+          >
+            Test Error Page
+          </button>
         </div>
       </div>
 
@@ -381,6 +406,12 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
           <AssignPropertyContent />
         ) : activeSection === 'help' ? (
           <HelpCenter onNavigate={handleNavigate} />
+        ) : activeSection === 'helpCenterContact' ? (
+          <ContactPage onBack={() => setActiveSection('help')} />
+        ) : activeSection === 'helpCenterFeedback' ? (
+          <FeedbackPage onBack={() => setActiveSection('help')} />
+        ) : activeSection === 'settings' ? (
+          <IntegratedSettings accountType={accountType} onAccountTypeChange={onAccountTypeToggle} />
         ) : (
           <div className="creatordashboard-grid">
             {/* Left Column */}

@@ -46,11 +46,21 @@ const HelpCenter = ({ onNavigate }) => {
   };
 
   const handleContactClick = () => {
-    setShowContactModal(true);
+    if (onNavigate) {
+      onNavigate('helpCenterContact');
+    } else {
+      // Fallback to modal if onNavigate is not provided (backwards compatibility)
+      setShowContactModal(true);
+    }
   };
 
   const handleFeedbackClick = () => {
-    setShowFeedbackModal(true);
+    if (onNavigate) {
+      onNavigate('helpCenterFeedback');
+    } else {
+      // Fallback to modal if onNavigate is not provided (backwards compatibility)
+      setShowFeedbackModal(true);
+    }
   };
 
   return (
@@ -246,15 +256,15 @@ const HelpCenter = ({ onNavigate }) => {
         </div>
       </div>
 
-      {/* Modals */}
-      {showContactModal && (
-        <ContactModal 
+      {/* Modals - Only show when onNavigate is not provided (backwards compatibility) */}
+      {!onNavigate && showContactModal && (
+        <ContactModal
           onClose={() => setShowContactModal(false)}
         />
       )}
-      
-      {showFeedbackModal && (
-        <FeedbackModal 
+
+      {!onNavigate && showFeedbackModal && (
+        <FeedbackModal
           onClose={() => setShowFeedbackModal(false)}
         />
       )}

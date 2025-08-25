@@ -1,0 +1,597 @@
+/* Page Container Styles */
+.helpcenter-page-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 32px 40px;
+  background: rgba(255, 255, 255, 1);
+  overflow-y: auto;
+  min-height: 100vh;
+  margin-top: 50px;
+}
+
+/* Page Header */
+.helpcenter-page-header {
+  margin-bottom: 40px;
+}
+
+.helpcenter-back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  color: rgba(107, 114, 126, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
+  margin-bottom: 24px;
+  padding: 8px 0;
+  transition: all 0.2s ease;
+}
+
+.helpcenter-back-button:hover {
+  color: rgba(52, 64, 84, 1);
+}
+
+.helpcenter-page-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: rgba(52, 64, 84, 1);
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  margin: 0 0 8px 0;
+}
+
+.helpcenter-page-subtitle {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(107, 114, 126, 1);
+  letter-spacing: -0.2px;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Contact Page Specific Styles */
+.helpcenter-contact-content {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 60px;
+  max-width: 1200px;
+}
+
+.helpcenter-contact-form-section {
+  min-width: 0;
+}
+
+.helpcenter-contact-form {
+  background: #F0EFF7;
+  border: 1px solid rgba(229, 231, 235, 1);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.helpcenter-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 7px;
+}
+
+.helpcenter-form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 7px;
+}
+
+.helpcenter-form-label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(52, 64, 84, 1);
+  margin-bottom: 8px;
+}
+
+.helpcenter-form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(209, 213, 219, 1);
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 15px;
+  color: rgba(52, 64, 84, 1);
+  background: rgba(255, 255, 255, 1);
+  transition: all 0.2s ease;
+}
+
+.helpcenter-form-input:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.helpcenter-form-input::placeholder {
+  color: rgba(156, 163, 175, 1);
+  font-weight: 400;
+}
+
+.helpcenter-form-input.helpcenter-error {
+  border-color: rgba(239, 68, 68, 1);
+  background: rgba(254, 242, 242, 1);
+}
+
+.helpcenter-form-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(209, 213, 219, 1);
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 15px;
+  color: rgba(52, 64, 84, 1);
+  background: rgba(255, 255, 255, 1);
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.helpcenter-form-textarea:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.helpcenter-form-textarea::placeholder {
+  color: rgba(156, 163, 175, 1);
+  font-weight: 400;
+}
+
+.helpcenter-mobile-input-group {
+  display: flex;
+  gap: 12px;
+}
+
+.helpcenter-country-select {
+  width: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(209, 213, 219, 1);
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 15px;
+  color: rgba(52, 64, 84, 1);
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.helpcenter-mobile-input {
+  flex: 1;
+}
+
+.helpcenter-submit-button {
+  width: 100%;
+  padding: 14px 24px;
+  background: rgba(55, 65, 81, 1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.helpcenter-submit-button:hover:not(:disabled) {
+  background: rgba(31, 41, 55, 1);
+}
+
+.helpcenter-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.helpcenter-contact-info-section {
+  background:#fff;
+  padding: 32px;
+  height: fit-content;
+}
+
+.helpcenter-info-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(52, 64, 84, 1);
+  margin: 0 0 8px 0;
+}
+
+.helpcenter-info-description {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(107, 114, 126, 1);
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+}
+
+.helpcenter-contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.helpcenter-contact-method {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.helpcenter-method-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(59, 130, 246, 1);
+  flex-shrink: 0;
+}
+
+.helpcenter-method-content {
+  flex: 1;
+}
+
+.helpcenter-method-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(52, 64, 84, 1);
+  margin: 0 0 4px 0;
+}
+
+.helpcenter-method-description {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(107, 114, 126, 1);
+  line-height: 1.4;
+  margin: 0 0 8px 0;
+}
+
+.helpcenter-method-link {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(52, 64, 84, 1);
+  text-decoration: none;
+}
+
+.helpcenter-method-link:hover {
+  text-decoration: underline;
+}
+
+/* Feedback Page Specific Styles */
+.helpcenter-feedback-content {
+  max-width: 800px;
+}
+
+.helpcenter-feedback-form {
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(229, 231, 235, 1);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.helpcenter-feedback-section {
+  margin-bottom: 32px;
+}
+
+.helpcenter-section-title {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(52, 64, 84, 1);
+  margin: 0 0 16px 0;
+}
+
+.helpcenter-rating-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.helpcenter-rating-stars {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.helpcenter-star-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: rgba(209, 213, 219, 1);
+}
+
+.helpcenter-star-button:hover {
+  color: rgba(251, 191, 36, 1);
+}
+
+.helpcenter-star-button.helpcenter-star-filled {
+  color: rgba(251, 191, 36, 1);
+}
+
+.helpcenter-feedback-types {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.helpcenter-feedback-type-button {
+  padding: 10px 16px;
+  border: 1px solid rgba(209, 213, 219, 1);
+  background: rgba(255, 255, 255, 1);
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(107, 114, 126, 1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.helpcenter-feedback-type-button:hover {
+  border-color: rgba(59, 130, 246, 1);
+  background: rgba(239, 246, 255, 1);
+  color: rgba(59, 130, 246, 1);
+}
+
+.helpcenter-feedback-type-button.helpcenter-feedback-type-selected {
+  border-color: rgba(59, 130, 246, 1);
+  background: rgba(239, 246, 255, 1);
+  color: rgba(59, 130, 246, 1);
+}
+
+.helpcenter-message-container {
+  position: relative;
+}
+
+.helpcenter-feedback-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(209, 213, 219, 1);
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 15px;
+  color: rgba(52, 64, 84, 1);
+  background: rgba(255, 255, 255, 1);
+  resize: vertical;
+  transition: all 0.2s ease;
+}
+
+.helpcenter-feedback-textarea:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 1);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.helpcenter-feedback-textarea.helpcenter-error {
+  border-color: rgba(239, 68, 68, 1);
+  background: rgba(254, 242, 242, 1);
+}
+
+.helpcenter-character-count {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 12px;
+  color: rgba(107, 114, 126, 1);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.helpcenter-submit-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.helpcenter-feedback-submit-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 24px;
+  background: rgba(55, 65, 81, 1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.helpcenter-feedback-submit-button:hover:not(:disabled) {
+  background: rgba(31, 41, 55, 1);
+}
+
+.helpcenter-feedback-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.helpcenter-submit-note {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  color: rgba(107, 114, 126, 1);
+  margin: 0;
+}
+
+/* Error Message */
+.helpcenter-error-message {
+  display: block;
+  color: rgba(239, 68, 68, 1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .helpcenter-page-container {
+    padding: 24px 32px;
+  }
+  
+  .helpcenter-contact-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .helpcenter-page-container {
+    padding: 20px 24px;
+  }
+  
+  .helpcenter-page-title {
+    font-size: 28px;
+  }
+  
+  .helpcenter-contact-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .helpcenter-contact-info-section {
+    order: -1;
+    padding: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .helpcenter-page-container {
+    padding: 16px 20px;
+  }
+  
+  .helpcenter-page-title {
+    font-size: 24px;
+  }
+  
+  .helpcenter-contact-form,
+  .helpcenter-feedback-form {
+    padding: 24px;
+  }
+  
+  .helpcenter-form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .helpcenter-feedback-types {
+    flex-direction: column;
+  }
+  
+  .helpcenter-feedback-type-button {
+    justify-content: center;
+  }
+  
+  .helpcenter-contact-methods {
+    gap: 20px;
+  }
+  
+  .helpcenter-contact-method {
+    gap: 12px;
+  }
+  
+  .helpcenter-mobile-input-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .helpcenter-country-select {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .helpcenter-page-container {
+    padding: 12px 16px;
+  }
+  
+  .helpcenter-page-title {
+    font-size: 22px;
+  }
+  
+  .helpcenter-contact-form,
+  .helpcenter-feedback-form {
+    padding: 20px;
+  }
+  
+  .helpcenter-contact-info-section {
+    padding: 20px;
+  }
+  
+  .helpcenter-rating-stars {
+    justify-content: center;
+  }
+  
+  .helpcenter-star-button {
+    padding: 8px;
+  }
+}
+
+/* Focus and accessibility improvements */
+.helpcenter-back-button:focus,
+.helpcenter-form-input:focus,
+.helpcenter-form-textarea:focus,
+.helpcenter-country-select:focus,
+.helpcenter-submit-button:focus,
+.helpcenter-feedback-submit-button:focus,
+.helpcenter-feedback-type-button:focus,
+.helpcenter-star-button:focus {
+  outline: 2px solid rgba(59, 130, 246, 1);
+  outline-offset: 2px;
+}
+
+/* Loading states */
+.helpcenter-submit-button:disabled,
+.helpcenter-feedback-submit-button:disabled {
+  position: relative;
+  color: transparent;
+}
+
+.helpcenter-submit-button:disabled::after,
+.helpcenter-feedback-submit-button:disabled::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid transparent;
+  border-top-color: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}

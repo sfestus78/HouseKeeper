@@ -2,7 +2,7 @@
 
 .property-details-wrapper {
   min-height: 100vh;
-  background-color: #f9fafb;
+  background-color: #fff;
   /* margin-left: -30px;
   margin-top: -30px; */
   margin: 85px auto 0;
@@ -11,8 +11,8 @@
 /* Header Styles */
 .property-header {
   /* background-color: white; */
-  border-bottom: 1px solid #e5e7eb;
-  padding: 16px 24px;
+  border-bottom: none;
+  padding: 10px 18px;
 }
 
 .property-header-content {

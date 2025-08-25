@@ -143,29 +143,29 @@
 .OnboardingCreatorStep2-stepDescription {
   font-size: 16px;
   color: #475467;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 /* Trainers List */
 .OnboardingCreatorStep2-trainersSection {
   background-color: #FFF;
   border-radius: 12px;
-  padding: 24px;
+  padding: 12px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
 }
 
 .OnboardingCreatorStep2-trainersTitle {
   font-size: 18px;
   font-weight: 600;
   color: #2B2D42;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .OnboardingCreatorStep2-assignmentMessage {
-  margin-bottom: 16px;
-  padding: 10px 12px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
   background-color: #dcfce7;
   border: 1px solid #bbf7d0;
   border-radius: 8px;
@@ -229,8 +229,8 @@
 
 /* Bottom Section */
 .OnboardingCreatorStep2-bottomSection {
-  margin-top: auto;
-  padding-top: 40px;
+  margin-top: 0;
+  /* padding-top: 40px; */
 }
 
 .OnboardingCreatorStep2-progressContainer {

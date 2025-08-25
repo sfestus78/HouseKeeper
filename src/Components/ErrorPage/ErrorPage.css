@@ -1,0 +1,222 @@
+/* Error Page Container */
+.404page-main-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #f8f9fa;
+}
+
+.404page-content-wrapper {
+  border-radius: 24px;
+  background-color: rgba(240, 239, 247, 1);
+  max-width: 615px;
+  width: 100%;
+  overflow: hidden;
+  padding: 24px 24px 48px;
+}
+
+/* Image Container */
+.404page-image-container {
+  border-radius: 14px;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 63px 80px;
+  margin-bottom: 32px;
+}
+
+.404page-error-image {
+  aspect-ratio: 1.41;
+  object-fit: contain;
+  object-position: center;
+  width: 286px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Text Section */
+.404page-text-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.404page-title {
+  color: rgba(43, 45, 66, 1);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.92px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.404page-description-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: start;
+  font-size: 24px;
+  color: rgba(115, 123, 125, 1);
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: -0.96px;
+  line-height: 38px;
+  justify-content: start;
+}
+
+.404page-description {
+  width: 100%;
+}
+
+/* Divider */
+.404page-divider {
+  height: 2px;
+  border: 2px dashed rgba(221, 221, 225, 1);
+  margin-bottom: 32px;
+}
+
+/* Actions Section */
+.404page-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.404page-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 180px;
+  font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.404page-button-primary {
+  background-color: rgba(43, 45, 66, 1);
+  color: white;
+}
+
+.404page-button-primary:hover {
+  background-color: rgba(33, 35, 56, 1);
+  transform: translateY(-1px);
+}
+
+.404page-button-secondary {
+  background-color: white;
+  color: rgba(43, 45, 66, 1);
+  border: 2px solid rgba(221, 221, 225, 1);
+}
+
+.404page-button-secondary:hover {
+  background-color: rgba(240, 239, 247, 1);
+  border-color: rgba(43, 45, 66, 1);
+  transform: translateY(-1px);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 991px) {
+  .404page-main-container {
+    padding: 20px;
+  }
+  
+  .404page-content-wrapper {
+    padding: 20px 20px 40px;
+  }
+  
+  .404page-image-container {
+    padding: 40px 20px;
+  }
+  
+  .404page-error-image {
+    width: 240px;
+  }
+  
+  .404page-title {
+    font-size: 28px;
+    letter-spacing: -1.4px;
+  }
+  
+  .404page-description-container {
+    font-size: 20px;
+    letter-spacing: -0.8px;
+    line-height: 32px;
+  }
+  
+  .404page-actions {
+    gap: 10px;
+  }
+  
+  .404page-button {
+    min-width: 160px;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .404page-main-container {
+    padding: 16px;
+  }
+  
+  .404page-content-wrapper {
+    padding: 16px 16px 32px;
+  }
+  
+  .404page-image-container {
+    padding: 32px 16px;
+  }
+  
+  .404page-error-image {
+    width: 200px;
+  }
+  
+  .404page-title {
+    font-size: 24px;
+    letter-spacing: -1.2px;
+  }
+  
+  .404page-description-container {
+    font-size: 18px;
+    letter-spacing: -0.7px;
+    line-height: 28px;
+  }
+  
+  .404page-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .404page-button {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .404page-title {
+    font-size: 20px;
+    letter-spacing: -1px;
+  }
+  
+  .404page-description-container {
+    font-size: 16px;
+    letter-spacing: -0.6px;
+    line-height: 24px;
+  }
+  
+  .404page-error-image {
+    width: 180px;
+  }
+}

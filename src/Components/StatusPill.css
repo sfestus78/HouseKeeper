@@ -1,0 +1,25 @@
+.status-pill {
+  border-radius: 16px;
+  background-color: #FFF;
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #475467;
+  font-weight: 400;
+  padding: 6px 12px;
+  margin-bottom: 40px;
+}
+
+.status-pill-dot {
+  background-color: #EF233C;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.status-pill-text {
+  color: #475467;
+}
+

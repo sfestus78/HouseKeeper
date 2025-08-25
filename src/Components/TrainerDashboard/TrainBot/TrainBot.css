@@ -6,9 +6,9 @@
 
 /* Main Container */
 .trainbot-container {
-  max-width: 1124px;
-  width: 100%;
-  margin: 100px 0 auto 20px;
+  width: 980px;
+  /* width: 100%; */
+  margin: 100px 0 20px 40px;
   font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
 }
 

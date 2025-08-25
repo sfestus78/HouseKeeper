@@ -31,7 +31,8 @@ import { VisitScheduler, VisitRescheduler, VisitInspectionChecklist } from './Vi
 import { TrainerVisitLogs } from './VisitLogs';
 import TrainerUserProfile from './TrainerUserProfile/TrainerUserProfile';
 import TrainerNotificationDropdown from './TrainerNotificationDropdown';
-import { HelpCenter } from '../HelpCenter';
+import { HelpCenter, ContactPage, FeedbackPage } from '../HelpCenter';
+import { IntegratedSettings } from '../Settings';
 
 import './TrainerDashboard.css';
 
@@ -509,23 +510,13 @@ const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccou
       case 'userProfile':
         return <TrainerUserProfile />;
       case 'settings':
-        return (
-          <div className="trainerDashboardnew-settings-content">
-            <h2>Settings</h2>
-            <div className="trainerDashboardnew-settings-grid">
-              <div className="trainerDashboardnew-settings-card">
-                <h3>Profile Settings</h3>
-                <p>Update your personal information</p>
-              </div>
-              <div className="trainerDashboardnew-settings-card">
-                <h3>Notification Preferences</h3>
-                <p>Manage your notification settings</p>
-              </div>
-            </div>
-          </div>
-        );
+        return <IntegratedSettings accountType={accountType} onAccountTypeChange={onAccountTypeToggle} />;
       case 'help':
-        return <HelpCenter onNavigate={onNavigate} />;
+        return <HelpCenter onNavigate={handleNavClick} />;
+      case 'helpCenterContact':
+        return <ContactPage onBack={() => handleNavClick('help')} />;
+      case 'helpCenterFeedback':
+        return <FeedbackPage onBack={() => handleNavClick('help')} />;
       default:
         return renderOverview();
     }
@@ -542,8 +533,20 @@ const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccou
     setShowTrainBot(false);
     setTrainBotProperty(null);
 
+    // Handle special navigation cases
+    if (menuId === 'errorPage') {
+      onNavigate && onNavigate('errorPage');
+      return;
+    }
+
     setActiveMenu(menuId);
     setIsSidebarOpen(false); // Close mobile menu after selection
+  };
+
+  // Error handling function for components
+  const handleError = (error) => {
+    console.error('TrainerDashboard Error:', error);
+    onNavigate && onNavigate('errorPage');
   };
 
   return (
@@ -612,6 +615,13 @@ const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccou
                 </div>
                 <div className="trainerDashboardnew-user-email">a.bridge@gmail.com</div>
                 <button className="trainerDashboardnew-logout-btn">Log out</button>
+                {/* <button
+                  onClick={() => onNavigate && onNavigate('errorPage')}
+                  className="trainerDashboardnew-logout-btn"
+                  style={{ marginTop: '8px', backgroundColor: '#dc2626' }}
+                >
+                  Test Error Page
+                </button> */}
               </div>
             </div>
           </div>
@@ -621,10 +631,12 @@ const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccou
         <div className="trainerDashboardnew-main">
           <div className="trainerDashboardnew-main-header">
             <div className="trainerDashboardnew-main-header-content">
-            <div className="trainerDashboardnew-welcome-section">
-              <h1 className="trainerDashboardnew-welcome-title">Welcome Anthony,</h1>
-              <p className="trainerDashboardnew-welcome-subtitle">Here is your dashboard</p>
-            </div>
+            {activeMenu === 'overview' && (
+              <div className="trainerDashboardnew-welcome-section">
+                <h1 className="trainerDashboardnew-welcome-title">Welcome Anthony,</h1>
+                <p className="trainerDashboardnew-welcome-subtitle">Here is your dashboard</p>
+              </div>
+            )}
 
             <div className="trainerDashboardnew-header-controls">
               <div className="trainerDashboardnew-search-and-notifications">

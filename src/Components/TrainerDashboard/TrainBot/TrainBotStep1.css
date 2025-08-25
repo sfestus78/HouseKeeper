@@ -9,13 +9,13 @@
   padding-bottom: 80px;
   /* margin-left: -30px;
   margin-top: -30px; */
-  margin: 85px auto 0;
+  margin: 85px auto 0 10px;
   overflow-x: hidden;
 }
 
 .trainbotstep1-layout {
   display: flex;
-  gap: 100px;
+  gap: 80px;
   width: 100%;
   padding: 20px;
   align-items: stretch;
