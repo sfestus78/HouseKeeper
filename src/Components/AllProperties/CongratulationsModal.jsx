@@ -3,13 +3,25 @@ import { CheckCircle, X } from 'lucide-react';
 import './CongratulationsModal.css';
 
 const CongratulationsModal = ({ isOpen, onClose, trainer, property }) => {
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   // Auto-close modal after 5 seconds
   useEffect(() => {
     if (isOpen) {
       const timer = setTimeout(() => {
         onClose();
       }, 5000);
-      
+
       return () => clearTimeout(timer);
     }
   }, [isOpen, onClose]);

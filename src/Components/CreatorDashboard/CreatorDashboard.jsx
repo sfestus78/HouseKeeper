@@ -308,13 +308,6 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
             </div>
           </div>
           <button className="creatordashboard-logout-btn">Log out</button>
-          <button
-            onClick={() => onNavigate && onNavigate('errorPage')}
-            className="creatordashboard-logout-btn"
-            style={{ marginTop: '8px', backgroundColor: '#dc2626' }}
-          >
-            Test Error Page
-          </button>
         </div>
       </div>
 
@@ -323,7 +316,7 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
         {/* Header - Always show for all sections */}
         <header className="creatordashboard-header">
             <div className="creatordashboard-header-content">
-              {/* Left side with mobile menu and welcome */}
+              {/* Left side with mobile menu, logo and welcome */}
               <div style={{ display: 'flex', alignItems: 'center', flex: 1 }}>
                 <button
                   onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -331,10 +324,16 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
                 >
                   {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
-                <div className="creatordashboard-welcome-section">
-                  <h1>Welcome Jon,</h1>
-                  <p>Here is your dashboard</p>
-                </div>
+                {/* <div className="creatordashboard-logo-section">
+                  <img src={LOGO} alt="Housekeeper-logo" className="creatordashboard-header-logo-icon" />
+                  <span className="creatordashboard-header-logo-text">Housekeepers</span>
+                </div> */}
+                {activeSection === 'overview' && (
+                  <div className="creatordashboard-welcome-section">
+                    <h1>Welcome Jon,</h1>
+                    <p>Here is your dashboard</p>
+                  </div>
+                )}
               </div>
 
               {/* Right Section */}

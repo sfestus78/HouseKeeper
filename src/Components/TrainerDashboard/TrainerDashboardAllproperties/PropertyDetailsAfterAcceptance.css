@@ -3,8 +3,6 @@
   background-color: #FFF;
   overflow-x: hidden;
   width: 100%;
-  /* margin-top: -30px; */
-  /* margin-left: 20px; */
   margin-top: 85px;
   min-height: calc(100vh - 140px);
   border-radius: 12px;
@@ -13,9 +11,9 @@
 
 .propertiesdetailsafteracceptance-content {
   background-color: #FFF;
-  width: 100%;
-  max-width: 100%;
+ width: 1064px;
   margin: 0;
+  margin-left: 20px;
   padding: 24px;
   font-family: Lato, -apple-system, Roboto, Helvetica, sans-serif;
 }

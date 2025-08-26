@@ -1,0 +1,120 @@
+/* Error Modal Overlay */
+.error-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+/* Error Modal Container */
+.error-modal-container {
+  background-color: rgba(240, 239, 247, 1);
+  border-radius: 24px;
+  max-width: 615px;
+  width: 100%;
+  padding: 24px 24px 100px;
+  overflow: hidden;
+}
+
+@media (max-width: 991px) {
+  .error-modal-container {
+    padding: 24px 20px 100px;
+  }
+}
+
+/* Error Modal Content */
+.error-modal-content {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 63px 80px;
+}
+
+@media (max-width: 991px) {
+  .error-modal-content {
+    max-width: 100%;
+    padding: 63px 20px;
+  }
+}
+
+/* Error Modal Image */
+.error-modal-image {
+  aspect-ratio: 1.41;
+  object-fit: contain;
+  object-position: center;
+  width: 286px;
+  max-width: 100%;
+}
+
+/* Error Modal Text Section */
+.error-modal-text-section {
+  display: flex;
+  margin-top: 32px;
+  flex-direction: column;
+  align-items: stretch;
+  font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  .error-modal-text-section {
+    max-width: 100%;
+    margin-right: 2px;
+  }
+}
+
+/* Error Modal Title */
+.error-modal-title {
+  color: rgba(43, 45, 66, 1);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1.92px;
+  text-align: center;
+}
+
+/* Error Modal Message */
+.error-modal-message {
+  display: flex;
+  margin-top: 8px;
+  width: 100%;
+  flex-direction: column;
+  align-items: start;
+  font-size: 24px;
+  color: rgba(115, 123, 125, 1);
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: -0.96px;
+  line-height: 38px;
+  justify-content: start;
+}
+
+@media (max-width: 991px) {
+  .error-modal-message {
+    max-width: 100%;
+  }
+}
+
+/* Error Modal Divider */
+.error-modal-divider {
+  margin-top: 26px;
+  height: 2px;
+  border: 2px dashed rgba(221, 221, 225, 1);
+  flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+  .error-modal-divider {
+    max-width: 100%;
+  }
+}

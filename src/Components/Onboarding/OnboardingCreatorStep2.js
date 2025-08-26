@@ -52,7 +52,7 @@ const OnboardingCreatorStep2 = ({accountType, onNavigate }) => {
                 <div className="OnboardingCreatorStep2-statusPill">
                   <div className="OnboardingCreatorStep2-pillDot" />
                   <div className="OnboardingCreatorStep2-pillText">
-                    Creator Onboarding
+                    Creator Onboardin
                   </div>
                 </div>
                 <div className="OnboardingCreatorStep2-contentSection">

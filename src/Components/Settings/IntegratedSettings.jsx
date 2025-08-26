@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { User, Upload, Edit, Eye, EyeOff, Camera } from 'lucide-react';
 import { Input, Button } from '../Authshared/general';
 import './IntegratedSettings.css';
 
 const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) => {
-  const [activeTab, setActiveTab] = useState('profile'); // Default to notifications as required
+  const [activeTab, setActiveTab] = useState('profile');
   const [profileImage, setProfileImage] = useState(null);
   const [isEditingProfile, setIsEditingProfile] = useState(false);
-  
+  const fileInputRef = useRef(null);
+
   // Profile state
   const [profileData, setProfileData] = useState({
     firstName: 'Anthony',
@@ -30,13 +31,13 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
   const [newEmail, setNewEmail] = useState('');
   const [emailError, setEmailError] = useState('');
 
-  // Notification state with required defaults
+  // Notification state
   const [notifications, setNotifications] = useState({
-    desktop: true,      // default: checked
-    email: false,       // default: unchecked  
-    updates: true,      // default: checked
-    reminders: true,    // default: checked
-    activities: true    // default: checked
+    desktop: true,
+    email: false,  
+    updates: true,
+    reminders: true,
+    activities: true
   });
 
   const handleImageUpload = (e) => {
@@ -49,6 +50,13 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
       reader.readAsDataURL(file);
     }
   };
+
+    const triggerFileInput = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
+  };
+
 
   const handleProfileUpdate = (field, value) => {
     setProfileData(prev => ({ ...prev, [field]: value }));
@@ -81,6 +89,16 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
     setAccountData(prev => ({ ...prev, twoStepVerification: !prev.twoStepVerification }));
   };
 
+   const handleSaveProfile = () => {
+    setIsEditingProfile(false);
+    alert('Profile updated successfully!');
+  };
+
+  const handleCancelEdit = () => {
+    setIsEditingProfile(false);
+    // Reset form data if needed
+  };
+
   const renderProfileSection = () => (
     <div className="integrated-settings-content-section">
       <div className="integrated-settings-section-header">
@@ -101,10 +119,13 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
               />
             )}
           </div>
-          <button className="integrated-settings-profile-edit-btn">
-            <Edit size={16} />
+          <button className="integrated-settings-profile-edit-btn"
+          onClick ={triggerFileInput}
+          >
+            <Edit size={14} />
           </button>
           <input
+            ref={fileInputRef}
             type="file"
             accept="image/*"
             onChange={handleImageUpload}
@@ -130,145 +151,243 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
       <div className="integrated-settings-personal-info">
         <div className="integrated-settings-personal-header">
           <h4 className="integrated-settings-personal-title">Personal Information</h4>
-          <button className="integrated-settings-edit-btn">
-            <Edit size={16} />
-            <span>Edit</span>
-          </button>
+          {isEditingProfile ? (
+            <div className="integrated-settings-edit-actions">
+              <Button variant="primary" size="small" onClick={handleSaveProfile}>
+                Save
+              </Button>
+              <Button variant="secondary" size="small" onClick={handleCancelEdit}>
+                Cancel
+              </Button>
+            </div>
+          ) : (
+            <button 
+              className="integrated-settings-edit-btn"
+              onClick={() => setIsEditingProfile(true)}
+            >
+              <Edit size={14} />
+              <span>Edit</span>
+            </button>
+          )}
         </div>
 
         <div className="integrated-settings-form-grid">
           <div className="integrated-settings-form-group">
             <label className="integrated-settings-form-label">First Name</label>
-            <div className="integrated-settings-form-value">{profileData.firstName}</div>
+            {isEditingProfile ? (
+              <Input
+                type="text"
+                value={profileData.firstName}
+                onChange={(e) => handleProfileUpdate('firstName', e.target.value)}
+                placeholder="First Name"
+              />
+            ) : (
+              <div className="integrated-settings-form-value">{profileData.firstName}</div>
+            )}
           </div>
           <div className="integrated-settings-form-group">
             <label className="integrated-settings-form-label">Last Name</label>
-            <div className="integrated-settings-form-value">{profileData.lastName}</div>
+            {isEditingProfile ? (
+              <Input
+                type="text"
+                value={profileData.lastName}
+                onChange={(e) => handleProfileUpdate('lastName', e.target.value)}
+                placeholder="Last Name"
+              />
+            ) : (
+              <div className="integrated-settings-form-value">{profileData.lastName}</div>
+            )}
           </div>
           <div className="integrated-settings-form-group">
             <label className="integrated-settings-form-label">Email Address</label>
-            <div className="integrated-settings-form-value">{profileData.email}</div>
+            {isEditingProfile ? (
+              <Input
+                type="email"
+                value={profileData.email}
+                onChange={(e) => handleProfileUpdate('email', e.target.value)}
+                placeholder="Email Address"
+              />
+            ) : (
+              <div className="integrated-settings-form-value">{profileData.email}</div>
+            )}
           </div>
           <div className="integrated-settings-form-group">
             <label className="integrated-settings-form-label">Mobile Number</label>
-            <div className="integrated-settings-form-value">{profileData.mobile}</div>
+            {isEditingProfile ? (
+              <Input
+                type="tel"
+                value={profileData.mobile}
+                onChange={(e) => handleProfileUpdate('mobile', e.target.value)}
+                placeholder="Mobile Number"
+              />
+            ) : (
+              <div className="integrated-settings-form-value">{profileData.mobile}</div>
+            )}
           </div>
           <div className="integrated-settings-form-group integrated-settings-form-group-full">
             <label className="integrated-settings-form-label">Location</label>
-            <div className="integrated-settings-form-value">{profileData.location}</div>
+            {isEditingProfile ? (
+              <Input
+                type="text"
+                value={profileData.location}
+                onChange={(e) => handleProfileUpdate('location', e.target.value)}
+                placeholder="Location"
+              />
+            ) : (
+              <div className="integrated-settings-form-value">{profileData.location}</div>
+            )}
           </div>
         </div>
       </div>
     </div>
   );
 
-  const renderAccountSection = () => (
-    <div className="integrated-settings-content-section">
-      <div className="integrated-settings-section-header">
-        <h3 className="integrated-settings-section-title">Account Settings</h3>
-        <p className="integrated-settings-section-subtitle">Manage your account security and login preferences</p>
+  // Update your renderAccountSection function with these improvements:
+
+const renderAccountSection = () => (
+  <div className="integrated-settings-content-section">
+    <div className="integrated-settings-section-header">
+      <h3 className="integrated-settings-section-title">Account Settings</h3>
+      <p className="integrated-settings-section-subtitle">Manage your account security and login preferences</p>
+    </div>
+
+    <div className="integrated-settings-form-section">
+      <div className="integrated-settings-form-field">
+        <label className="integrated-settings-form-label">Email Address</label>
+        <div className="integrated-settings-account-field">
+          {isChangingEmail ? (
+            <div className="integrated-settings-email-change">
+              <Input
+                type="email"
+                value={newEmail}
+                onChange={(e) => {
+                  setNewEmail(e.target.value);
+                  if (emailError) setEmailError(''); // Clear error on input
+                }}
+                placeholder="Enter your new email address"
+                className={emailError ? 'error' : ''}
+                autoFocus
+              />
+              {emailError && (
+                <div className="integrated-settings-error-message">
+                  {emailError}
+                </div>
+              )}
+              <div className="integrated-settings-field-actions">
+                <Button 
+                  variant="primary" 
+                  size="small" 
+                  onClick={handleEmailChange}
+                  disabled={!newEmail.trim()}
+                >
+                  Update Email
+                </Button>
+                <Button 
+                  variant="secondary" 
+                  size="small" 
+                  onClick={() => {
+                    setIsChangingEmail(false);
+                    setNewEmail('');
+                    setEmailError('');
+                  }}
+                >
+                  Cancel
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="integrated-settings-form-value">{accountData.email}</div>
+              <Button 
+                variant="outline" 
+                size="small"
+                onClick={() => setIsChangingEmail(true)}
+                className="integrated-settings-change-btn"
+              >
+                Change
+              </Button>
+            </>
+          )}
+        </div>
       </div>
 
-      <div className="integrated-settings-form-section">
-        <div className="integrated-settings-form-field">
-          <label className="integrated-settings-form-label">Email Address</label>
-          <div className="integrated-settings-account-field">
-            {isChangingEmail ? (
-              <div className="integrated-settings-email-change">
-                <Input
-                  type="email"
-                  value={newEmail}
-                  onChange={(e) => setNewEmail(e.target.value)}
-                  placeholder="Enter new email"
-                  error={emailError}
-                />
-                <div className="integrated-settings-field-actions">
-                  <Button variant="primary" onClick={handleEmailChange}>
-                    Update Email
-                  </Button>
-                  <Button variant="secondary" onClick={() => setIsChangingEmail(false)}>
-                    Cancel
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <>
-                <div className="integrated-settings-form-value">{accountData.email}</div>
-                <Button 
-                  variant="outline" 
-                  onClick={() => setIsChangingEmail(true)}
-                  className="integrated-settings-change-btn"
-                >
-                  Change
-                </Button>
-              </>
-            )}
-          </div>
-        </div>
-
-        <div className="integrated-settings-form-field">
-          <label className="integrated-settings-form-label">Password</label>
-          <div className="integrated-settings-account-field">
-            {isChangingPassword ? (
-              <div className="integrated-settings-password-change">
-                <p className="integrated-settings-password-info">
-                  A password reset link will be sent to your email address.
-                </p>
-                <div className="integrated-settings-field-actions">
-                  <Button variant="primary" onClick={handlePasswordChange}>
-                    Send Reset Link
-                  </Button>
-                  <Button variant="secondary" onClick={() => setIsChangingPassword(false)}>
-                    Cancel
-                  </Button>
-                </div>
-              </div>
-            ) : (
-              <>
-                <div className="integrated-settings-password-field">
-                  <span className="integrated-settings-form-value">
-                    {showPassword ? 'mypassword123' : '••••••••••••'}
-                  </span>
-                  <button 
-                    className="integrated-settings-password-toggle"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
-                  </button>
-                </div>
-                <Button 
-                  variant="outline" 
-                  onClick={() => setIsChangingPassword(true)}
-                  className="integrated-settings-change-btn"
-                >
-                  Change
-                </Button>
-              </>
-            )}
-          </div>
-        </div>
-
-        <div className="integrated-settings-form-field">
-          <label className="integrated-settings-form-label">2-Step Verification</label>
-          <div className="integrated-settings-account-field">
-            <div className="integrated-settings-2fa-info">
-              <span className="integrated-settings-form-value">
-                {accountData.twoStepVerification ? 'Enabled' : 'Disabled'}
-              </span>
-              <p className="integrated-settings-field-description">
-                Add an extra layer of security to your account
+      <div className="integrated-settings-form-field">
+        <label className="integrated-settings-form-label">Password</label>
+        <div className="integrated-settings-account-field">
+          {isChangingPassword ? (
+            <div className="integrated-settings-password-change">
+              <p className="integrated-settings-password-info">
+                🔐 For security reasons, we'll send a password reset link to your registered email address. 
+                Click the link in the email to create your new password.
               </p>
-            </div>
-            <div className="integrated-settings-toggle" onClick={toggle2FA}>
-              <div className={`integrated-settings-toggle-track ${accountData.twoStepVerification ? 'active' : ''}`}>
-                <div className={`integrated-settings-toggle-knob ${accountData.twoStepVerification ? 'active' : ''}`}></div>
+              <div className="integrated-settings-field-actions">
+                <Button 
+                  variant="primary" 
+                  size="small" 
+                  onClick={handlePasswordChange}
+                >
+                  Send Reset Link
+                </Button>
+                <Button 
+                  variant="secondary" 
+                  size="small" 
+                  onClick={() => setIsChangingPassword(false)}
+                >
+                  Cancel
+                </Button>
               </div>
+            </div>
+          ) : (
+            <>
+              <div className="integrated-settings-password-field">
+                <span className="integrated-settings-form-value">
+                  {showPassword ? 'mypassword123' : '••••••••••••'}
+                </span>
+                <button 
+                  className="integrated-settings-password-toggle"
+                  onClick={() => setShowPassword(!showPassword)}
+                  title={showPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+                </button>
+              </div>
+              <Button 
+                variant="outline" 
+                size="small"
+                onClick={() => setIsChangingPassword(true)}
+                className="integrated-settings-change-btn"
+              >
+                Change
+              </Button>
+            </>
+          )}
+        </div>
+      </div>
+
+      <div className="integrated-settings-form-field">
+        <label className="integrated-settings-form-label">2-Step Verification</label>
+        <div className="integrated-settings-account-field">
+          <div className="integrated-settings-2fa-info">
+            <span className="integrated-settings-form-value">
+              {accountData.twoStepVerification ? '✅ Enabled' : '❌ Disabled'}
+            </span>
+            <p className="integrated-settings-field-description">
+              {accountData.twoStepVerification 
+                ? 'Your account has an extra layer of security enabled'
+                : 'Add an extra layer of security to protect your account'
+              }
+            </p>
+          </div>
+          <div className="integrated-settings-toggle" onClick={toggle2FA}>
+            <div className={`integrated-settings-toggle-track ${accountData.twoStepVerification ? 'active' : ''}`}>
+              <div className={`integrated-settings-toggle-knob ${accountData.twoStepVerification ? 'active' : ''}`}></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 
   const renderNotificationsSection = () => (
     <div className="integrated-settings-content-section">
@@ -287,11 +406,12 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
               Receive notifications for any activity regarding your properties.
             </p>
           </div>
-          <div className="integrated-settings-toggle" onClick={() => toggleNotification('desktop')}>
-            <div className={`integrated-settings-toggle-track ${notifications.desktop ? 'active' : ''}`}>
-              <div className={`integrated-settings-toggle-knob ${notifications.desktop ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.desktop}
+            onChange={() => toggleNotification('desktop')}
+            className="integrated-settings-checkbox"
+          />
         </div>
 
         <div className="integrated-settings-notification-item">
@@ -301,11 +421,12 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
               Receive notifications for any activity regarding your properties.
             </p>
           </div>
-          <div className="integrated-settings-toggle" onClick={() => toggleNotification('email')}>
-            <div className={`integrated-settings-toggle-track ${notifications.email ? 'active' : ''}`}>
-              <div className={`integrated-settings-toggle-knob ${notifications.email ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.email}
+            onChange={() => toggleNotification('email')}
+            className="integrated-settings-checkbox"
+          />
         </div>
 
         <div className="integrated-settings-notification-item">
@@ -315,11 +436,12 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
               Receive notifications for any activity regarding your properties.
             </p>
           </div>
-          <div className="integrated-settings-toggle" onClick={() => toggleNotification('updates')}>
-            <div className={`integrated-settings-toggle-track ${notifications.updates ? 'active' : ''}`}>
-              <div className={`integrated-settings-toggle-knob ${notifications.updates ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.updates}
+            onChange={() => toggleNotification('updates')}
+            className="integrated-settings-checkbox"
+          />
         </div>
 
         <div className="integrated-settings-divider"></div>
@@ -333,11 +455,12 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
               Notify me on all the system activities and reminders created.
             </p>
           </div>
-          <div className="integrated-settings-toggle" onClick={() => toggleNotification('reminders')}>
-            <div className={`integrated-settings-toggle-track ${notifications.reminders ? 'active' : ''}`}>
-              <div className={`integrated-settings-toggle-knob ${notifications.reminders ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.reminders}
+            onChange={() => toggleNotification('reminders')}
+            className="integrated-settings-checkbox"
+          />
         </div>
 
         <div className="integrated-settings-notification-item">
@@ -347,11 +470,12 @@ const IntegratedSettings = ({ accountType = 'Creator', onAccountTypeChange }) =>
               Receive latest updates and settings info.
             </p>
           </div>
-          <div className="integrated-settings-toggle" onClick={() => toggleNotification('activities')}>
-            <div className={`integrated-settings-toggle-track ${notifications.activities ? 'active' : ''}`}>
-              <div className={`integrated-settings-toggle-knob ${notifications.activities ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.activities}
+            onChange={() => toggleNotification('activities')}
+            className="integrated-settings-checkbox"
+          />
         </div>
       </div>
     </div>

@@ -337,11 +337,12 @@ const SettingsPage = ({ accountType = 'Creator', onAccountTypeChange }) => {
               Receive notifications directly on your desktop when important events occur
             </p>
           </div>
-          <div className="settings-toggle" onClick={() => toggleNotification('desktop')}>
-            <div className={`settings-toggle-track ${notifications.desktop ? 'active' : ''}`}>
-              <div className={`settings-toggle-knob ${notifications.desktop ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.desktop}
+            onChange={() => toggleNotification('desktop')}
+            className="settings-checkbox"
+          />
         </div>
 
         <div className="settings-notification-item">
@@ -351,11 +352,12 @@ const SettingsPage = ({ accountType = 'Creator', onAccountTypeChange }) => {
               Get important updates and alerts sent to your email address
             </p>
           </div>
-          <div className="settings-toggle" onClick={() => toggleNotification('email')}>
-            <div className={`settings-toggle-track ${notifications.email ? 'active' : ''}`}>
-              <div className={`settings-toggle-knob ${notifications.email ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.email}
+            onChange={() => toggleNotification('email')}
+            className="settings-checkbox"
+          />
         </div>
 
         <div className="settings-notification-item">
@@ -365,11 +367,12 @@ const SettingsPage = ({ accountType = 'Creator', onAccountTypeChange }) => {
               Stay informed about system updates and new features
             </p>
           </div>
-          <div className="settings-toggle" onClick={() => toggleNotification('updates')}>
-            <div className={`settings-toggle-track ${notifications.updates ? 'active' : ''}`}>
-              <div className={`settings-toggle-knob ${notifications.updates ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.updates}
+            onChange={() => toggleNotification('updates')}
+            className="settings-checkbox"
+          />
         </div>
 
         <div className="settings-divider"></div>
@@ -383,11 +386,12 @@ const SettingsPage = ({ accountType = 'Creator', onAccountTypeChange }) => {
               Receive notifications for property visits, deadlines, and scheduled tasks
             </p>
           </div>
-          <div className="settings-toggle" onClick={() => toggleNotification('reminders')}>
-            <div className={`settings-toggle-track ${notifications.reminders ? 'active' : ''}`}>
-              <div className={`settings-toggle-knob ${notifications.reminders ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.reminders}
+            onChange={() => toggleNotification('reminders')}
+            className="settings-checkbox"
+          />
         </div>
 
         <div className="settings-notification-item">
@@ -397,11 +401,12 @@ const SettingsPage = ({ accountType = 'Creator', onAccountTypeChange }) => {
               Get notified when properties are updated or assignments change
             </p>
           </div>
-          <div className="settings-toggle" onClick={() => toggleNotification('activities')}>
-            <div className={`settings-toggle-track ${notifications.activities ? 'active' : ''}`}>
-              <div className={`settings-toggle-knob ${notifications.activities ? 'active' : ''}`}></div>
-            </div>
-          </div>
+          <input
+            type="checkbox"
+            checked={notifications.activities}
+            onChange={() => toggleNotification('activities')}
+            className="settings-checkbox"
+          />
         </div>
       </div>
     </div>

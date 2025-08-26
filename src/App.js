@@ -358,7 +358,11 @@ const App = () => {
       />
     ),
     creatorDashboard: (
-      <CreatorDashboard onNavigate={navigateToPage} />
+      <CreatorDashboard
+        onNavigate={navigateToPage}
+        accountType={accountType}
+        onAccountTypeToggle={toggleAccountType}
+      />
     ),
     trainerDashboard: (
       <TrainerDashboard
@@ -380,11 +384,13 @@ const App = () => {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
-        {/* Shared Header Component */}
-        <Header
-          accountType={accountType}
-          onToggle={toggleAccountType}
-        />
+        {/* Shared Header Component - Hide on creator dashboard */}
+        {currentPage !== 'creatorDashboard' && currentPage !== 'trainerDashboard' && (
+          <Header
+            accountType={accountType}
+            onToggle={toggleAccountType}
+          />
+        )}
 
         {/* Demo Navigation Controls */}
         {/* <DemoNavigation

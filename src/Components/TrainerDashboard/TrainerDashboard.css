@@ -271,7 +271,7 @@ body {
 
 .trainerDashboardnew-main-header {
   position: fixed;
-  top: 0;
+  top:0;
   left: 250px;
   right: 0;
   background-color: rgba(255, 255, 255, 1);
@@ -293,6 +293,12 @@ body {
   align-items: stretch;
   font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
   justify-content: start;
+  min-width: 200px; /* Maintain consistent width */
+}
+
+.trainerDashboardnew-page-title-placeholder {
+  height: 48px; /* Same height as welcome title + subtitle */
+  width: 200px; /* Minimum width to maintain space */
 }
 
 .trainerDashboardnew-welcome-title {
@@ -493,10 +499,10 @@ body {
 
 /* Main Content Area */
 .trainerDashboardnew-main-content {
-  margin-top: 95px;
+  margin-top: 80px;
   width: 100%;
   padding: 32px;
-  min-height: calc(100vh - 120px);
+  min-height: calc(100vh - 200px);
 }
 
 .trainerDashboardnew-overview-grid {
@@ -1251,6 +1257,7 @@ body {
   
   .trainerDashboardnew-main-header {
     left: 0;
+    top: 80px;
     padding-left: 20px;
     padding-right:70px;
   }

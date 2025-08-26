@@ -631,12 +631,16 @@ const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccou
         <div className="trainerDashboardnew-main">
           <div className="trainerDashboardnew-main-header">
             <div className="trainerDashboardnew-main-header-content">
-            {activeMenu === 'overview' && (
-              <div className="trainerDashboardnew-welcome-section">
-                <h1 className="trainerDashboardnew-welcome-title">Welcome Anthony,</h1>
-                <p className="trainerDashboardnew-welcome-subtitle">Here is your dashboard</p>
-              </div>
-            )}
+            <div className="trainerDashboardnew-welcome-section">
+              {activeMenu === 'overview' ? (
+                <>
+                  <h1 className="trainerDashboardnew-welcome-title">Welcome Anthony,</h1>
+                  <p className="trainerDashboardnew-welcome-subtitle">Here is your dashboard</p>
+                </>
+              ) : (
+                <div className="trainerDashboardnew-page-title-placeholder"></div>
+              )}
+            </div>
 
             <div className="trainerDashboardnew-header-controls">
               <div className="trainerDashboardnew-search-and-notifications">
