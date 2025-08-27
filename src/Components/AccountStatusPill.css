@@ -1,0 +1,29 @@
+.accountStatus-content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.accountStatus-pill {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  width: fit-content;
+}
+
+.accountStatus-pill-dot {
+  background-color: rgba(239, 35, 60, 1);
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.accountStatus-pill-text {
+  color: var(--Gray-600, #475467);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.28px;
+}

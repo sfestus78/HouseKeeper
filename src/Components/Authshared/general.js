@@ -5,6 +5,7 @@ import trainerImage from '../../Assets/traineraccount.jpg';
 import creatorImage from '../../Assets/creatoraccount.jpg';
 
 
+
 // Logo Component
 export const Logo = ({ size = 'md' }) => {
   return (
@@ -28,9 +29,16 @@ export const AccountToggle = ({ accountType, onToggle }) => (
       <span className={`account-toggle-text ${accountType === 'Creator' ? 'active' : 'inactive'}`}>
         Creator
       </span>
-      <div className="account-toggle-switch" onClick={onToggle}>
+      <button
+        className="account-toggle-switch"
+        onClick={onToggle}
+        aria-label={`Switch to ${accountType === 'Creator' ? 'Trainer' : 'Creator'} account`}
+        role="switch"
+        aria-checked={accountType === 'Trainer'}
+        type="button"
+      >
         <div className={`account-toggle-knob ${accountType === 'Trainer' ? 'trainer' : 'creator'}`} />
-      </div>
+      </button>
       <span className={`account-toggle-text ${accountType === 'Trainer' ? 'active' : 'inactive'}`}>
         Trainer
       </span>
@@ -43,7 +51,9 @@ export const Header = ({ accountType, onToggle }) => (
   <header className="header">
     <div className="header-content">
       <Logo size="md" />
-      <AccountToggle accountType={accountType} onToggle={onToggle} />
+      <div className="header-toggle-wrapper">
+        <AccountToggle accountType={accountType} onToggle={onToggle} />
+      </div>
     </div>
   </header>
 );

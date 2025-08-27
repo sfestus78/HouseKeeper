@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AccountStatusPill from '../AccountStatusPill'
 import './OnboardingTrainerStep2.css';
 
 const OnboardingTrainerStep2 = ({accountType, onNavigate }) => {
@@ -43,54 +44,13 @@ const OnboardingTrainerStep2 = ({accountType, onNavigate }) => {
 
   return (
     <div className="trainer-step2-container">
-      {/* Header Navigation */}
-      {/* <div className="trainer-step2-header-navigation">
-        <div className="trainer-step2-header">
-          <div className="trainer-step2-header-container">
-            <div className="trainer-step2-logo-section">
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/fd2e76c2b4620a710f8884d9852c589d61caab4d?width=80"
-                alt="Logo"
-                className="trainer-step2-logo"
-              />
-            </div>
-            <div className="trainer-step2-account-switch">
-              <div className="trainer-step2-switch-label">
-                Switch account type
-              </div>
-              <div className="trainer-step2-toggle-container">
-                <div
-                  className="trainer-step2-toggle-text"
-                  onClick={handleToggleToCreator}
-                >
-                  Creator
-                </div>
-                <div
-                  className="trainer-step2-toggle-switch"
-                  onClick={handleToggleToCreator}
-                >
-                  <div className="trainer-step2-toggle-track">
-                    <div className="trainer-step2-toggle-circle" />
-                  </div>
-                </div>
-                <div className="trainer-step2-toggle-text active">Trainer</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       {/* Main Content */}
       <div className="trainer-step2-main-content">
         <div className="trainer-step2-content-wrapper">
           <div className="trainer-step2-left-column">
             <div className="trainer-step2-content-section">
-              <div className="trainer-step2-pill">
-                <div className="trainer-step2-pill-dot" />
-                <div className="trainer-step2-pill-text">
-                  Trainer Onboarding
-                </div>
-              </div>
+              < AccountStatusPill accountType= "trainer"/>
               <div className="trainer-step2-heading-section">
                 <div className="trainer-step2-main-title">
                   Accept property assignment

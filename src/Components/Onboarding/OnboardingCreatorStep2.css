@@ -5,16 +5,16 @@
 .OnboardingCreatorStep2-container {
   background-color: #F0EFF7;
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 /* Main Content */
 .OnboardingCreatorStep2-mainContent {
-  margin-top: 70px;
+  /* margin-top: 70px; */
   width: 100%;
-  padding: 20px;
+  padding-top: 70px;
   box-sizing: border-box;
 }
 
@@ -48,31 +48,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-}
-
-.OnboardingCreatorStep2-statusPill {
-  border-radius: 16px;
-  background-color: #FFF;
-  align-self: start;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 14px;
-  color: #475467;
-  font-weight: 400;
-  padding: 6px 12px;
-  margin-bottom: 40px;
-}
-
-.OnboardingCreatorStep2-pillDot {
-  background-color: #EF233C;
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-}
-
-.OnboardingCreatorStep2-pillText {
-  color: #475467;
 }
 
 .OnboardingCreatorStep2-contentSection {
@@ -143,7 +118,7 @@
 .OnboardingCreatorStep2-stepDescription {
   font-size: 16px;
   color: #475467;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 /* Trainers List */
@@ -160,7 +135,7 @@
   font-size: 18px;
   font-weight: 600;
   color: #2B2D42;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
 }
 
 .OnboardingCreatorStep2-assignmentMessage {
@@ -177,7 +152,7 @@
 .OnboardingCreatorStep2-trainersList {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .OnboardingCreatorStep2-trainerItem {
@@ -234,7 +209,7 @@
 }
 
 .OnboardingCreatorStep2-progressContainer {
-  margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 .OnboardingCreatorStep2-progressBar {

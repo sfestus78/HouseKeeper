@@ -1,119 +1,11 @@
 /* Main Container */
 .onboarding-creator {
   width: 100%;
-  margin-top: 80px;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   font-family: 'Lato', sans-serif;
   background-color: #F0EFF7;
   box-sizing: border-box;
-}
-
-/* Header Navigation */
-.onboarding-header {
-  display: flex;
-  width: 100%;
-  height: 70px;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid #F2F4F7;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #FFF;
-  z-index: 100;
-}
-
-.onboarding-header-container {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.onboarding-header-content {
-  display: flex;
-  width: 100%;
-  max-width: 1200px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.onboarding-logo-section {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
-
-.onboarding-logo {
-  width: 36px;
-  height: 36px;
-}
-
-/* Account Toggle Section */
-.onboarding-account-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 2px;
-}
-
-.onboarding-toggle-label {
-  color: #475467;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: -0.4px;
-}
-
-.onboarding-toggle-container {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.onboarding-toggle-text {
-  color: #475467;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 20px;
-  letter-spacing: -0.4px;
-  cursor: pointer;
-}
-
-.onboarding-toggle-text.active {
-  color: #475467;
-}
-
-.onboarding-toggle-switch {
-  width: 40px;
-  height: 24px;
-  position: relative;
-  cursor: pointer;
-}
-
-.onboarding-toggle-track {
-  width: 34px;
-  height: 18px;
-  border-radius: 9px;
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  background-color: #2B2D42;
-}
-
-.onboarding-toggle-circle {
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  left: 6px;
-  top: 6px;
 }
 
 /* Main Content Area */
@@ -122,10 +14,11 @@
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 90px 20px 40px 20px;
+  /* padding: 90px 20px 40px 20px; */
+  padding-top: 130px;
   gap: 40px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto ;
   box-sizing: border-box;
 }
 
@@ -136,29 +29,6 @@
   gap: 16px;
   flex: 1;
   max-width: 600px;
-}
-
-/* Pill Component */
-.onboarding-pill {
-  display: flex;
-  padding: 6px 12px;
-  align-items: center;
-  gap: 4px;
-  border-radius: 16px;
-  background-color: #FFF;
-}
-
-.onboarding-pill-dot {
-  width: 8px;
-  height: 8px;
-}
-
-.onboarding-pill-text {
-  color: #475467;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-  letter-spacing: -0.4px;
 }
 
 /* Content Section */

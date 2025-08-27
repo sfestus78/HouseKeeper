@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AccountStatusPill from '../AccountStatusPill'
 import './OnboardingTrainer.css';
 
 const OnboardingTrainer = ({accountType, onNavigate }) => {
@@ -68,12 +69,7 @@ const OnboardingTrainer = ({accountType, onNavigate }) => {
         <div className="content-container">
           <div className="left-column">
             <div className="content-section">
-              <div className="pill">
-                <div className="pill-dot" />
-                <div className="pill-text">
-                  Trainer Onboarding
-                </div>
-              </div>
+              < AccountStatusPill accountType= "trainer"/>
               <div className="heading-wrapper">
                 <div className="main-title">
                   Become a trainer with just a few steps

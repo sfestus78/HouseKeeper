@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AccountStatusPill from '../AccountStatusPill';
 import './OnboardingCreatorStep3.css';
 
 const OnboardingCreatorStep3 = ({accountType, onNavigate }) => {
@@ -98,14 +99,7 @@ const OnboardingCreatorStep3 = ({accountType, onNavigate }) => {
       <div className="OnboardingCreatorStep3-main-content">
         <div className="OnboardingCreatorStep3-left-section">
           <div className="OnboardingCreatorStep3-pill">
-            <div className="OnboardingCreatorStep3-pill-dot">
-              <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                <circle cx="4" cy="4" r="4" fill="#EF233C" />
-              </svg>
-            </div>
-            <div className="OnboardingCreatorStep3-pill-text">
-              Creator Onboarding
-            </div>
+            <AccountStatusPill accountType={accountType}/>
           </div>
           <div className="OnboardingCreatorStep3-content-section">
             <div className="OnboardingCreatorStep3-main-title">

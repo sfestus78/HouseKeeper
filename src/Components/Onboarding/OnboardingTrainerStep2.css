@@ -269,6 +269,8 @@
 /* Property Assignment Card */
 .trainer-step2-property-card {
   background-color: #FFF;
+  width:350px;
+  height:150px;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(43, 45, 66, 0.08);

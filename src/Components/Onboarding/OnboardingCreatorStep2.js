@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AccountStatusPill from '../AccountStatusPill';
 import './OnboardingCreatorStep2.css';
 
 const OnboardingCreatorStep2 = ({accountType, onNavigate }) => {
@@ -49,12 +50,7 @@ const OnboardingCreatorStep2 = ({accountType, onNavigate }) => {
           <div className="OnboardingCreatorStep2-columns">
             <div className="OnboardingCreatorStep2-leftColumn">
               <div className="OnboardingCreatorStep2-leftContent">
-                <div className="OnboardingCreatorStep2-statusPill">
-                  <div className="OnboardingCreatorStep2-pillDot" />
-                  <div className="OnboardingCreatorStep2-pillText">
-                    Creator Onboardin
-                  </div>
-                </div>
+                <AccountStatusPill accountType={accountType}/>
                 <div className="OnboardingCreatorStep2-contentSection">
                   <div className="OnboardingCreatorStep2-mainTitle">
                     Become a creator by following a few steps
