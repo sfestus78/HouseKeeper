@@ -6,6 +6,23 @@
   margin-left: 40px;
   margin-top: 30px;
   background-color: #FFF;
+  max-width: calc(100% - 40px);
+}
+
+@media (max-width: 768px) {
+  .assignPropertyContainer {
+    margin-left: 20px;
+    margin-top: 20px;
+    max-width: calc(100% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .assignPropertyContainer {
+    margin-left: 16px;
+    margin-top: 16px;
+    max-width: calc(100% - 16px);
+  }
 }
 
 /* Header */
@@ -71,9 +88,16 @@
 }
 
 .stepDivider {
-  width: 604px;
+  width: 100%;
+  max-width: 604px;
   height: 2px;
   background-color: #DDDDE1;
+}
+
+@media (max-width: 768px) {
+  .stepDivider {
+    max-width: 100%;
+  }
 }
 
 /* Dropdown Section */
@@ -95,7 +119,14 @@
 
 .dropdownContainer {
   position: relative;
-  width: 604px;
+  width: 100%;
+  max-width: 604px;
+}
+
+@media (max-width: 768px) {
+  .dropdownContainer {
+    max-width: 100%;
+  }
 }
 
 .dropdown {
@@ -183,12 +214,35 @@
 
 /* Property Cards Grid */
 .propertyCardsGrid {
-  display: flex;
-  align-items: center;
-  align-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
-  flex-wrap: wrap;
   width: 100%;
+  align-items: start;
+}
+
+/* Mobile: 2 cards per row */
+@media (max-width: 767px) {
+  .propertyCardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Tablet: 3 cards per row */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .propertyCardsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+}
+
+/* Desktop: auto-fit for larger screens */
+@media (min-width: 1025px) {
+  .propertyCardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
 }
 
 .propertyCard {
@@ -200,7 +254,36 @@
   border: 1px solid #E1E5EA;
   box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   background-color: #F9F8FC;
-  max-width: 240px;
+  width: 100%;
+  max-width: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.propertyCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px 0 rgba(16, 24, 40, 0.1);
+}
+
+/* Responsive adjustments for property card content */
+@media (max-width: 767px) {
+  .propertyCard {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  .propertyImage {
+    width: 40px;
+    height: 40px;
+  }
+
+  .propertyAddress {
+    width: 140px;
+    font-size: 11px;
+  }
+
+  .propertyName {
+    font-size: 13px;
+  }
 }
 
 .propertyCardContent {

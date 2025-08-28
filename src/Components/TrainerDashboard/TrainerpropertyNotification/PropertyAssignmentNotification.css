@@ -48,6 +48,21 @@
   border: 1px solid #d0d5dd;
   padding: 18px 32px;
   width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .assignednotification-table-section {
+    padding: 16px 20px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .assignednotification-table-section {
+    padding: 12px 16px;
+    border-radius: 8px;
+  }
 }
 
 .assignednotification-section-title {
@@ -71,6 +86,29 @@
   gap: 26px;
   align-items: center;
   padding: 10px 0;
+}
+
+@media (max-width: 1024px) {
+  .assignednotification-table-header {
+    grid-template-columns: 1fr 180px 120px 90px 120px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .assignednotification-table-header {
+    grid-template-columns: 1fr 150px 100px 80px 100px;
+    gap: 16px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .assignednotification-table-header {
+    grid-template-columns: 1fr 120px 80px 60px 80px;
+    gap: 12px;
+    font-size: 11px;
+  }
 }
 
 .assignednotification-header-cell {

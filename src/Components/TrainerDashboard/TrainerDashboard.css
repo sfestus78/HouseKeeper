@@ -271,12 +271,15 @@ body {
 
 .trainerDashboardnew-main-header {
   position: fixed;
-  top:0;
+  top: 0;
   left: 250px;
   right: 0;
   background-color: rgba(255, 255, 255, 1);
   z-index: 100;
   padding: 17px 25px;
+  border-bottom: 1px solid rgba(229, 231, 235, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .trainerDashboardnew-main-header-content {
@@ -363,7 +366,7 @@ body {
   flex-shrink: 1;
   flex-basis: 0%;
   margin: auto 0;
-  background: transparent;
+  /* background: transparent; */
   border: none;
   outline: none;
   color: inherit;
@@ -524,7 +527,6 @@ body {
   display: flex;
   gap: 8px;
   margin-bottom: 24px;
-  
   height: 226px;
 }
 
@@ -1239,6 +1241,30 @@ body {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .trainerDashboardnew-overview-stats-section {
+    margin-left: 10px;
+  }
+  
+  .trainerDashboardnew-stats-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .trainerDashboardnew-main-stat-card {
+    min-height: 120px;
+  }
+  
+  .trainerDashboardnew-header-controls {
+    gap: 30px;
+  }
+  
+  .trainerDashboardnew-search-bar {
+    width: 240px;
+    min-width: 200px;
+  }
+}
+
 @media (max-width: 1024px) {
   .trainerDashboardnew-sidebar {
     width: 250px;
@@ -1257,9 +1283,10 @@ body {
   
   .trainerDashboardnew-main-header {
     left: 0;
-    top: 80px;
-    padding-left: 20px;
-    padding-right:70px;
+    padding: 17px 70px 17px 25px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
   }
   
   .trainerDashboardnew-mobile-menu-btn {
@@ -1269,34 +1296,166 @@ body {
   }
   
   .trainerDashboardnew-welcome-section {
-    display: none;
+    min-width: 180px;
+  }
+  
+  .trainerDashboardnew-welcome-title {
+    font-size: 28px;
   }
   
   .trainerDashboardnew-header-controls {
-    gap: 20px;
+    gap: 25px;
   }
   
   .trainerDashboardnew-search-and-notifications {
-    min-width: auto;
+    min-width: 200px;
+  }
+  
+  .trainerDashboardnew-search-bar {
+    width: 200px;
+    min-width: 180px;
   }
   
   .trainerDashboardnew-account-switch {
-    display: none;
+    margin-left: auto;
+  }
+  
+  .trainerDashboardnew-overview-left,
+  .trainerDashboardnew-overview-right {
+    width: 100%;
+  }
+  
+  .trainerDashboardnew-overview-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .trainerDashboardnew-overview-right {
+    margin-left: 0;
+  }
+  
+  .trainerDashboardnew-grid-row {
+    height: auto;
+    min-height: 200px;
+  }
+  
+  .trainerDashboardnew-create-visit-section,
+  .trainerDashboardnew-overview-stats-section {
+    width: 100%;
+    height: auto;
+  }
+  
+  .trainerDashboardnew-overview-stats-section {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+  
+  .trainerDashboardnew-properties-assigned-card,
+  .trainerDashboardnew-scheduled-visits-card {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 900px) {
+  .trainerDashboardnew-main-header {
+    padding: 15px 60px 15px 20px;
+  }
+  
+  .trainerDashboardnew-welcome-title {
+    font-size: 24px;
+  }
+  
+  .trainerDashboardnew-welcome-subtitle {
+    font-size: 14px;
+  }
+  
+  .trainerDashboardnew-search-bar {
+    width: 180px;
+  }
+  
+  .trainerDashboardnew-grid-row {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  
+  .trainerDashboardnew-create-visit-section,
+  .trainerDashboardnew-overview-stats-section {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .trainerDashboardnew-properties-table-header,
+  .trainerDashboardnew-property-row {
+    gap: 20px;
+  }
+  
+  .trainerDashboardnew-header-property-info,
+  .trainerDashboardnew-property-info {
+    min-width: 150px;
+  }
+  
+  .trainerDashboardnew-header-address,
+  .trainerDashboardnew-property-address {
+    width: 120px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 768px) {
   .trainerDashboardnew-main-header {
-    padding: 16px 60px 16px 20px;
+    padding: 15px 60px 15px 20px;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
   
   .trainerDashboardnew-main-content {
     padding: 20px;
-    margin-top: 100px;
+    margin-top: 85px;
+  }
+  
+  .trainerDashboardnew-welcome-section {
+    display: none;
+  }
+  
+  .trainerDashboardnew-header-controls {
+    width: 100%;
+    justify-content: space-between;
   }
   
   .trainerDashboardnew-search-and-notifications {
-    display: none;
+    min-width: auto;
+    gap: 15px;
+  }
+  
+  .trainerDashboardnew-search-bar {
+    width: 160px;
+    min-width: 140px;
+    padding: 10px 14px;
+    min-height: 40px;
+  }
+  
+  .trainerDashboardnew-notifications {
+    width: 40px;
+  }
+  
+  .trainerDashboardnew-notification-dot {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+  }
+  
+  .trainerDashboardnew-account-switch {
+    margin-left: 0;
+  }
+  
+  .trainerDashboardnew-switch-label {
+    font-size: 14px;
+  }
+  
+  .trainerDashboardnew-toggle-label {
+    font-size: 12px;
   }
   
   .trainerDashboardnew-overview-grid {
@@ -1313,6 +1472,7 @@ body {
   .trainerDashboardnew-grid-row {
     flex-direction: column;
     gap: 20px;
+    height: auto;
   }
   
   .trainerDashboardnew-create-visit-section,
@@ -1320,33 +1480,299 @@ body {
     width: 100%;
     margin-left: 0;
   }
-}
-
-@media (max-width: 480px) {
-  .trainerDashboardnew-main-header {
-    padding: 12px 50px 12px 16px;
-  }
-  
-  .trainerDashboardnew-main-content {
-    padding: 16px;
-    margin-top: 80px;
-  }
-  
-  .trainerDashboardnew-mobile-menu-btn {
-    top: 16px;
-    right: 16px;
-    padding: 6px;
-  }
-  
-  .trainerDashboardnew-welcome-title {
-    font-size: 24px;
-  }
   
   .trainerDashboardnew-create-visit-title {
     font-size: 24px;
   }
   
+  .trainerDashboardnew-create-visit-description {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  
   .trainerDashboardnew-main-stat-number {
     font-size: 36px;
+  }
+  
+  .trainerDashboardnew-bot-stats-number {
+    font-size: 20px;
+  }
+  
+  .trainerDashboardnew-properties-table-header {
+    font-size: 12px;
+    gap: 15px;
+  }
+  
+  .trainerDashboardnew-property-row {
+    gap: 15px;
+    margin: 6px 0;
+  }
+  
+  .trainerDashboardnew-property-info {
+    font-size: 12px;
+    gap: 12px;
+    min-width: 140px;
+  }
+  
+  .trainerDashboardnew-property-image {
+    width: 32px;
+  }
+  
+  .trainerDashboardnew-property-address {
+    width: 100px;
+    font-size: 11px;
+  }
+  
+  .trainerDashboardnew-property-distance {
+    width: 25px;
+    font-size: 11px;
+  }
+  
+  .trainerDashboardnew-scheduled-visits-card {
+    min-height: 500px;
+  }
+  
+  .trainerDashboardnew-visit-card {
+    gap: 15px;
+  }
+  
+  .trainerDashboardnew-visit-image {
+    width: 50px;
+  }
+  
+  .trainerDashboardnew-visit-details {
+    width: 160px;
+  }
+  
+  .trainerDashboardnew-visit-property-name {
+    font-size: 13px;
+  }
+  
+  .trainerDashboardnew-visit-address {
+    width: 160px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .trainerDashboardnew-main-header {
+    padding: 12px 55px 12px 16px;
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+  }
+  
+  .trainerDashboardnew-main-content {
+    padding: 16px;
+    margin-top: 125px;
+  }
+  
+  .trainerDashboardnew-mobile-menu-btn {
+    top: 14px;
+    right: 14px;
+    padding: 6px;
+  }
+  
+  .trainerDashboardnew-header-controls {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .trainerDashboardnew-search-and-notifications {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .trainerDashboardnew-account-switch {
+    order: 1;
+  }
+  
+  .trainerDashboardnew-search-bar {
+    width: 200px;
+  }
+  
+  .trainerDashboardnew-create-visit-title {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  
+  .trainerDashboardnew-create-visit-description {
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+  
+  .trainerDashboardnew-main-stat-number {
+    font-size: 28px;
+  }
+  
+  .trainerDashboardnew-bot-stats-item {
+    min-height: 36px;
+    padding: 4px 8px;
+  }
+  
+  .trainerDashboardnew-bot-stats-label {
+    font-size: 10px;
+    width: 60px;
+  }
+  
+  .trainerDashboardnew-bot-stats-number {
+    font-size: 18px;
+  }
+  
+  .trainerDashboardnew-properties-table-header {
+    display: none;
+  }
+  
+  .trainerDashboardnew-property-row {
+    flex-direction: column;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(229, 231, 235, 1);
+  }
+  
+  .trainerDashboardnew-property-info {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .trainerDashboardnew-property-address {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  .trainerDashboardnew-property-distance {
+    width: auto;
+    margin-bottom: 8px;
+  }
+  
+  .trainerDashboardnew-property-actions {
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+  
+  .trainerDashboardnew-visit-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .trainerDashboardnew-visit-details {
+    width: 100%;
+  }
+  
+  .trainerDashboardnew-visit-address {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainerDashboardnew-main-header {
+    padding: 10px 50px 10px 12px;
+  }
+  
+  .trainerDashboardnew-main-content {
+    padding: 12px;
+    margin-top: 125px;
+  }
+  
+  .trainerDashboardnew-mobile-menu-btn {
+    top: 12px;
+    right: 12px;
+    padding: 4px;
+  }
+  
+  .trainerDashboardnew-search-and-notifications {
+    gap: 10px;
+  }
+  
+  .trainerDashboardnew-search-bar {
+    width: 180px;
+    min-width: 150px;
+    padding: 8px 12px;
+    min-height: 36px;
+    font-size: 14px;
+  }
+  
+  .trainerDashboardnew-notifications {
+    width: 36px;
+  }
+  
+  .trainerDashboardnew-notification-dot {
+    width: 36px;
+    height: 36px;
+    padding: 6px;
+  }
+  
+  .trainerDashboardnew-toggle {
+    width: 36px;
+  }
+  
+  .trainerDashboardnew-toggle-circle::after {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .trainerDashboardnew-toggle-active .trainerDashboardnew-toggle-circle::after {
+    transform: translateX(10px);
+  }
+  
+  .trainerDashboardnew-create-visit-title {
+    font-size: 18px;
+    letter-spacing: -0.98px;
+    line-height: 22px;
+  }
+  
+  .trainerDashboardnew-create-visit-description {
+    font-size: 11px;
+    margin-bottom: 20px;
+  }
+  
+  .trainerDashboardnew-main-stat-number {
+    font-size: 24px;
+  }
+  
+  .trainerDashboardnew-main-stat-label {
+    font-size: 14px;
+  }
+  
+  .trainerDashboardnew-bot-stats-item {
+    min-height: 32px;
+    padding: 3px 6px;
+  }
+  
+  .trainerDashboardnew-bot-stats-label {
+    font-size: 9px;
+    width: 50px;
+  }
+  
+  .trainerDashboardnew-bot-stats-number {
+    font-size: 16px;
+  }
+  
+  .trainerDashboardnew-properties-assigned-card,
+  .trainerDashboardnew-scheduled-visits-card {
+    padding: 15px;
+  }
+  
+  .trainerDashboardnew-property-info {
+    gap: 10px;
+  }
+  
+  .trainerDashboardnew-property-image {
+    width: 28px;
+  }
+  
+  .trainerDashboardnew-visit-image {
+    width: 40px;
   }
 }
