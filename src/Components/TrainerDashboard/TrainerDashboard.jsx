@@ -36,7 +36,7 @@ import { IntegratedSettings } from '../Settings';
 
 import './TrainerDashboard.css';
 
-const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccountTypeToggle }) => {
+const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccountTypeToggle, onLogout }) => {
   // Preserve all existing state from original component
   const [activeMenu, setActiveMenu] = useState('overview');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -614,7 +614,25 @@ const TrainerDashboard = ({ onNavigate, onStartBotTraining, accountType, onAccou
                   Anthony Bridge
                 </div>
                 <div className="trainerDashboardnew-user-email">a.bridge@gmail.com</div>
-                <button className="trainerDashboardnew-logout-btn">Log out</button>
+                <button
+                  className="trainerDashboardnew-logout-btn"
+                  onClick={() => {
+                    if (onLogout) {
+                      onLogout();
+                    } else {
+                      // Default logout behavior
+                      localStorage.removeItem('userToken');
+                      localStorage.removeItem('accountType');
+                      if (onNavigate) {
+                        onNavigate('login');
+                      } else {
+                        window.location.href = '/login';
+                      }
+                    }
+                  }}
+                >
+                  Log out
+                </button>
                 {/* <button
                   onClick={() => onNavigate && onNavigate('errorPage')}
                   className="trainerDashboardnew-logout-btn"

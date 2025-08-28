@@ -351,6 +351,27 @@
   }
 }
 
+@media (max-width: 489px) {
+  .OnboardingCreatorStep2-navigationButtons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+  }
+
+  .OnboardingCreatorStep2-backButton {
+    order: 1;
+  }
+
+  .OnboardingCreatorStep2-nextButton {
+    order: 2;
+  }
+}
+
 @media (max-width: 480px) {
   .OnboardingCreatorStep2-mainContent {
     padding: 20px 12px;

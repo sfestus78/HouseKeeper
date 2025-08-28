@@ -494,43 +494,65 @@
   }
 }
 
+@media (max-width: 489px) {
+  .OnboardingCreatorStep3-navigation-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 40px);
+  }
+
+  .OnboardingCreatorStep3-back-button {
+    order: 1;
+  }
+
+  .OnboardingCreatorStep3-finish-button {
+    order: 2;
+    width: auto;
+  }
+}
+
 @media (max-width: 480px) {
   .OnboardingCreatorStep3-main-content {
     padding: 80px 12px 100px 12px;
     gap: 20px;
   }
-  
+
   .OnboardingCreatorStep3-main-title {
     font-size: clamp(24px, 7vw, 32px);
     text-align: center;
   }
-  
+
   .OnboardingCreatorStep3-description {
     font-size: 14px;
     text-align: center;
   }
-  
+
   .OnboardingCreatorStep3-step-number-large {
     font-size: clamp(80px, 15vw, 120px);
   }
-  
+
   .OnboardingCreatorStep3-step-title {
     font-size: 18px;
   }
-  
+
   .OnboardingCreatorStep3-step-description-section {
     font-size: 14px;
   }
-  
+
   .OnboardingCreatorStep3-property-card {
     max-width: none;
     padding: 14px;
   }
-  
+
   .OnboardingCreatorStep3-card-divider {
     width: 100%;
   }
-  
+
   .OnboardingCreatorStep3-card-content {
     gap: 12px;
   }
@@ -543,24 +565,24 @@
   .OnboardingCreatorStep3-card-text {
     font-size: 13px;
   }
-  
+
   .OnboardingCreatorStep3-bottom-section {
     bottom: 12px;
     left: 12px;
     right: 12px;
   }
-  
+
   .OnboardingCreatorStep3-navigation-buttons {
     flex-direction: column;
     gap: 12px;
     align-items: stretch;
   }
-  
+
   .OnboardingCreatorStep3-back-button {
     align-self: flex-start;
     font-size: 14px;
   }
-  
+
   .OnboardingCreatorStep3-finish-button {
     width: 100%;
   }

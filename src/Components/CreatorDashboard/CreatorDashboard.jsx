@@ -148,7 +148,7 @@ const mockTrainers = [
   }
 ];
 
-const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
+const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle, onLogout }) => {
   const [properties, setProperties] = useState(mockProperties);
   const [trainers] = useState(mockTrainers);
   const [searchTerm, setSearchTerm] = useState('');
@@ -307,7 +307,25 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
               <p>{getUserEmail()}</p>
             </div>
           </div>
-          <button className="creatordashboard-logout-btn">Log out</button>
+          <button
+            className="creatordashboard-logout-btn"
+            onClick={() => {
+              if (onLogout) {
+                onLogout();
+              } else {
+                // Default logout behavior
+                localStorage.removeItem('userToken');
+                localStorage.removeItem('accountType');
+                if (onNavigate) {
+                  onNavigate('login');
+                } else {
+                  window.location.href = '/login';
+                }
+              }
+            }}
+          >
+            Log out
+          </button>
         </div>
       </div>
 
@@ -337,7 +355,8 @@ const CreatorDashboard = ({ onNavigate, accountType, onAccountTypeToggle }) => {
               </div>
 
               {/* Right Section */}
-              <div className="creatordashboard-header-controls">
+              <div className="creatordashboa
+              rd-header-controls">
                 {/* Search Bar */}
                 <div className="creatordashboard-search-container">
                   <input

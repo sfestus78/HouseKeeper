@@ -571,7 +571,7 @@ body {
   line-height: 32px;
   letter-spacing: -2.24px;
   margin-bottom: 8px;
-  color: #fff;
+  color: #fff;  
 }
 
 .trainerDashboardnew-create-visit-description {
@@ -1713,18 +1713,18 @@ body {
     padding: 6px;
   }
   
-  .trainerDashboardnew-toggle {
-    width: 36px;
+  .trainerDashboardnew-account-switch{
+    display: none;
   }
   
-  .trainerDashboardnew-toggle-circle::after {
+  /* .trainerDashboardnew-toggle-circle::after {
     width: 10px;
     height: 10px;
-  }
+  } */
   
-  .trainerDashboardnew-toggle-active .trainerDashboardnew-toggle-circle::after {
+  /* .trainerDashboardnew-toggle-active .trainerDashboardnew-toggle-circle::after {
     transform: translateX(10px);
-  }
+  } */
   
   .trainerDashboardnew-create-visit-title {
     font-size: 18px;

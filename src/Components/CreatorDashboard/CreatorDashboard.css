@@ -874,6 +874,20 @@
   }
 }
 
+@media (max-width: 480px) {
+  .creatordashboard-hero-section {
+    order: 1;
+  }
+
+  .creatordashboard-trainers-panel {
+    order: 2;
+  }
+
+  .creatordashboard-properties-table {
+    order: 3;
+  }
+}
+
 @media (max-width: 1024px) {
   .creatordashboard-main-content {
     margin-left: 0;
@@ -985,31 +999,64 @@
   .creatordashboard-sidebar {
     width: 100%;
   }
-  
+
+  .creatordashboard-account-switcher{
+    display:none;
+  }
+
+  .creatordashboard-header-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .creatordashboard-header-controls {
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .creatordashboard-search-container {
+    order: 0;
+    width: auto;
+    margin-bottom: 0;
+  }
+
+  .creatordashboard-search-input {
+    width: 120px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .creatordashboard-welcome-section {
+    display: none;
+  }
+
   .creatordashboard-grid {
     padding: 8px;
     gap: 12px;
   }
-  
+
   .creatordashboard-overview-card,
   .creatordashboard-properties-table,
   .creatordashboard-trainers-panel {
     padding: 12px;
   }
-  
+
   .creatordashboard-stat-number {
     font-size: 24px;
   }
-  
+
   .creatordashboard-secondary-stat-number {
     font-size: 16px;
   }
-  
+
   .creatordashboard-create-property-card {
     min-height: 140px;
     padding: 16px;
   }
-  
+
   .creatordashboard-create-property-title {
     font-size: 18px;
   }
