@@ -997,7 +997,7 @@
 
 @media (max-width: 480px) {
   .creatordashboard-sidebar {
-    width: 100%;
+    width: 43%;
   }
 
   .creatordashboard-account-switcher{
@@ -1027,10 +1027,6 @@
     width: 120px;
     padding: 8px 10px;
     font-size: 12px;
-  }
-
-  .creatordashboard-welcome-section {
-    display: none;
   }
 
   .creatordashboard-grid {

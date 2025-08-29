@@ -494,7 +494,7 @@
   }
 }
 
-@media (max-width: 489px) {
+@media (max-width: 480px) {
   .OnboardingCreatorStep3-navigation-buttons {
     position: fixed;
     bottom: 20px;
@@ -504,15 +504,23 @@
     justify-content: space-between;
     align-items: center;
     width: calc(100% - 40px);
+    flex-direction: row;
+    gap: 16px;
   }
 
   .OnboardingCreatorStep3-back-button {
     order: 1;
+    flex: 0 0 auto;
   }
 
   .OnboardingCreatorStep3-finish-button {
     order: 2;
     width: auto;
+    flex: 0 0 auto;
+  }
+
+  .OnboardingCreatorStep3-bottom-section {
+    padding-bottom: 80px;
   }
 }
 
@@ -564,27 +572,6 @@
 
   .OnboardingCreatorStep3-card-text {
     font-size: 13px;
-  }
-
-  .OnboardingCreatorStep3-bottom-section {
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
-  }
-
-  .OnboardingCreatorStep3-navigation-buttons {
-    flex-direction: column;
-    gap: 12px;
-    align-items: stretch;
-  }
-
-  .OnboardingCreatorStep3-back-button {
-    align-self: flex-start;
-    font-size: 14px;
-  }
-
-  .OnboardingCreatorStep3-finish-button {
-    width: 100%;
   }
 
   .OnboardingCreatorStep3-property-form-modal {

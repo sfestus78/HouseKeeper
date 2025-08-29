@@ -4,7 +4,7 @@
 .helpcenter-container {
   width: 100%;
   max-width: 1046px;
-  margin: 100px auto 0;
+  margin: 80px auto 0;
   padding: 31px 20px 0;
   font-family: 'Lato', -apple-system, Roboto, Helvetica, sans-serif;
   background:#FFF;
@@ -446,6 +446,7 @@
 @media (max-width: 480px) {
   .helpcenter-container {
     padding: 16px 8px 0;
+    margin-top: 70px;
   }
 
   .helpcenter-title {

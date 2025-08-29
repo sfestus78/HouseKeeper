@@ -152,8 +152,7 @@ body {
   display: none;
   position: fixed;
   top: 20px;
-  right: 20px;
-  left:auto;
+  left: 20px;
   z-index: 1002;
   background: rgba(255, 255, 255, 1);
   border: 1px solid rgba(229, 231, 235, 1);
@@ -1106,6 +1105,7 @@ body {
   letter-spacing: -0.56px;
   line-height: 1;
   margin-bottom: 4px;
+  text-align: left;
 }
 
 .trainerDashboardnew-visit-distance {
@@ -1113,6 +1113,7 @@ body {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: -1.08px;
+  text-align: left;
 }
 
 .trainerDashboardnew-view-details-btn {
@@ -1283,7 +1284,7 @@ body {
   
   .trainerDashboardnew-main-header {
     left: 0;
-    padding: 17px 70px 17px 25px;
+    padding: 17px 25px 17px 70px;
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -1358,7 +1359,7 @@ body {
 
 @media (max-width: 900px) {
   .trainerDashboardnew-main-header {
-    padding: 15px 60px 15px 20px;
+    padding: 15px 20px 15px 60px;
   }
   
   .trainerDashboardnew-welcome-title {
@@ -1404,7 +1405,7 @@ body {
 
 @media (max-width: 768px) {
   .trainerDashboardnew-main-header {
-    padding: 15px 60px 15px 20px;
+    padding: 15px 20px 15px 60px;
     background-color: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1413,10 +1414,6 @@ body {
   .trainerDashboardnew-main-content {
     padding: 20px;
     margin-top: 85px;
-  }
-  
-  .trainerDashboardnew-welcome-section {
-    display: none;
   }
   
   .trainerDashboardnew-header-controls {
@@ -1457,6 +1454,13 @@ body {
   .trainerDashboardnew-toggle-label {
     font-size: 12px;
   }
+
+  .trainerDashboardnew-create-visit-content {
+    aspect-ratio: 1.4;
+    height: 250px;
+    padding: 12px;
+  }
+
   
   .trainerDashboardnew-overview-grid {
     flex-direction: column;
@@ -1489,13 +1493,46 @@ body {
     font-size: 13px;
     margin-bottom: 30px;
   }
-  
-  .trainerDashboardnew-main-stat-number {
-    font-size: 36px;
+
+
+  .trainerDashboardnew-stats-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  .trainerDashboardnew-main-stat-card {
+    flex: 0 0 auto;
+    width: 48%;
+    min-height: 140px;
+    padding: 12px;
   }
   
+  .trainerDashboardnew-main-stat-number {
+    font-size: 32px;
+  }
+
+  .trainerDashboardnew-bot-stats-container{
+    flex: 0 0 auto;
+    width: 50%;
+    gap: 6px;
+  }
+
+  .trainerDashboardnew-bot-stats-item{
+    min-height: 40px;
+    padding: 6px 10px;
+  }
+  
+  .trainerDashboardnew-bot-stats-label{
+    font-size: 15px;
+    width: auto;
+    text-align: left;
+  }
+
   .trainerDashboardnew-bot-stats-number {
-    font-size: 20px;
+    font-size: 18px;
   }
   
   .trainerDashboardnew-properties-table-header {
@@ -1556,7 +1593,7 @@ body {
 
 @media (max-width: 640px) {
   .trainerDashboardnew-main-header {
-    padding: 12px 55px 12px 16px;
+    padding: 12px 16px 12px 65px;
     background-color: rgba(255, 255, 255, 1);
     border-bottom: 1px solid rgba(229, 231, 235, 0.8);
   }
@@ -1568,7 +1605,7 @@ body {
   
   .trainerDashboardnew-mobile-menu-btn {
     top: 14px;
-    right: 14px;
+    left: 14px;
     padding: 6px;
   }
   
@@ -1602,8 +1639,28 @@ body {
     margin-bottom: 25px;
   }
   
+  .trainerDashboardnew-stats-content{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .trainerDashboardnew-main-stat-card{
+    flex: 0 0 auto;
+    width: 45%;
+    min-height: 140px;
+    padding: 12px;
+  }
+
   .trainerDashboardnew-main-stat-number {
-    font-size: 28px;
+    font-size: 25px;
+  }
+
+  .trainerDashboardnew-bot-stats-container{
+    flex: 0 0 auto;
+    width: 50%;
+    gap: 6px;
   }
   
   .trainerDashboardnew-bot-stats-item {
@@ -1613,7 +1670,8 @@ body {
   
   .trainerDashboardnew-bot-stats-label {
     font-size: 10px;
-    width: 60px;
+    width: auto;
+    text-align: left;
   }
   
   .trainerDashboardnew-bot-stats-number {
@@ -1677,18 +1735,42 @@ body {
 
 @media (max-width: 480px) {
   .trainerDashboardnew-main-header {
-    padding: 10px 50px 10px 12px;
+    padding: 10px 8px 10px 50px;
+    min-height: 60px;
   }
   
   .trainerDashboardnew-main-content {
     padding: 12px;
-    margin-top: 125px;
+    margin-top: 70px;
+  }
+
+  .trainerDashboardnew-main-header-content{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 6px;
+    justify-content: space-between;
+    overflow: hidden;
   }
   
+  .trainerDashboardnew-welcome-section{
+    flex-shrink: 1;
+  }
+
+  .trainerDashboardnew-welcome-title{
+    font-size: 17px;
+  }
+
+
   .trainerDashboardnew-mobile-menu-btn {
     top: 12px;
-    right: 12px;
+    left: 12px;
     padding: 4px;
+  }
+
+  .trainerDashboardnew-header-controls{
+    flex: 1;
   }
   
   .trainerDashboardnew-search-and-notifications {
@@ -1701,6 +1783,11 @@ body {
     padding: 8px 12px;
     min-height: 36px;
     font-size: 14px;
+  }
+
+  .trainerDashboardnew-search-icon{
+    width: 16px;
+    height: 16px;
   }
   
   .trainerDashboardnew-notifications {
@@ -1716,7 +1803,26 @@ body {
   .trainerDashboardnew-account-switch{
     display: none;
   }
-  
+
+  /* .trainerDashboardnew-create-visit-section {
+    /* min-height: 110px; */
+  /* } */
+
+  /* .trainerDashboardnew-create-visit-card { */
+    /* min-height: 110px; */
+  /* } */ 
+
+  .trainerDashboardnew-create-visit-content {
+    aspect-ratio: 1.4;
+    height: 150px;
+    padding: 12px;
+  }
+
+  .trainerDashboardnew-grid-row {
+    height: auto;
+    /* min-height: 120px; */
+  }
+
   /* .trainerDashboardnew-toggle-circle::after {
     width: 10px;
     height: 10px;
@@ -1736,23 +1842,47 @@ body {
     font-size: 11px;
     margin-bottom: 20px;
   }
+
+  .trainerDashboardnew-stats-content{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .trainerDashboardnew-main-stat-card{
+    flex: 0 0 auto;
+    width: 40%;
+    min-height: 120px;
+    padding: 10px;
+  }
+
   
   .trainerDashboardnew-main-stat-number {
     font-size: 24px;
   }
   
   .trainerDashboardnew-main-stat-label {
-    font-size: 14px;
+    font-size: 15px;
+  }
+  
+  .trainerDashboardnew-bot-stats-container {
+    flex: 0 0 auto;
+    width: 53%;
+    gap: 4px;
   }
   
   .trainerDashboardnew-bot-stats-item {
     min-height: 32px;
-    padding: 3px 6px;
+    padding: 4px 8px;
   }
   
   .trainerDashboardnew-bot-stats-label {
-    font-size: 9px;
-    width: 50px;
+    font-size: 12px;
+    text-align: left;
+    width: auto;
+    line-height: 1.2;
   }
   
   .trainerDashboardnew-bot-stats-number {
@@ -1774,5 +1904,72 @@ body {
   
   .trainerDashboardnew-visit-image {
     width: 40px;
+  }
+}
+
+
+
+/* For extremely small screens */
+@media (max-width: 360px) {
+  .trainerDashboardnew-main-header {
+    padding: 8px 6px 8px 45px;
+  }
+  
+  .trainerDashboardnew-welcome-section {
+    min-width: 60px;
+    max-width: 90px;
+  }
+  
+  .trainerDashboardnew-welcome-title {
+    font-size: 14px;
+  }
+  
+  .trainerDashboardnew-welcome-subtitle {
+    font-size: 10px;
+  }
+  
+  .trainerDashboardnew-search-bar {
+    min-width: 60px;
+    max-width: 100px;
+    padding: 3px 6px;
+    min-height: 24px;
+    font-size: 11px;
+  }
+  
+  .trainerDashboardnew-search-input {
+    font-size: 11px;
+  }
+  
+  .trainerDashboardnew-search-input::placeholder {
+    font-size: 11px;
+  }
+  
+  .trainerDashboardnew-search-icon {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .trainerDashboardnew-notifications {
+    width: 24px;
+  }
+  
+  .trainerDashboardnew-notification-dot {
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+  }
+  
+  .trainerDashboardnew-notification-dot::after {
+    width: 5px;
+    height: 5px;
+    top: 3px;
+    right: 5px;
+  }
+  
+  .trainerDashboardnew-mobile-menu-btn {
+    width: 24px;
+    height: 24px;
+    top: 12px;
+    left: 8px;
   }
 }

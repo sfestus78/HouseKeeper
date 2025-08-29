@@ -246,6 +246,7 @@
 }
 
 .OnboardingCreatorStep2-nextButton {
+  padding: 10px 20px;
   border-radius: 8px;
   min-height: 44px;
   width: 120px;
@@ -351,7 +352,7 @@
   }
 }
 
-@media (max-width: 489px) {
+@media (max-width: 480px) {
   .OnboardingCreatorStep2-navigationButtons {
     position: fixed;
     bottom: 20px;
@@ -361,14 +362,23 @@
     justify-content: space-between;
     align-items: center;
     width: calc(100% - 40px);
+    flex-direction: row;
+    gap: 16px;
   }
 
   .OnboardingCreatorStep2-backButton {
     order: 1;
+    flex: 0 0 auto;
   }
 
   .OnboardingCreatorStep2-nextButton {
     order: 2;
+    flex: 0 0 auto;
+    width: auto;
+  }
+
+  .OnboardingCreatorStep2-bottomSection {
+    padding-bottom: 80px;
   }
 }
 
@@ -412,14 +422,5 @@
   .OnboardingCreatorStep2-assignButton {
     width: 100%;
     padding: 10px 16px;
-  }
-
-  .OnboardingCreatorStep2-navigationButtons {
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .OnboardingCreatorStep2-nextButton {
-    width: 100%;
   }
 }
